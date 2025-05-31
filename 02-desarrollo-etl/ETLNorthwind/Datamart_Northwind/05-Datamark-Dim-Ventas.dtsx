@@ -1,0 +1,2273 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/30/2025 4:33:30 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MORGAN_BF"
+  DTS:CreatorName="MORGAN_BF\uridk"
+  DTS:DTSID="{BFEF1023-13FF-45BD-84E8-9ABB6EF5808F}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="2058"
+  DTS:ObjectName="05-Datamark-Dim-Ventas"
+  DTS:PackageType="5"
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{BB5CD314-1CC2-4715-9665-DC299F7060A4}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost,1450.datamart_northwind.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{FA2F0993-6D3F-4292-B450-A7F0B0CD8790}"
+      DTS:ObjectName="localhost,1450.datamart_northwind.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost,1450;User ID=sa;Initial Catalog=datamart_northwind;Provider=MSOLEDBSQL.1;Application Name=SSIS-05-Datamark-Dim-Ventas-{FA2F0993-6D3F-4292-B450-A7F0B0CD8790}localhost,1450.datamart_northwind.sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAj9LjijGAY0qER73leZuoQwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABx2VfxWT07ieN0XqmkyT8RWwKqHsZvbk1nHg6K6BcwQgAAAAAOgAAAAAIAACAAAAApaaA2zqgEnD9GrNKMhBrXSvFXbJnMfpPqmj+CC/1dBiAAAABTxe93OoMO/Y/J9CrCj/XwIwccO8ry4T26nmDg1MlKfkAAAADzWovhJtPY+jdrZmQjHeepq1/eJb8JQXtmUWXHU6V5WbquPhZn04OMUt096OTfgepP7EBrMxzjIjceROX1fn/9</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9A0C82C7-4F48-4296-961C-9B8F562C7A64}"
+      DTS:ObjectName="localhost,1450.stage_northwind.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost,1450;User ID=sa;Initial Catalog=stage_northwind;Provider=MSOLEDBSQL.1;Application Name=SSIS-05-Datamark-Dim-Ventas-{9A0C82C7-4F48-4296-961C-9B8F562C7A64}localhost,1450.stage_northwind.sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAj9LjijGAY0qER73leZuoQwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADstaTXZSTVbHJDRokq6Gz9lhSpf8oHUB/kzGWk2TXNigAAAAAOgAAAAAIAACAAAADS79bhSE/lQ/SH2OTQs2I2GkCszdArk3BoQPx/An9CSyAAAABgSh85NFhd/Oki4P4RE4lzlw970NwRBqlTYB0JvrKbk0AAAACIxfOy5TZwpGCQ8TOIQI8Q2rwFM3/ofpZaUCtWrwxUfof5/LVpCqaK+uL1WzhbhBf1E6EH/dz/oxuIu6d7cUb0</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\CARGA DIM VENTAS"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{4CBD9569-53A2-45C9-8660-D876F5AC2252}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CARGA DIM VENTAS"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\CARGA DIM VENTAS\Conditional Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Conditional Split"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\CARGA DIM VENTAS\Conditional Split.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\Conditional Split.Inputs[Conditional Split Input].Columns[cliente_Skey_FAC_VENTAS]"
+                      cachedDataType="i4"
+                      cachedName="cliente_Skey_FAC_VENTAS"
+                      lineageId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[cliente_Skey_FAC_VENTAS]" />
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\Conditional Split.Inputs[Conditional Split Input].Columns[empleado_FAC_VENTAS]"
+                      cachedDataType="i4"
+                      cachedName="empleado_FAC_VENTAS"
+                      lineageId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[empleado_FAC_VENTAS]" />
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\Conditional Split.Inputs[Conditional Split Input].Columns[producto_SkeyFAC_VENTAS]"
+                      cachedDataType="i4"
+                      cachedName="producto_SkeyFAC_VENTAS"
+                      lineageId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[producto_SkeyFAC_VENTAS]" />
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\Conditional Split.Inputs[Conditional Split Input].Columns[tiempo_SkeyFAC_VENTAS]"
+                      cachedDataType="i4"
+                      cachedName="tiempo_SkeyFAC_VENTAS"
+                      lineageId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[tiempo_SkeyFAC_VENTAS]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\CARGA DIM VENTAS\Conditional Split.Outputs[NEW_VENTAS]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="NEW_VENTAS"
+                  synchronousInputId="Package\CARGA DIM VENTAS\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">[ISNULL](#{Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[tiempo_SkeyFAC_VENTAS]}) || [ISNULL](#{Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[producto_SkeyFAC_VENTAS]}) || [ISNULL](#{Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[cliente_Skey_FAC_VENTAS]}) || [ISNULL](#{Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[empleado_FAC_VENTAS]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">ISNULL(tiempo_SkeyFAC_VENTAS) || ISNULL(producto_SkeyFAC_VENTAS) || ISNULL(cliente_Skey_FAC_VENTAS) || ISNULL(empleado_FAC_VENTAS)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\CARGA DIM VENTAS\Conditional Split.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\CARGA DIM VENTAS\Conditional Split.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\CARGA DIM VENTAS\Conditional Split.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\CARGA DIM VENTAS\Conditional Split.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIM VENTAS\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIM VENTAS\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\CARGA DIM VENTAS\DIM VENTAS"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="DIM VENTAS"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[fact_ventas]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\CARGA DIM VENTAS\DIM VENTAS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost,1450.datamart_northwind.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.datamart_northwind.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].Columns[cliente_Skey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].ExternalColumns[cliente_Skey]"
+                      lineageId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].Columns[cliente_Skey]"
+                      name="cliente_Skey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].Columns[empleado_Skey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].ExternalColumns[empleado_Skey]"
+                      lineageId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].Columns[empleado_Skey]"
+                      name="empleado_Skey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].Columns[producto_Skey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].ExternalColumns[producto_Skey]"
+                      lineageId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].Columns[producto_Skey]"
+                      name="producto_Skey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].Columns[tiempo_Skey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].ExternalColumns[tiempo_Skey]"
+                      lineageId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].Columns[tiempo_Skey]"
+                      name="tiempo_Skey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].Columns[ventas_Norden]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].ExternalColumns[ventas_Norden]"
+                      lineageId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].Columns[ventas_Norden]"
+                      name="ventas_Norden"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].Columns[ventas_monto]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].ExternalColumns[ventas_monto]"
+                      lineageId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].Columns[ventas_monto]"
+                      name="ventas_monto"
+                      precision="15"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].Columns[ventas_unidades]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].ExternalColumns[ventas_unidades]"
+                      lineageId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].Columns[ventas_unidades]"
+                      name="ventas_unidades"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].Columns[ventas_punitario]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].ExternalColumns[ventas_punitario]"
+                      lineageId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].Columns[ventas_punitario]"
+                      name="ventas_punitario"
+                      precision="15"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].Columns[ventas_descuento]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].ExternalColumns[ventas_descuento]"
+                      lineageId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].Columns[ventas_descuento]"
+                      name="ventas_descuento"
+                      precision="15"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].ExternalColumns[cliente_Skey]"
+                      dataType="i4"
+                      name="cliente_Skey" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].ExternalColumns[empleado_Skey]"
+                      dataType="i4"
+                      name="empleado_Skey" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].ExternalColumns[producto_Skey]"
+                      dataType="i4"
+                      name="producto_Skey" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].ExternalColumns[tiempo_Skey]"
+                      dataType="i4"
+                      name="tiempo_Skey" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].ExternalColumns[ventas_Norden]"
+                      dataType="i4"
+                      name="ventas_Norden" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].ExternalColumns[ventas_monto]"
+                      dataType="numeric"
+                      name="ventas_monto"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].ExternalColumns[ventas_unidades]"
+                      dataType="i4"
+                      name="ventas_unidades" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].ExternalColumns[ventas_punitario]"
+                      dataType="numeric"
+                      name="ventas_punitario"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].ExternalColumns[ventas_descuento]"
+                      dataType="numeric"
+                      name="ventas_descuento"
+                      precision="15"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Error Output].Columns[cliente_Skey]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Error Output].Columns[cliente_Skey]"
+                      name="cliente_Skey" />
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Error Output].Columns[empleado_Skey]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Error Output].Columns[empleado_Skey]"
+                      name="empleado_Skey" />
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Error Output].Columns[producto_Skey]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Error Output].Columns[producto_Skey]"
+                      name="producto_Skey" />
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Error Output].Columns[tiempo_Skey]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Error Output].Columns[tiempo_Skey]"
+                      name="tiempo_Skey" />
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Error Output].Columns[ventas_Norden]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Error Output].Columns[ventas_Norden]"
+                      name="ventas_Norden" />
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Error Output].Columns[ventas_monto]"
+                      dataType="numeric"
+                      lineageId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Error Output].Columns[ventas_monto]"
+                      name="ventas_monto"
+                      precision="15"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Error Output].Columns[ventas_unidades]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Error Output].Columns[ventas_unidades]"
+                      name="ventas_unidades" />
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Error Output].Columns[ventas_punitario]"
+                      dataType="numeric"
+                      lineageId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Error Output].Columns[ventas_punitario]"
+                      name="ventas_punitario"
+                      precision="15"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Error Output].Columns[ventas_descuento]"
+                      dataType="numeric"
+                      lineageId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Error Output].Columns[ventas_descuento]"
+                      name="ventas_descuento"
+                      precision="15"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\CARGA DIM VENTAS\Merge Join"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">4</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\CARGA DIM VENTAS\Merge Join.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\Merge Join.Inputs[Merge Join Left Input].Columns[cliente_Skey]"
+                      cachedDataType="i4"
+                      cachedName="cliente_Skey"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\CARGA DIM VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[cliente_Skey]" />
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\Merge Join.Inputs[Merge Join Left Input].Columns[empleado_Skey]"
+                      cachedDataType="i4"
+                      cachedName="empleado_Skey"
+                      cachedSortKeyPosition="2"
+                      lineageId="Package\CARGA DIM VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[empleado_Skey]" />
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\Merge Join.Inputs[Merge Join Left Input].Columns[producto_Skey]"
+                      cachedDataType="i4"
+                      cachedName="producto_Skey"
+                      cachedSortKeyPosition="3"
+                      lineageId="Package\CARGA DIM VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[producto_Skey]" />
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\Merge Join.Inputs[Merge Join Left Input].Columns[tiempo_Skey]"
+                      cachedDataType="i4"
+                      cachedName="tiempo_Skey"
+                      cachedSortKeyPosition="4"
+                      lineageId="Package\CARGA DIM VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[tiempo_Skey]" />
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\Merge Join.Inputs[Merge Join Left Input].Columns[ventas_monto]"
+                      cachedDataType="numeric"
+                      cachedName="ventas_monto"
+                      cachedPrecision="15"
+                      cachedScale="2"
+                      lineageId="Package\CARGA DIM VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[ventas_monto]" />
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\Merge Join.Inputs[Merge Join Left Input].Columns[ventas_unidades]"
+                      cachedDataType="i4"
+                      cachedName="ventas_unidades"
+                      lineageId="Package\CARGA DIM VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[ventas_unidades]" />
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\Merge Join.Inputs[Merge Join Left Input].Columns[ventas_preciounitario]"
+                      cachedDataType="numeric"
+                      cachedName="ventas_preciounitario"
+                      cachedPrecision="15"
+                      cachedScale="2"
+                      lineageId="Package\CARGA DIM VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[ventas_preciounitario]" />
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\Merge Join.Inputs[Merge Join Left Input].Columns[ventas_descuento]"
+                      cachedDataType="numeric"
+                      cachedName="ventas_descuento"
+                      cachedPrecision="15"
+                      cachedScale="2"
+                      lineageId="Package\CARGA DIM VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[ventas_descuento]" />
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\Merge Join.Inputs[Merge Join Left Input].Columns[norden]"
+                      cachedDataType="i4"
+                      cachedName="norden"
+                      lineageId="Package\CARGA DIM VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[norden]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\CARGA DIM VENTAS\Merge Join.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\Merge Join.Inputs[Merge Join Right Input].Columns[cliente_Skey]"
+                      cachedDataType="i4"
+                      cachedName="cliente_Skey"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\CARGA DIM VENTAS\ORDENAR FAC VENTAS.Outputs[Sort Output].Columns[cliente_Skey]" />
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\Merge Join.Inputs[Merge Join Right Input].Columns[empleado_Skey]"
+                      cachedDataType="i4"
+                      cachedName="empleado_Skey"
+                      cachedSortKeyPosition="2"
+                      lineageId="Package\CARGA DIM VENTAS\ORDENAR FAC VENTAS.Outputs[Sort Output].Columns[empleado_Skey]" />
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\Merge Join.Inputs[Merge Join Right Input].Columns[producto_Skey]"
+                      cachedDataType="i4"
+                      cachedName="producto_Skey"
+                      cachedSortKeyPosition="3"
+                      lineageId="Package\CARGA DIM VENTAS\ORDENAR FAC VENTAS.Outputs[Sort Output].Columns[producto_Skey]" />
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\Merge Join.Inputs[Merge Join Right Input].Columns[tiempo_Skey]"
+                      cachedDataType="i4"
+                      cachedName="tiempo_Skey"
+                      cachedSortKeyPosition="4"
+                      lineageId="Package\CARGA DIM VENTAS\ORDENAR FAC VENTAS.Outputs[Sort Output].Columns[tiempo_Skey]" />
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\Merge Join.Inputs[Merge Join Right Input].Columns[ventas_Norden]"
+                      cachedDataType="i4"
+                      cachedName="ventas_Norden"
+                      lineageId="Package\CARGA DIM VENTAS\ORDENAR FAC VENTAS.Outputs[Sort Output].Columns[ventas_Norden]" />
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\Merge Join.Inputs[Merge Join Right Input].Columns[ventas_monto]"
+                      cachedDataType="numeric"
+                      cachedName="ventas_monto"
+                      cachedPrecision="15"
+                      cachedScale="2"
+                      lineageId="Package\CARGA DIM VENTAS\ORDENAR FAC VENTAS.Outputs[Sort Output].Columns[ventas_monto]" />
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\Merge Join.Inputs[Merge Join Right Input].Columns[ventas_unidades]"
+                      cachedDataType="i4"
+                      cachedName="ventas_unidades"
+                      lineageId="Package\CARGA DIM VENTAS\ORDENAR FAC VENTAS.Outputs[Sort Output].Columns[ventas_unidades]" />
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\Merge Join.Inputs[Merge Join Right Input].Columns[ventas_punitario]"
+                      cachedDataType="numeric"
+                      cachedName="ventas_punitario"
+                      cachedPrecision="15"
+                      cachedScale="2"
+                      lineageId="Package\CARGA DIM VENTAS\ORDENAR FAC VENTAS.Outputs[Sort Output].Columns[ventas_punitario]" />
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\Merge Join.Inputs[Merge Join Right Input].Columns[ventas_descuento]"
+                      cachedDataType="numeric"
+                      cachedName="ventas_descuento"
+                      cachedPrecision="15"
+                      cachedScale="2"
+                      lineageId="Package\CARGA DIM VENTAS\ORDENAR FAC VENTAS.Outputs[Sort Output].Columns[ventas_descuento]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output]"
+                  isSorted="true"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[ventas_monto]"
+                      dataType="numeric"
+                      lineageId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[ventas_monto]"
+                      name="ventas_monto"
+                      precision="15"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\CARGA DIM VENTAS\Merge Join.Inputs[Merge Join Left Input].Columns[ventas_monto]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[ventas_unidades]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[ventas_unidades]"
+                      name="ventas_unidades">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\CARGA DIM VENTAS\Merge Join.Inputs[Merge Join Left Input].Columns[ventas_unidades]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[ventas_preciounitario]"
+                      dataType="numeric"
+                      lineageId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[ventas_preciounitario]"
+                      name="ventas_preciounitario"
+                      precision="15"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\CARGA DIM VENTAS\Merge Join.Inputs[Merge Join Left Input].Columns[ventas_preciounitario]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[ventas_descuento]"
+                      dataType="numeric"
+                      lineageId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[ventas_descuento]"
+                      name="ventas_descuento"
+                      precision="15"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\CARGA DIM VENTAS\Merge Join.Inputs[Merge Join Left Input].Columns[ventas_descuento]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[cliente_Skey]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[cliente_Skey]"
+                      name="cliente_Skey"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\CARGA DIM VENTAS\Merge Join.Inputs[Merge Join Left Input].Columns[cliente_Skey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[empleado_Skey]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[empleado_Skey]"
+                      name="empleado_Skey"
+                      sortKeyPosition="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\CARGA DIM VENTAS\Merge Join.Inputs[Merge Join Left Input].Columns[empleado_Skey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[producto_Skey]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[producto_Skey]"
+                      name="producto_Skey"
+                      sortKeyPosition="3">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\CARGA DIM VENTAS\Merge Join.Inputs[Merge Join Left Input].Columns[producto_Skey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[tiempo_Skey]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[tiempo_Skey]"
+                      name="tiempo_Skey"
+                      sortKeyPosition="4">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\CARGA DIM VENTAS\Merge Join.Inputs[Merge Join Left Input].Columns[tiempo_Skey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[norden]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[norden]"
+                      name="norden">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\CARGA DIM VENTAS\Merge Join.Inputs[Merge Join Left Input].Columns[norden]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[cliente_Skey_FAC_VENTAS]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[cliente_Skey_FAC_VENTAS]"
+                      name="cliente_Skey_FAC_VENTAS">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\CARGA DIM VENTAS\Merge Join.Inputs[Merge Join Right Input].Columns[cliente_Skey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[empleado_FAC_VENTAS]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[empleado_FAC_VENTAS]"
+                      name="empleado_FAC_VENTAS">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\CARGA DIM VENTAS\Merge Join.Inputs[Merge Join Right Input].Columns[empleado_Skey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[producto_SkeyFAC_VENTAS]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[producto_SkeyFAC_VENTAS]"
+                      name="producto_SkeyFAC_VENTAS">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\CARGA DIM VENTAS\Merge Join.Inputs[Merge Join Right Input].Columns[producto_Skey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[tiempo_SkeyFAC_VENTAS]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[tiempo_SkeyFAC_VENTAS]"
+                      name="tiempo_SkeyFAC_VENTAS">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\CARGA DIM VENTAS\Merge Join.Inputs[Merge Join Right Input].Columns[tiempo_Skey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[ventas_NordenFAC_VENTAS]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[ventas_NordenFAC_VENTAS]"
+                      name="ventas_NordenFAC_VENTAS">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\CARGA DIM VENTAS\Merge Join.Inputs[Merge Join Right Input].Columns[ventas_Norden]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[ventas_montoFAC_VENTAS]"
+                      dataType="numeric"
+                      lineageId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[ventas_montoFAC_VENTAS]"
+                      name="ventas_montoFAC_VENTAS"
+                      precision="15"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\CARGA DIM VENTAS\Merge Join.Inputs[Merge Join Right Input].Columns[ventas_monto]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[ventas_unidadesFAC_VENTAS]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[ventas_unidadesFAC_VENTAS]"
+                      name="ventas_unidadesFAC_VENTAS">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\CARGA DIM VENTAS\Merge Join.Inputs[Merge Join Right Input].Columns[ventas_unidades]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[ventas_punitarioFAC_VENTAS]"
+                      dataType="numeric"
+                      lineageId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[ventas_punitarioFAC_VENTAS]"
+                      name="ventas_punitarioFAC_VENTAS"
+                      precision="15"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\CARGA DIM VENTAS\Merge Join.Inputs[Merge Join Right Input].Columns[ventas_punitario]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[ventas_descuentoFAC_VENTAS]"
+                      dataType="numeric"
+                      lineageId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[ventas_descuentoFAC_VENTAS]"
+                      name="ventas_descuentoFAC_VENTAS"
+                      precision="15"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\CARGA DIM VENTAS\Merge Join.Inputs[Merge Join Right Input].Columns[ventas_descuento]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\CARGA DIM VENTAS\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[fact_ventas]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\CARGA DIM VENTAS\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost,1450.datamart_northwind.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.datamart_northwind.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\CARGA DIM VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ventas_monto]"
+                      cachedDataType="numeric"
+                      cachedName="ventas_monto"
+                      cachedPrecision="15"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\CARGA DIM VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ventas_monto]"
+                      lineageId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[ventas_monto]" />
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ventas_unidades]"
+                      cachedDataType="i4"
+                      cachedName="ventas_unidades"
+                      externalMetadataColumnId="Package\CARGA DIM VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ventas_unidades]"
+                      lineageId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[ventas_unidades]" />
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ventas_descuento]"
+                      cachedDataType="numeric"
+                      cachedName="ventas_descuento"
+                      cachedPrecision="15"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\CARGA DIM VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ventas_descuento]"
+                      lineageId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[ventas_descuento]" />
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cliente_Skey]"
+                      cachedDataType="i4"
+                      cachedName="cliente_Skey"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\CARGA DIM VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[cliente_Skey]"
+                      lineageId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[cliente_Skey]" />
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[empleado_Skey]"
+                      cachedDataType="i4"
+                      cachedName="empleado_Skey"
+                      cachedSortKeyPosition="2"
+                      externalMetadataColumnId="Package\CARGA DIM VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[empleado_Skey]"
+                      lineageId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[empleado_Skey]" />
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[producto_Skey]"
+                      cachedDataType="i4"
+                      cachedName="producto_Skey"
+                      cachedSortKeyPosition="3"
+                      externalMetadataColumnId="Package\CARGA DIM VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[producto_Skey]"
+                      lineageId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[producto_Skey]" />
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[tiempo_Skey]"
+                      cachedDataType="i4"
+                      cachedName="tiempo_Skey"
+                      cachedSortKeyPosition="4"
+                      externalMetadataColumnId="Package\CARGA DIM VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tiempo_Skey]"
+                      lineageId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[tiempo_Skey]" />
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[norden]"
+                      cachedDataType="i4"
+                      cachedName="norden"
+                      externalMetadataColumnId="Package\CARGA DIM VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ventas_Norden]"
+                      lineageId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[norden]" />
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ventas_preciounitario]"
+                      cachedDataType="numeric"
+                      cachedName="ventas_preciounitario"
+                      cachedPrecision="15"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\CARGA DIM VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ventas_punitario]"
+                      lineageId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output].Columns[ventas_preciounitario]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\CARGA DIM VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[cliente_Skey]"
+                      dataType="i4"
+                      name="cliente_Skey" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA DIM VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[empleado_Skey]"
+                      dataType="i4"
+                      name="empleado_Skey" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA DIM VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[producto_Skey]"
+                      dataType="i4"
+                      name="producto_Skey" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA DIM VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tiempo_Skey]"
+                      dataType="i4"
+                      name="tiempo_Skey" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA DIM VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ventas_Norden]"
+                      dataType="i4"
+                      name="ventas_Norden" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA DIM VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ventas_monto]"
+                      dataType="numeric"
+                      name="ventas_monto"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA DIM VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ventas_unidades]"
+                      dataType="i4"
+                      name="ventas_unidades" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA DIM VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ventas_punitario]"
+                      dataType="numeric"
+                      name="ventas_punitario"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA DIM VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ventas_descuento]"
+                      dataType="numeric"
+                      name="ventas_descuento"
+                      precision="15"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\CARGA DIM VENTAS\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\CARGA DIM VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIM VENTAS\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIM VENTAS\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\CARGA DIM VENTAS\ORDENAR FAC VENTAS"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="ORDENAR FAC VENTAS"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\CARGA DIM VENTAS\ORDENAR FAC VENTAS.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\ORDENAR FAC VENTAS.Inputs[Sort Input].Columns[cliente_Skey]"
+                      cachedDataType="i4"
+                      cachedName="cliente_Skey"
+                      lineageId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].Columns[cliente_Skey]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\ORDENAR FAC VENTAS.Inputs[Sort Input].Columns[empleado_Skey]"
+                      cachedDataType="i4"
+                      cachedName="empleado_Skey"
+                      lineageId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].Columns[empleado_Skey]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\ORDENAR FAC VENTAS.Inputs[Sort Input].Columns[producto_Skey]"
+                      cachedDataType="i4"
+                      cachedName="producto_Skey"
+                      lineageId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].Columns[producto_Skey]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\ORDENAR FAC VENTAS.Inputs[Sort Input].Columns[tiempo_Skey]"
+                      cachedDataType="i4"
+                      cachedName="tiempo_Skey"
+                      lineageId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].Columns[tiempo_Skey]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\ORDENAR FAC VENTAS.Inputs[Sort Input].Columns[ventas_Norden]"
+                      cachedDataType="i4"
+                      cachedName="ventas_Norden"
+                      lineageId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].Columns[ventas_Norden]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\ORDENAR FAC VENTAS.Inputs[Sort Input].Columns[ventas_monto]"
+                      cachedDataType="numeric"
+                      cachedName="ventas_monto"
+                      cachedPrecision="15"
+                      cachedScale="2"
+                      lineageId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].Columns[ventas_monto]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\ORDENAR FAC VENTAS.Inputs[Sort Input].Columns[ventas_unidades]"
+                      cachedDataType="i4"
+                      cachedName="ventas_unidades"
+                      lineageId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].Columns[ventas_unidades]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\ORDENAR FAC VENTAS.Inputs[Sort Input].Columns[ventas_punitario]"
+                      cachedDataType="numeric"
+                      cachedName="ventas_punitario"
+                      cachedPrecision="15"
+                      cachedScale="2"
+                      lineageId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].Columns[ventas_punitario]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\ORDENAR FAC VENTAS.Inputs[Sort Input].Columns[ventas_descuento]"
+                      cachedDataType="numeric"
+                      cachedName="ventas_descuento"
+                      cachedPrecision="15"
+                      cachedScale="2"
+                      lineageId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].Columns[ventas_descuento]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\CARGA DIM VENTAS\ORDENAR FAC VENTAS.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\ORDENAR FAC VENTAS.Outputs[Sort Output].Columns[cliente_Skey]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIM VENTAS\ORDENAR FAC VENTAS.Outputs[Sort Output].Columns[cliente_Skey]"
+                      name="cliente_Skey"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].Columns[cliente_Skey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\ORDENAR FAC VENTAS.Outputs[Sort Output].Columns[empleado_Skey]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIM VENTAS\ORDENAR FAC VENTAS.Outputs[Sort Output].Columns[empleado_Skey]"
+                      name="empleado_Skey"
+                      sortKeyPosition="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].Columns[empleado_Skey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\ORDENAR FAC VENTAS.Outputs[Sort Output].Columns[producto_Skey]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIM VENTAS\ORDENAR FAC VENTAS.Outputs[Sort Output].Columns[producto_Skey]"
+                      name="producto_Skey"
+                      sortKeyPosition="3">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].Columns[producto_Skey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\ORDENAR FAC VENTAS.Outputs[Sort Output].Columns[tiempo_Skey]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIM VENTAS\ORDENAR FAC VENTAS.Outputs[Sort Output].Columns[tiempo_Skey]"
+                      name="tiempo_Skey"
+                      sortKeyPosition="4">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].Columns[tiempo_Skey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\ORDENAR FAC VENTAS.Outputs[Sort Output].Columns[ventas_Norden]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIM VENTAS\ORDENAR FAC VENTAS.Outputs[Sort Output].Columns[ventas_Norden]"
+                      name="ventas_Norden">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].Columns[ventas_Norden]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\ORDENAR FAC VENTAS.Outputs[Sort Output].Columns[ventas_monto]"
+                      dataType="numeric"
+                      lineageId="Package\CARGA DIM VENTAS\ORDENAR FAC VENTAS.Outputs[Sort Output].Columns[ventas_monto]"
+                      name="ventas_monto"
+                      precision="15"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].Columns[ventas_monto]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\ORDENAR FAC VENTAS.Outputs[Sort Output].Columns[ventas_unidades]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIM VENTAS\ORDENAR FAC VENTAS.Outputs[Sort Output].Columns[ventas_unidades]"
+                      name="ventas_unidades">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].Columns[ventas_unidades]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\ORDENAR FAC VENTAS.Outputs[Sort Output].Columns[ventas_punitario]"
+                      dataType="numeric"
+                      lineageId="Package\CARGA DIM VENTAS\ORDENAR FAC VENTAS.Outputs[Sort Output].Columns[ventas_punitario]"
+                      name="ventas_punitario"
+                      precision="15"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].Columns[ventas_punitario]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\ORDENAR FAC VENTAS.Outputs[Sort Output].Columns[ventas_descuento]"
+                      dataType="numeric"
+                      lineageId="Package\CARGA DIM VENTAS\ORDENAR FAC VENTAS.Outputs[Sort Output].Columns[ventas_descuento]"
+                      name="ventas_descuento"
+                      precision="15"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output].Columns[ventas_descuento]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\CARGA DIM VENTAS\ORDENAR STAGE VENTAS"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="ORDENAR STAGE VENTAS"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\CARGA DIM VENTAS\ORDENAR STAGE VENTAS.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\ORDENAR STAGE VENTAS.Inputs[Sort Input].Columns[ventas_monto]"
+                      cachedDataType="numeric"
+                      cachedName="ventas_monto"
+                      cachedPrecision="15"
+                      cachedScale="2"
+                      lineageId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].Columns[ventas_monto]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\ORDENAR STAGE VENTAS.Inputs[Sort Input].Columns[ventas_unidades]"
+                      cachedDataType="i4"
+                      cachedName="ventas_unidades"
+                      lineageId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].Columns[ventas_unidades]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\ORDENAR STAGE VENTAS.Inputs[Sort Input].Columns[ventas_preciounitario]"
+                      cachedDataType="numeric"
+                      cachedName="ventas_preciounitario"
+                      cachedPrecision="15"
+                      cachedScale="2"
+                      lineageId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].Columns[ventas_preciounitario]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\ORDENAR STAGE VENTAS.Inputs[Sort Input].Columns[ventas_descuento]"
+                      cachedDataType="numeric"
+                      cachedName="ventas_descuento"
+                      cachedPrecision="15"
+                      cachedScale="2"
+                      lineageId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].Columns[ventas_descuento]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\ORDENAR STAGE VENTAS.Inputs[Sort Input].Columns[cliente_Skey]"
+                      cachedDataType="i4"
+                      cachedName="cliente_Skey"
+                      lineageId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].Columns[cliente_Skey]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\ORDENAR STAGE VENTAS.Inputs[Sort Input].Columns[empleado_Skey]"
+                      cachedDataType="i4"
+                      cachedName="empleado_Skey"
+                      lineageId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].Columns[empleado_Skey]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\ORDENAR STAGE VENTAS.Inputs[Sort Input].Columns[producto_Skey]"
+                      cachedDataType="i4"
+                      cachedName="producto_Skey"
+                      lineageId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].Columns[producto_Skey]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\ORDENAR STAGE VENTAS.Inputs[Sort Input].Columns[tiempo_Skey]"
+                      cachedDataType="i4"
+                      cachedName="tiempo_Skey"
+                      lineageId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].Columns[tiempo_Skey]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CARGA DIM VENTAS\ORDENAR STAGE VENTAS.Inputs[Sort Input].Columns[norden]"
+                      cachedDataType="i4"
+                      cachedName="norden"
+                      lineageId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].Columns[norden]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\CARGA DIM VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[ventas_monto]"
+                      dataType="numeric"
+                      lineageId="Package\CARGA DIM VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[ventas_monto]"
+                      name="ventas_monto"
+                      precision="15"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].Columns[ventas_monto]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[ventas_unidades]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIM VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[ventas_unidades]"
+                      name="ventas_unidades">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].Columns[ventas_unidades]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[ventas_preciounitario]"
+                      dataType="numeric"
+                      lineageId="Package\CARGA DIM VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[ventas_preciounitario]"
+                      name="ventas_preciounitario"
+                      precision="15"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].Columns[ventas_preciounitario]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[ventas_descuento]"
+                      dataType="numeric"
+                      lineageId="Package\CARGA DIM VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[ventas_descuento]"
+                      name="ventas_descuento"
+                      precision="15"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].Columns[ventas_descuento]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[cliente_Skey]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIM VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[cliente_Skey]"
+                      name="cliente_Skey"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].Columns[cliente_Skey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[empleado_Skey]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIM VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[empleado_Skey]"
+                      name="empleado_Skey"
+                      sortKeyPosition="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].Columns[empleado_Skey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[producto_Skey]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIM VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[producto_Skey]"
+                      name="producto_Skey"
+                      sortKeyPosition="3">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].Columns[producto_Skey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[tiempo_Skey]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIM VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[tiempo_Skey]"
+                      name="tiempo_Skey"
+                      sortKeyPosition="4">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].Columns[tiempo_Skey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[norden]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIM VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[norden]"
+                      name="norden">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].Columns[norden]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\CARGA DIM VENTAS\STAGE VENTAS"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="STAGE VENTAS"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT dc.cliente_Skey, de.empleado_Skey
+, dp.producto_Skey, dt.tiempo_Skey,
+(1) AS  norden , sv.ventas_monto, sv.ventas_unidades
+,sv.ventas_preciounitario, sv.ventas_descuento
+FROM stage_northwind.dbo.ventas AS sv
+INNER JOIN datamart_northwind.dbo.dim_cliente AS dc
+ON sv.cliente = dc.cliente_codigoBkey
+INNER JOIN datamart_northwind.dbo.dim_empleado AS de
+ON sv.empleadocodigo = de.empleado_codigoBkey
+INNER JOIN datamart_northwind.dbo.dim_producto AS dp
+ON sv.producto_codigo = dp.producto_CodigoBkey
+INNER JOIN datamart_northwind.dbo.dim_tiempo AS dt
+ON sv.ventasorden = dt.tiempo_fechaActual</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\CARGA DIM VENTAS\STAGE VENTAS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].Columns[ventas_monto]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].ExternalColumns[ventas_monto]"
+                      lineageId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].Columns[ventas_monto]"
+                      name="ventas_monto"
+                      precision="15"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].Columns[ventas_unidades]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].ExternalColumns[ventas_unidades]"
+                      lineageId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].Columns[ventas_unidades]"
+                      name="ventas_unidades"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].Columns[ventas_preciounitario]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].ExternalColumns[ventas_preciounitario]"
+                      lineageId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].Columns[ventas_preciounitario]"
+                      name="ventas_preciounitario"
+                      precision="15"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].Columns[ventas_descuento]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].ExternalColumns[ventas_descuento]"
+                      lineageId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].Columns[ventas_descuento]"
+                      name="ventas_descuento"
+                      precision="15"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].Columns[cliente_Skey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].ExternalColumns[cliente_Skey]"
+                      lineageId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].Columns[cliente_Skey]"
+                      name="cliente_Skey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].Columns[empleado_Skey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].ExternalColumns[empleado_Skey]"
+                      lineageId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].Columns[empleado_Skey]"
+                      name="empleado_Skey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].Columns[producto_Skey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].ExternalColumns[producto_Skey]"
+                      lineageId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].Columns[producto_Skey]"
+                      name="producto_Skey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].Columns[tiempo_Skey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].ExternalColumns[tiempo_Skey]"
+                      lineageId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].Columns[tiempo_Skey]"
+                      name="tiempo_Skey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].Columns[norden]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].ExternalColumns[norden]"
+                      lineageId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].Columns[norden]"
+                      name="norden"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].ExternalColumns[ventas_monto]"
+                      dataType="numeric"
+                      name="ventas_monto"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].ExternalColumns[ventas_unidades]"
+                      dataType="i4"
+                      name="ventas_unidades" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].ExternalColumns[ventas_preciounitario]"
+                      dataType="numeric"
+                      name="ventas_preciounitario"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].ExternalColumns[ventas_descuento]"
+                      dataType="numeric"
+                      name="ventas_descuento"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].ExternalColumns[cliente_Skey]"
+                      dataType="i4"
+                      name="cliente_Skey" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].ExternalColumns[empleado_Skey]"
+                      dataType="i4"
+                      name="empleado_Skey" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].ExternalColumns[producto_Skey]"
+                      dataType="i4"
+                      name="producto_Skey" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].ExternalColumns[tiempo_Skey]"
+                      dataType="i4"
+                      name="tiempo_Skey" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output].ExternalColumns[norden]"
+                      dataType="i4"
+                      name="norden" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Error Output].Columns[ventas_monto]"
+                      dataType="numeric"
+                      lineageId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Error Output].Columns[ventas_monto]"
+                      name="ventas_monto"
+                      precision="15"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Error Output].Columns[ventas_unidades]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Error Output].Columns[ventas_unidades]"
+                      name="ventas_unidades" />
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Error Output].Columns[ventas_preciounitario]"
+                      dataType="numeric"
+                      lineageId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Error Output].Columns[ventas_preciounitario]"
+                      name="ventas_preciounitario"
+                      precision="15"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Error Output].Columns[ventas_descuento]"
+                      dataType="numeric"
+                      lineageId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Error Output].Columns[ventas_descuento]"
+                      name="ventas_descuento"
+                      precision="15"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Error Output].Columns[norden]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Error Output].Columns[norden]"
+                      name="norden" />
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Error Output].Columns[cliente_Skey]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Error Output].Columns[cliente_Skey]"
+                      name="cliente_Skey" />
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Error Output].Columns[empleado_Skey]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Error Output].Columns[empleado_Skey]"
+                      name="empleado_Skey" />
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Error Output].Columns[producto_Skey]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Error Output].Columns[producto_Skey]"
+                      name="producto_Skey" />
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Error Output].Columns[tiempo_Skey]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Error Output].Columns[tiempo_Skey]"
+                      name="tiempo_Skey" />
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\CARGA DIM VENTAS.Paths[Merge Join Output]"
+              endId="Package\CARGA DIM VENTAS\Conditional Split.Inputs[Conditional Split Input]"
+              name="Merge Join Output"
+              startId="Package\CARGA DIM VENTAS\Merge Join.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\CARGA DIM VENTAS.Paths[NEW_VENTAS]"
+              endId="Package\CARGA DIM VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="NEW_VENTAS"
+              startId="Package\CARGA DIM VENTAS\Conditional Split.Outputs[NEW_VENTAS]" />
+            <path
+              refId="Package\CARGA DIM VENTAS.Paths[OLE DB Source Output]"
+              endId="Package\CARGA DIM VENTAS\ORDENAR FAC VENTAS.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\CARGA DIM VENTAS\DIM VENTAS.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\CARGA DIM VENTAS.Paths[OLE DB Source Output1]"
+              endId="Package\CARGA DIM VENTAS\ORDENAR STAGE VENTAS.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\CARGA DIM VENTAS\STAGE VENTAS.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\CARGA DIM VENTAS.Paths[Sort Output]"
+              endId="Package\CARGA DIM VENTAS\Merge Join.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\CARGA DIM VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output]" />
+            <path
+              refId="Package\CARGA DIM VENTAS.Paths[Sort Output1]"
+              endId="Package\CARGA DIM VENTAS\Merge Join.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\CARGA DIM VENTAS\ORDENAR FAC VENTAS.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="181.6,41.6"
+          Id="Package\CARGA DIM VENTAS"
+          TopLeft="378.333312662112,143.866665666236" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\CARGA DIM VENTAS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="158.4,41.6"
+          Id="Package\CARGA DIM VENTAS\STAGE VENTAS"
+          TopLeft="180.833323453036,53.7333329596784" />
+        <NodeLayout
+          Size="198.4,41.6"
+          Id="Package\CARGA DIM VENTAS\ORDENAR FAC VENTAS"
+          TopLeft="537.499970632296,149.066665630076" />
+        <NodeLayout
+          Size="141.6,41.6"
+          Id="Package\CARGA DIM VENTAS\DIM VENTAS"
+          TopLeft="567.499968993169,51.1333329777585" />
+        <EdgeLayout
+          Id="Package\CARGA DIM VENTAS.Paths[OLE DB Source Output]"
+          TopLeft="637.499969812733,92.7333329777585">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56.3333326523175"
+              Start="0,0"
+              End="0,48.8333326523175">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.8333326523175" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="212.8,41.6"
+          Id="Package\CARGA DIM VENTAS\ORDENAR STAGE VENTAS"
+          TopLeft="150.833325092164,151.666665611996" />
+        <EdgeLayout
+          Id="Package\CARGA DIM VENTAS.Paths[OLE DB Source Output1]"
+          TopLeft="258.6333242726,95.3333329596784">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56.3333326523172"
+              Start="0,0"
+              End="0,48.8333326523172">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.8333326523172" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\CARGA DIM VENTAS\Merge Join"
+          TopLeft="380.833312525518,267.799998137752" />
+        <EdgeLayout
+          Id="Package\CARGA DIM VENTAS.Paths[Sort Output]"
+          TopLeft="257.233325092164,193.266665611996">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="188.399987433355,74.5333325257567"
+              Start="0,0"
+              End="188.399987433355,67.0333325257567">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.2666662628784" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33.2666662628784"
+                    Point2="0,37.2666662628784"
+                    Point3="4,37.2666662628784" />
+                  <mssgle:LineSegment
+                    End="184.399987433355,37.2666662628784" />
+                  <mssgle:CubicBezierSegment
+                    Point1="184.399987433355,37.2666662628784"
+                    Point2="188.399987433355,37.2666662628784"
+                    Point3="188.399987433355,41.2666662628784" />
+                  <mssgle:LineSegment
+                    End="188.399987433355,67.0333325257567" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\CARGA DIM VENTAS.Paths[Sort Output1]"
+          TopLeft="636.699970632296,190.666665630076">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-170.799991440111,77.1333325076763"
+              Start="0,0"
+              End="-170.799991440111,69.6333325076763">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.7156092667447" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,41.7156092667447"
+                    Point2="0,45.7156092667447"
+                    Point3="-4,45.7156092667447" />
+                  <mssgle:LineSegment
+                    End="-166.799991440111,45.7156092667447" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-166.799991440111,45.7156092667447"
+                    Point2="-170.799991440111,45.7156092667447"
+                    Point3="-170.799991440111,49.7156092667447" />
+                  <mssgle:LineSegment
+                    End="-170.799991440111,69.6333325076763" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="153.6,41.6"
+          Id="Package\CARGA DIM VENTAS\Conditional Split"
+          TopLeft="362.499980193874,378.933330753909" />
+        <EdgeLayout
+          Id="Package\CARGA DIM VENTAS.Paths[Merge Join Output]"
+          TopLeft="442.466646359696,309.399998137752">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,69.533332616157"
+              Start="0,0"
+              End="0,62.033332616157">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,62.033332616157" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\CARGA DIM VENTAS\OLE DB Destination"
+          TopLeft="331.6666485452,457.46666429215" />
+        <EdgeLayout
+          Id="Package\CARGA DIM VENTAS.Paths[NEW_VENTAS]"
+          TopLeft="439.299980193874,420.533330753909">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-22.0333316486744,36.933333538241"
+              Start="0,0"
+              End="-22.0333316486744,29.433333538241">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.4666667691205" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.4666667691205"
+                    Point2="0,18.4666667691205"
+                    Point3="-4,18.4666667691205" />
+                  <mssgle:LineSegment
+                    End="-18.0333316486744,18.4666667691205" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.0333316486744,18.4666667691205"
+                    Point2="-22.0333316486744,18.4666667691205"
+                    Point3="-22.0333316486744,22.4666667691205" />
+                  <mssgle:LineSegment
+                    End="-22.0333316486744,29.433333538241" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-42.7341462930872,23.4666667691205,63.4349609375,10.8671875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARGA DIM VENTAS\STAGE VENTAS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARGA DIM VENTAS\DIM VENTAS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARGA DIM VENTAS\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

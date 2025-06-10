@@ -1,0 +1,1978 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/9/2025 5:01:49 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-772JNFH"
+  DTS:CreatorName="DESKTOP-772JNFH\Bruno"
+  DTS:DTSID="{0C418E8B-B6E7-4F48-B247-DD817D653F6E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="2058"
+  DTS:ObjectName="01-Datamart_dimcliente"
+  DTS:PackageType="5"
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{500BD9E8-8548-47A7-8A41-62CCBD7E3E1B}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost,1450.datamart_northwind.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D72D7FBD-ECB0-4271-B925-B3F80AC2F285}"
+      DTS:ObjectName="localhost,1450.datamart_northwind.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost,1450;User ID=sa;Initial Catalog=datamart_northwind;Provider=MSOLEDBSQL.1;Application Name=SSIS-01-Datamart_dimcliente-{D72D7FBD-ECB0-4271-B925-B3F80AC2F285}localhost,1450.datamart_northwind.sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbnRWTxIt6kyg4Q8YGpNkdgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAD8lNdh7l/dDUaBNdGIVlZ8Sdng1uSpYvqP5K/QBBm5QQAAAAAOgAAAAAIAACAAAADWxR4S6qo26lpUpLJYj5YqXvseJJNgRpKdKd3Ue28gbyAAAAAkNK9hiVWEmgMUznwxHAhGzTPASpTtsiDQonSsWcJCsEAAAABlyk/maiKfFNPXBOdouWfUbAWmbDDspjN/ZajY6Sep4w2UP+A7mXtrdlI1MBgryl7ThlC+Ds8+XJAUFw21xlin</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{4E135926-E1FC-4B2A-8180-2014639BC9A6}"
+      DTS:ObjectName="localhost,1450.stage_northwind.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost,1450;User ID=sa;Initial Catalog=stage_northwind;Provider=MSOLEDBSQL.1;Application Name=SSIS-01-Datamart_dimcliente-{4E135926-E1FC-4B2A-8180-2014639BC9A6}localhost,1450.stage_northwind.sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbnRWTxIt6kyg4Q8YGpNkdgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACU3+o7tqXFjLNE8opwcWQswwZwyiR4cOyXAzswGa7a7AAAAAAOgAAAAAIAACAAAADFnG4wfXFYU9gK3HLkZegasGgbZZhr756iT1D8dD6CGSAAAAATJkyoGucHze67iZXkwckPyBD8a5bduxQpXHOL231JlkAAAAC9yYqKCEoZkfhOC/fQgtDT2BN/w4dviJQ0l710ZMYr7+BM4tGpu7X1QfJz+F4tS49/D7RoeUhmjqH7PrVsrWPC</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.datamart_northwind]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{FF784098-145D-4173-BFC6-74E30279C881}"
+      DTS:ObjectName="LocalHost.datamart_northwind">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=datamart_northwind;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-01-Datamart_dimcliente-{FF784098-145D-4173-BFC6-74E30279C881}LocalHost.datamart_northwind;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.stage_northwind]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{B2942F4F-A889-4E1A-A9AE-B124F2992F59}"
+      DTS:ObjectName="LocalHost.stage_northwind">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=stage_northwind;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-01-Datamart_dimcliente-{B2942F4F-A889-4E1A-A9AE-B124F2992F59}LocalHost.stage_northwind;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\CARGA DIMCLIENTE"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{0A1B1CC0-D664-405C-8D7B-1AC0C4628175}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CARGA DIMCLIENTE"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\CARGA DIMCLIENTE\Clientes _nuevos"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Clientes _nuevos"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\CARGA DIMCLIENTE\Clientes _nuevos.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\CARGA DIMCLIENTE\Clientes _nuevos.Inputs[Conditional Split Input].Columns[cliente_codigoBkey]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="cliente_codigoBkey"
+                      lineageId="Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Outputs[Merge Join Output].Columns[cliente_codigoBkey]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\CARGA DIMCLIENTE\Clientes _nuevos.Outputs[CLIENTES_NUEVOS]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="CLIENTES_NUEVOS"
+                  synchronousInputId="Package\CARGA DIMCLIENTE\Clientes _nuevos.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">[ISNULL](#{Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Outputs[Merge Join Output].Columns[cliente_codigoBkey]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">ISNULL(cliente_codigoBkey)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\CARGA DIMCLIENTE\Clientes _nuevos.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\CARGA DIMCLIENTE\Clientes _nuevos.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\CARGA DIMCLIENTE\Clientes _nuevos.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\CARGA DIMCLIENTE\Clientes _nuevos.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\Clientes _nuevos.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIMCLIENTE\Clientes _nuevos.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\Clientes _nuevos.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIMCLIENTE\Clientes _nuevos.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\CARGA DIMCLIENTE\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\CARGA DIMCLIENTE\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\CARGA DIMCLIENTE\Data Conversion.Inputs[Data Conversion Input].Columns[pais]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="pais"
+                      lineageId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Output].Columns[pais]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\CARGA DIMCLIENTE\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\CARGA DIMCLIENTE\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\Data Conversion.Outputs[Data Conversion Output].Columns[pais_varchar]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="15"
+                      lineageId="Package\CARGA DIMCLIENTE\Data Conversion.Outputs[Data Conversion Output].Columns[pais_varchar]"
+                      name="pais_varchar"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Output].Columns[pais]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\CARGA DIMCLIENTE\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\CARGA DIMCLIENTE\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIMCLIENTE\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIMCLIENTE\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\CARGA DIMCLIENTE\DIMCLIENTE"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="DIMCLIENTE"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[dim_cliente]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost,1450.datamart_northwind.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.datamart_northwind.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Output].Columns[cliente_Skey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Output].ExternalColumns[cliente_Skey]"
+                      lineageId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Output].Columns[cliente_Skey]"
+                      name="cliente_Skey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Output].Columns[cliente_codigoBkey]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Output].ExternalColumns[cliente_codigoBkey]"
+                      length="5"
+                      lineageId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Output].Columns[cliente_codigoBkey]"
+                      name="cliente_codigoBkey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Output].Columns[cliente_compania]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Output].ExternalColumns[cliente_compania]"
+                      length="40"
+                      lineageId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Output].Columns[cliente_compania]"
+                      name="cliente_compania"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Output].Columns[cliente_ciudad]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Output].ExternalColumns[cliente_ciudad]"
+                      length="15"
+                      lineageId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Output].Columns[cliente_ciudad]"
+                      name="cliente_ciudad"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Output].Columns[cliente_region]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Output].ExternalColumns[cliente_region]"
+                      length="25"
+                      lineageId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Output].Columns[cliente_region]"
+                      name="cliente_region"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Output].Columns[cliente_pais]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Output].ExternalColumns[cliente_pais]"
+                      length="15"
+                      lineageId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Output].Columns[cliente_pais]"
+                      name="cliente_pais"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Output].ExternalColumns[cliente_Skey]"
+                      dataType="i4"
+                      name="cliente_Skey" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Output].ExternalColumns[cliente_codigoBkey]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="cliente_codigoBkey" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Output].ExternalColumns[cliente_compania]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="cliente_compania" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Output].ExternalColumns[cliente_ciudad]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="cliente_ciudad" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Output].ExternalColumns[cliente_region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      name="cliente_region" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Output].ExternalColumns[cliente_pais]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="cliente_pais" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Error Output].Columns[cliente_Skey]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Error Output].Columns[cliente_Skey]"
+                      name="cliente_Skey" />
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Error Output].Columns[cliente_codigoBkey]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Error Output].Columns[cliente_codigoBkey]"
+                      name="cliente_codigoBkey" />
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Error Output].Columns[cliente_compania]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      lineageId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Error Output].Columns[cliente_compania]"
+                      name="cliente_compania" />
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Error Output].Columns[cliente_ciudad]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Error Output].Columns[cliente_ciudad]"
+                      name="cliente_ciudad" />
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Error Output].Columns[cliente_region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      lineageId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Error Output].Columns[cliente_region]"
+                      name="cliente_region" />
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Error Output].Columns[cliente_pais]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Error Output].Columns[cliente_pais]"
+                      name="cliente_pais" />
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Inputs[Merge Join Left Input].Columns[clienteid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="clienteid"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\CARGA DIMCLIENTE\ORDENAR STAGE_CLIENTE.Outputs[Sort Output].Columns[clienteid]" />
+                    <inputColumn
+                      refId="Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Inputs[Merge Join Left Input].Columns[compania]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="compania"
+                      lineageId="Package\CARGA DIMCLIENTE\ORDENAR STAGE_CLIENTE.Outputs[Sort Output].Columns[compania]" />
+                    <inputColumn
+                      refId="Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Inputs[Merge Join Left Input].Columns[ciudad]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="ciudad"
+                      lineageId="Package\CARGA DIMCLIENTE\ORDENAR STAGE_CLIENTE.Outputs[Sort Output].Columns[ciudad]" />
+                    <inputColumn
+                      refId="Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Inputs[Merge Join Left Input].Columns[region]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="region"
+                      lineageId="Package\CARGA DIMCLIENTE\ORDENAR STAGE_CLIENTE.Outputs[Sort Output].Columns[region]" />
+                    <inputColumn
+                      refId="Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Inputs[Merge Join Left Input].Columns[pais_varchar]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="pais_varchar"
+                      cachedSortKeyPosition="2"
+                      lineageId="Package\CARGA DIMCLIENTE\ORDENAR STAGE_CLIENTE.Outputs[Sort Output].Columns[pais_varchar]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Inputs[Merge Join Right Input].Columns[cliente_codigoBkey]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="cliente_codigoBkey"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\CARGA DIMCLIENTE\ORDENAR_DIMCLIENTE.Outputs[Sort Output].Columns[cliente_codigoBkey]" />
+                    <inputColumn
+                      refId="Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Inputs[Merge Join Right Input].Columns[cliente_compania]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="cliente_compania"
+                      lineageId="Package\CARGA DIMCLIENTE\ORDENAR_DIMCLIENTE.Outputs[Sort Output].Columns[cliente_compania]" />
+                    <inputColumn
+                      refId="Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Inputs[Merge Join Right Input].Columns[cliente_ciudad]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="cliente_ciudad"
+                      lineageId="Package\CARGA DIMCLIENTE\ORDENAR_DIMCLIENTE.Outputs[Sort Output].Columns[cliente_ciudad]" />
+                    <inputColumn
+                      refId="Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Inputs[Merge Join Right Input].Columns[cliente_region]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedName="cliente_region"
+                      lineageId="Package\CARGA DIMCLIENTE\ORDENAR_DIMCLIENTE.Outputs[Sort Output].Columns[cliente_region]" />
+                    <inputColumn
+                      refId="Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Inputs[Merge Join Right Input].Columns[cliente_pais]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="cliente_pais"
+                      lineageId="Package\CARGA DIMCLIENTE\ORDENAR_DIMCLIENTE.Outputs[Sort Output].Columns[cliente_pais]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Outputs[Merge Join Output]"
+                  isSorted="true"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Outputs[Merge Join Output].Columns[clienteid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Outputs[Merge Join Output].Columns[clienteid]"
+                      name="clienteid"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Inputs[Merge Join Left Input].Columns[clienteid]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Outputs[Merge Join Output].Columns[compania]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      lineageId="Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Outputs[Merge Join Output].Columns[compania]"
+                      name="compania">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Inputs[Merge Join Left Input].Columns[compania]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Outputs[Merge Join Output].Columns[ciudad]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Outputs[Merge Join Output].Columns[ciudad]"
+                      name="ciudad">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Inputs[Merge Join Left Input].Columns[ciudad]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Outputs[Merge Join Output].Columns[region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Outputs[Merge Join Output].Columns[region]"
+                      name="region">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Inputs[Merge Join Left Input].Columns[region]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Outputs[Merge Join Output].Columns[cliente_codigoBkey]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Outputs[Merge Join Output].Columns[cliente_codigoBkey]"
+                      name="cliente_codigoBkey">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Inputs[Merge Join Right Input].Columns[cliente_codigoBkey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Outputs[Merge Join Output].Columns[cliente_compania]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      lineageId="Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Outputs[Merge Join Output].Columns[cliente_compania]"
+                      name="cliente_compania">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Inputs[Merge Join Right Input].Columns[cliente_compania]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Outputs[Merge Join Output].Columns[cliente_ciudad]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Outputs[Merge Join Output].Columns[cliente_ciudad]"
+                      name="cliente_ciudad">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Inputs[Merge Join Right Input].Columns[cliente_ciudad]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Outputs[Merge Join Output].Columns[cliente_region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      lineageId="Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Outputs[Merge Join Output].Columns[cliente_region]"
+                      name="cliente_region">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Inputs[Merge Join Right Input].Columns[cliente_region]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Outputs[Merge Join Output].Columns[cliente_pais]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Outputs[Merge Join Output].Columns[cliente_pais]"
+                      name="cliente_pais">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Inputs[Merge Join Right Input].Columns[cliente_pais]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Outputs[Merge Join Output].Columns[pais_varchar]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Outputs[Merge Join Output].Columns[pais_varchar]"
+                      name="pais_varchar">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Inputs[Merge Join Left Input].Columns[pais_varchar]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\CARGA DIMCLIENTE\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[dim_cliente]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\CARGA DIMCLIENTE\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost,1450.datamart_northwind.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.datamart_northwind.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\CARGA DIMCLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\CARGA DIMCLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[clienteid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="clienteid"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\CARGA DIMCLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[cliente_codigoBkey]"
+                      lineageId="Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Outputs[Merge Join Output].Columns[clienteid]" />
+                    <inputColumn
+                      refId="Package\CARGA DIMCLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[compania]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="compania"
+                      externalMetadataColumnId="Package\CARGA DIMCLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[cliente_compania]"
+                      lineageId="Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Outputs[Merge Join Output].Columns[compania]" />
+                    <inputColumn
+                      refId="Package\CARGA DIMCLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ciudad]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="ciudad"
+                      externalMetadataColumnId="Package\CARGA DIMCLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[cliente_ciudad]"
+                      lineageId="Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Outputs[Merge Join Output].Columns[ciudad]" />
+                    <inputColumn
+                      refId="Package\CARGA DIMCLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[region]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="region"
+                      externalMetadataColumnId="Package\CARGA DIMCLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[cliente_region]"
+                      lineageId="Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Outputs[Merge Join Output].Columns[region]" />
+                    <inputColumn
+                      refId="Package\CARGA DIMCLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[pais_varchar]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="pais_varchar"
+                      externalMetadataColumnId="Package\CARGA DIMCLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[cliente_pais]"
+                      lineageId="Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Outputs[Merge Join Output].Columns[pais_varchar]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\CARGA DIMCLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[cliente_Skey]"
+                      dataType="i4"
+                      name="cliente_Skey" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA DIMCLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[cliente_codigoBkey]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="cliente_codigoBkey" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA DIMCLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[cliente_compania]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="cliente_compania" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA DIMCLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[cliente_ciudad]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="cliente_ciudad" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA DIMCLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[cliente_region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      name="cliente_region" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA DIMCLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[cliente_pais]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="cliente_pais" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\CARGA DIMCLIENTE\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\CARGA DIMCLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIMCLIENTE\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIMCLIENTE\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\CARGA DIMCLIENTE\ORDENAR STAGE_CLIENTE"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="ORDENAR STAGE_CLIENTE"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\CARGA DIMCLIENTE\ORDENAR STAGE_CLIENTE.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\CARGA DIMCLIENTE\ORDENAR STAGE_CLIENTE.Inputs[Sort Input].Columns[clienteid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="clienteid"
+                      lineageId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Output].Columns[clienteid]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CARGA DIMCLIENTE\ORDENAR STAGE_CLIENTE.Inputs[Sort Input].Columns[compania]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="compania"
+                      lineageId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Output].Columns[compania]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CARGA DIMCLIENTE\ORDENAR STAGE_CLIENTE.Inputs[Sort Input].Columns[ciudad]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="ciudad"
+                      lineageId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Output].Columns[ciudad]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CARGA DIMCLIENTE\ORDENAR STAGE_CLIENTE.Inputs[Sort Input].Columns[region]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="region"
+                      lineageId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Output].Columns[region]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CARGA DIMCLIENTE\ORDENAR STAGE_CLIENTE.Inputs[Sort Input].Columns[pais]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="pais"
+                      lineageId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Output].Columns[pais]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CARGA DIMCLIENTE\ORDENAR STAGE_CLIENTE.Inputs[Sort Input].Columns[pais_varchar]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="pais_varchar"
+                      lineageId="Package\CARGA DIMCLIENTE\Data Conversion.Outputs[Data Conversion Output].Columns[pais_varchar]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">2</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\CARGA DIMCLIENTE\ORDENAR STAGE_CLIENTE.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\ORDENAR STAGE_CLIENTE.Outputs[Sort Output].Columns[clienteid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\CARGA DIMCLIENTE\ORDENAR STAGE_CLIENTE.Outputs[Sort Output].Columns[clienteid]"
+                      name="clienteid"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Output].Columns[clienteid]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\ORDENAR STAGE_CLIENTE.Outputs[Sort Output].Columns[compania]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      lineageId="Package\CARGA DIMCLIENTE\ORDENAR STAGE_CLIENTE.Outputs[Sort Output].Columns[compania]"
+                      name="compania">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Output].Columns[compania]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\ORDENAR STAGE_CLIENTE.Outputs[Sort Output].Columns[ciudad]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\CARGA DIMCLIENTE\ORDENAR STAGE_CLIENTE.Outputs[Sort Output].Columns[ciudad]"
+                      name="ciudad">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Output].Columns[ciudad]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\ORDENAR STAGE_CLIENTE.Outputs[Sort Output].Columns[region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\CARGA DIMCLIENTE\ORDENAR STAGE_CLIENTE.Outputs[Sort Output].Columns[region]"
+                      name="region">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Output].Columns[region]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\ORDENAR STAGE_CLIENTE.Outputs[Sort Output].Columns[pais]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\CARGA DIMCLIENTE\ORDENAR STAGE_CLIENTE.Outputs[Sort Output].Columns[pais]"
+                      name="pais">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Output].Columns[pais]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\ORDENAR STAGE_CLIENTE.Outputs[Sort Output].Columns[pais_varchar]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\CARGA DIMCLIENTE\ORDENAR STAGE_CLIENTE.Outputs[Sort Output].Columns[pais_varchar]"
+                      name="pais_varchar"
+                      sortKeyPosition="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\CARGA DIMCLIENTE\Data Conversion.Outputs[Data Conversion Output].Columns[pais_varchar]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\CARGA DIMCLIENTE\ORDENAR_DIMCLIENTE"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="ORDENAR_DIMCLIENTE"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\CARGA DIMCLIENTE\ORDENAR_DIMCLIENTE.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\CARGA DIMCLIENTE\ORDENAR_DIMCLIENTE.Inputs[Sort Input].Columns[cliente_Skey]"
+                      cachedDataType="i4"
+                      cachedName="cliente_Skey"
+                      lineageId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Output].Columns[cliente_Skey]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CARGA DIMCLIENTE\ORDENAR_DIMCLIENTE.Inputs[Sort Input].Columns[cliente_codigoBkey]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="cliente_codigoBkey"
+                      lineageId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Output].Columns[cliente_codigoBkey]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CARGA DIMCLIENTE\ORDENAR_DIMCLIENTE.Inputs[Sort Input].Columns[cliente_compania]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="cliente_compania"
+                      lineageId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Output].Columns[cliente_compania]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CARGA DIMCLIENTE\ORDENAR_DIMCLIENTE.Inputs[Sort Input].Columns[cliente_ciudad]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="cliente_ciudad"
+                      lineageId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Output].Columns[cliente_ciudad]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CARGA DIMCLIENTE\ORDENAR_DIMCLIENTE.Inputs[Sort Input].Columns[cliente_region]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedName="cliente_region"
+                      lineageId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Output].Columns[cliente_region]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CARGA DIMCLIENTE\ORDENAR_DIMCLIENTE.Inputs[Sort Input].Columns[cliente_pais]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="cliente_pais"
+                      lineageId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Output].Columns[cliente_pais]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\CARGA DIMCLIENTE\ORDENAR_DIMCLIENTE.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\ORDENAR_DIMCLIENTE.Outputs[Sort Output].Columns[cliente_Skey]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIMCLIENTE\ORDENAR_DIMCLIENTE.Outputs[Sort Output].Columns[cliente_Skey]"
+                      name="cliente_Skey">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Output].Columns[cliente_Skey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\ORDENAR_DIMCLIENTE.Outputs[Sort Output].Columns[cliente_codigoBkey]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\CARGA DIMCLIENTE\ORDENAR_DIMCLIENTE.Outputs[Sort Output].Columns[cliente_codigoBkey]"
+                      name="cliente_codigoBkey"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Output].Columns[cliente_codigoBkey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\ORDENAR_DIMCLIENTE.Outputs[Sort Output].Columns[cliente_compania]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      lineageId="Package\CARGA DIMCLIENTE\ORDENAR_DIMCLIENTE.Outputs[Sort Output].Columns[cliente_compania]"
+                      name="cliente_compania">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Output].Columns[cliente_compania]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\ORDENAR_DIMCLIENTE.Outputs[Sort Output].Columns[cliente_ciudad]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\CARGA DIMCLIENTE\ORDENAR_DIMCLIENTE.Outputs[Sort Output].Columns[cliente_ciudad]"
+                      name="cliente_ciudad">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Output].Columns[cliente_ciudad]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\ORDENAR_DIMCLIENTE.Outputs[Sort Output].Columns[cliente_region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      lineageId="Package\CARGA DIMCLIENTE\ORDENAR_DIMCLIENTE.Outputs[Sort Output].Columns[cliente_region]"
+                      name="cliente_region">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Output].Columns[cliente_region]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\ORDENAR_DIMCLIENTE.Outputs[Sort Output].Columns[cliente_pais]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\CARGA DIMCLIENTE\ORDENAR_DIMCLIENTE.Outputs[Sort Output].Columns[cliente_pais]"
+                      name="cliente_pais">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Output].Columns[cliente_pais]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="STAGE_CLIENTE"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select sc.clienteid, sc.compania, sc.ciudad, sc.region, sc.pais
+	from stage_northwind.dbo.clientes as sc;</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Output].Columns[clienteid]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Output].ExternalColumns[clienteid]"
+                      length="5"
+                      lineageId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Output].Columns[clienteid]"
+                      name="clienteid"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Output].Columns[compania]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Output].ExternalColumns[compania]"
+                      length="40"
+                      lineageId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Output].Columns[compania]"
+                      name="compania"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Output].Columns[ciudad]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Output].ExternalColumns[ciudad]"
+                      length="15"
+                      lineageId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Output].Columns[ciudad]"
+                      name="ciudad"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Output].Columns[region]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Output].ExternalColumns[region]"
+                      length="15"
+                      lineageId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Output].Columns[region]"
+                      name="region"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Output].Columns[pais]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Output].ExternalColumns[pais]"
+                      length="15"
+                      lineageId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Output].Columns[pais]"
+                      name="pais"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Output].ExternalColumns[clienteid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="clienteid" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Output].ExternalColumns[compania]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="compania" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Output].ExternalColumns[ciudad]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="ciudad" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Output].ExternalColumns[region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="region" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Output].ExternalColumns[pais]"
+                      dataType="wstr"
+                      length="15"
+                      name="pais" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Error Output].Columns[clienteid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Error Output].Columns[clienteid]"
+                      name="clienteid" />
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Error Output].Columns[compania]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      lineageId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Error Output].Columns[compania]"
+                      name="compania" />
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Error Output].Columns[ciudad]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Error Output].Columns[ciudad]"
+                      name="ciudad" />
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Error Output].Columns[region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Error Output].Columns[region]"
+                      name="region" />
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Error Output].Columns[pais]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Error Output].Columns[pais]"
+                      name="pais" />
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\CARGA DIMCLIENTE.Paths[CLIENTES_NUEVOS]"
+              endId="Package\CARGA DIMCLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="CLIENTES_NUEVOS"
+              startId="Package\CARGA DIMCLIENTE\Clientes _nuevos.Outputs[CLIENTES_NUEVOS]" />
+            <path
+              refId="Package\CARGA DIMCLIENTE.Paths[Data Conversion Output]"
+              endId="Package\CARGA DIMCLIENTE\ORDENAR STAGE_CLIENTE.Inputs[Sort Input]"
+              name="Data Conversion Output"
+              startId="Package\CARGA DIMCLIENTE\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\CARGA DIMCLIENTE.Paths[Merge Join Output]"
+              endId="Package\CARGA DIMCLIENTE\Clientes _nuevos.Inputs[Conditional Split Input]"
+              name="Merge Join Output"
+              startId="Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\CARGA DIMCLIENTE.Paths[OLE DB Source Output]"
+              endId="Package\CARGA DIMCLIENTE\ORDENAR_DIMCLIENTE.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\CARGA DIMCLIENTE\DIMCLIENTE.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\CARGA DIMCLIENTE.Paths[OLE DB Source Output1]"
+              endId="Package\CARGA DIMCLIENTE\Data Conversion.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\CARGA DIMCLIENTE\STAGE_CLIENTE.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\CARGA DIMCLIENTE.Paths[Sort Output]"
+              endId="Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\CARGA DIMCLIENTE\ORDENAR STAGE_CLIENTE.Outputs[Sort Output]" />
+            <path
+              refId="Package\CARGA DIMCLIENTE.Paths[Sort Output1]"
+              endId="Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\CARGA DIMCLIENTE\ORDENAR_DIMCLIENTE.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="180.8,41.6"
+          Id="Package\CARGA DIMCLIENTE"
+          TopLeft="348.33331430124,90.9999993671974" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\CARGA DIMCLIENTE">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\CARGA DIMCLIENTE\Data Conversion"
+          TopLeft="269.999985247851,33.222221991199" />
+        <NodeLayout
+          Size="163.2,41.6"
+          Id="Package\CARGA DIMCLIENTE\STAGE_CLIENTE"
+          TopLeft="52.4999971315266,20.7999998553594" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\CARGA DIMCLIENTE\OLE DB Destination"
+          TopLeft="328.333315393992,370.79999764959" />
+        <NodeLayout
+          Size="141.6,41.6"
+          Id="Package\CARGA DIMCLIENTE\DIMCLIENTE"
+          TopLeft="493.333306378789,4.33333330319984" />
+        <NodeLayout
+          Size="315.2,41.6"
+          Id="Package\CARGA DIMCLIENTE\LEFT JOIN CON STAGE CLIENTE_ DIM CLIENTE"
+          TopLeft="247.499986477197,227.933331748314" />
+        <NodeLayout
+          Size="199.2,41.6"
+          Id="Package\CARGA DIMCLIENTE\ORDENAR_DIMCLIENTE"
+          TopLeft="445.833308974075,141.266665684316" />
+        <NodeLayout
+          Size="218.4,41.6"
+          Id="Package\CARGA DIMCLIENTE\ORDENAR STAGE_CLIENTE"
+          TopLeft="144.99999207755,140.399999023676" />
+        <NodeLayout
+          Size="158.4,41.6"
+          Id="Package\CARGA DIMCLIENTE\Clientes _nuevos"
+          TopLeft="327.49998210619,292.933331296312" />
+        <EdgeLayout
+          Id="Package\CARGA DIMCLIENTE.Paths[Sort Output1]"
+          TopLeft="545.433308974075,182.866665684316">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-89.1333224968782,45.0666660639977"
+              Start="0,0"
+              End="-89.1333224968782,37.5666660639977">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.9034339836592" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.9034339836592"
+                    Point2="0,26.9034339836592"
+                    Point3="-4,26.9034339836592" />
+                  <mssgle:LineSegment
+                    End="-85.1333224968782,26.9034339836592" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-85.1333224968782,26.9034339836592"
+                    Point2="-89.1333224968782,26.9034339836592"
+                    Point3="-89.1333224968782,30.9034339836592" />
+                  <mssgle:LineSegment
+                    End="-89.1333224968782,37.5666660639977" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\CARGA DIMCLIENTE.Paths[Sort Output]"
+          TopLeft="254.19999207755,181.999999023676">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="99.6999943996473,45.9333327246376"
+              Start="0,0"
+              End="99.6999943996473,38.4333327246376">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.4208077174352" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.4208077174352"
+                    Point2="0,27.4208077174352"
+                    Point3="4,27.4208077174352" />
+                  <mssgle:LineSegment
+                    End="95.6999943996473,27.4208077174352" />
+                  <mssgle:CubicBezierSegment
+                    Point1="95.6999943996473,27.4208077174352"
+                    Point2="99.6999943996473,27.4208077174352"
+                    Point3="99.6999943996473,31.4208077174352" />
+                  <mssgle:LineSegment
+                    End="99.6999943996473,38.4333327246376" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\CARGA DIMCLIENTE.Paths[OLE DB Source Output1]"
+          TopLeft="215.699997131527,41.5999998553594">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="54.2999881163243,12.4222221358396"
+              Start="0,0"
+              End="46.7999881163243,12.4222221358396">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="23.1499940581622,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="23.1499940581622,0"
+                    Point2="27.1499940581622,0"
+                    Point3="27.1499940581622,4" />
+                  <mssgle:LineSegment
+                    End="27.1499940581622,8.42222213583962" />
+                  <mssgle:CubicBezierSegment
+                    Point1="27.1499940581622,8.42222213583962"
+                    Point2="27.1499940581622,12.4222221358396"
+                    Point3="31.1499940581622,12.4222221358396" />
+                  <mssgle:LineSegment
+                    End="46.7999881163243,12.4222221358396" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\CARGA DIMCLIENTE.Paths[OLE DB Source Output]"
+          TopLeft="564.133306378789,45.9333333031998">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-18.6999974047145,95.3333323811162"
+              Start="0,0"
+              End="-18.6999974047145,87.8333323811162">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.6666661905581" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,43.6666661905581"
+                    Point2="0,47.6666661905581"
+                    Point3="-4,47.6666661905581" />
+                  <mssgle:LineSegment
+                    End="-14.6999974047145,47.6666661905581" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-14.6999974047145,47.6666661905581"
+                    Point2="-18.6999974047145,47.6666661905581"
+                    Point3="-18.6999974047145,51.6666661905581" />
+                  <mssgle:LineSegment
+                    End="-18.6999974047145,87.8333323811162" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\CARGA DIMCLIENTE.Paths[Merge Join Output]"
+          TopLeft="405.899984291693,269.533331748314">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,23.3999995479979"
+              Start="0,0"
+              End="0,15.8999995479979">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.8999995479979" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\CARGA DIMCLIENTE.Paths[Data Conversion Output]"
+          TopLeft="347.999985247851,74.822221991199">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-93.7999931703009,65.577777032477"
+              Start="0,0"
+              End="-93.7999931703009,58.077777032477">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.7888885162385" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.7888885162385"
+                    Point2="0,32.7888885162385"
+                    Point3="-4,32.7888885162385" />
+                  <mssgle:LineSegment
+                    End="-89.7999931703009,32.7888885162385" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-89.7999931703009,32.7888885162385"
+                    Point2="-93.7999931703009,32.7888885162385"
+                    Point3="-93.7999931703009,36.7888885162385" />
+                  <mssgle:LineSegment
+                    End="-93.7999931703009,58.077777032477" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\CARGA DIMCLIENTE.Paths[CLIENTES_NUEVOS]"
+          TopLeft="410.316648750091,334.533331296312">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.2666663532787"
+              Start="0,0"
+              End="0,28.7666663532787">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.7666663532787" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-62.4692578125,8.55423161413935,88.37,10.88671875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARGA DIMCLIENTE\STAGE_CLIENTE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARGA DIMCLIENTE\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARGA DIMCLIENTE\DIMCLIENTE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,2133 +1,0 @@
-<?xml version="1.0"?>
-<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
-  DTS:refId="Package"
-  DTS:CreationDate="5/22/2025 4:44:10 PM"
-  DTS:CreationName="Microsoft.Package"
-  DTS:CreatorComputerName="MORGAN_BF"
-  DTS:CreatorName="MORGAN_BF\uridk"
-  DTS:DTSID="{5874313D-96F6-4DC8-8693-5DA9F30F02BA}"
-  DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5685.0"
-  DTS:LocaleID="2058"
-  DTS:ObjectName="04-Stage-Ventas"
-  DTS:PackageType="5"
-  DTS:VersionBuild="12"
-  DTS:VersionGUID="{DE87BDF2-E565-42F2-BD23-786D13ABA115}">
-  <DTS:Property
-    DTS:Name="PackageFormatVersion">8</DTS:Property>
-  <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost,1450.Northwind.sa]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{7F79DC2C-645B-4718-8F91-12FA98D21CB8}"
-      DTS:ObjectName="localhost,1450.Northwind.sa">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost,1450;User ID=sa;Initial Catalog=Northwind;Provider=MSOLEDBSQL.1;Persist Security Info=True;Application Name=SSIS-04-Stage-Ventas-{7F79DC2C-645B-4718-8F91-12FA98D21CB8}localhost,1450.Northwind.sa;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAj9LjijGAY0qER73leZuoQwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABd5m6WrmBv1iJxfpMZC7mTFFjgConZpsyUl4IiAZ6E2wAAAAAOgAAAAAIAACAAAADXd/c0IympEx79UgPoOIIUIVq48dnFNTjfFMApkSIx2SAAAACgWTDdtxmOFnFbfCdxmbnhhK1DNJY9/SZauDCR2ApdokAAAABQs3uuTbpzoRUnCb7HZkmXKbm+Hq1q8QoUimUODqrhUT0NdrJBKOd6kaD0gxG3xVmRMzgiZAdD+mniDS9DS+oP</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{66510418-D931-4D9A-93CF-6BD88896ACE3}"
-      DTS:ObjectName="localhost,1450.stage_northwind.sa">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost,1450;User ID=sa;Initial Catalog=stage_northwind;Provider=MSOLEDBSQL.1;Application Name=SSIS-04-Stage-Ventas-{66510418-D931-4D9A-93CF-6BD88896ACE3}localhost,1450.stage_northwind.sa;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAj9LjijGAY0qER73leZuoQwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACs656i/1YS5c5vZL4ddrayrNK3vkUvkP0l+cH75DWIGgAAAAAOgAAAAAIAACAAAACIm+R/bvcXFNKOf2ZYpIarErjNGwuBI8lKW5KCUxIqPyAAAABAYXYokdc1TzOv279sRppef4CT58ubeMBsxNnlEZKs+EAAAAASaeLcNClW6qCv6F9ggfXacvAJuEO+uO36b/WUdcT9MkXpxxvIGnJLeUc/iIjU0JwmQWW8jOFm+CfMlMrs7r4f</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-  </DTS:ConnectionManagers>
-  <DTS:Variables />
-  <DTS:Executables>
-    <DTS:Executable
-      DTS:refId="Package\STAGE VENTAS"
-      DTS:CreationName="Microsoft.Pipeline"
-      DTS:Description="Data Flow Task"
-      DTS:DTSID="{69DDE913-261B-4CF4-BD4C-0C782DFEF7D4}"
-      DTS:ExecutableType="Microsoft.Pipeline"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="STAGE VENTAS"
-      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <pipeline
-          version="1">
-          <components>
-            <component
-              refId="Package\STAGE VENTAS\Data Conversion"
-              componentClassID="Microsoft.DataConvert"
-              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Data Conversion"
-              name="Data Conversion"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\STAGE VENTAS\Data Conversion.Inputs[Data Conversion Input]"
-                  name="Data Conversion Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\Data Conversion.Inputs[Data Conversion Input].Columns[CustomerID]"
-                      cachedDataType="wstr"
-                      cachedLength="5"
-                      cachedName="CustomerID"
-                      lineageId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].Columns[CustomerID]" />
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\Data Conversion.Inputs[Data Conversion Input].Columns[Quantity]"
-                      cachedDataType="i2"
-                      cachedName="Quantity"
-                      lineageId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].Columns[Quantity]" />
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\Data Conversion.Inputs[Data Conversion Input].Columns[UnitPrice]"
-                      cachedDataType="cy"
-                      cachedName="UnitPrice"
-                      lineageId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].Columns[UnitPrice]" />
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\Data Conversion.Inputs[Data Conversion Input].Columns[Discount]"
-                      cachedDataType="r4"
-                      cachedName="Discount"
-                      lineageId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].Columns[Discount]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\STAGE VENTAS\Data Conversion.Outputs[Data Conversion Output]"
-                  exclusionGroup="1"
-                  name="Data Conversion Output"
-                  synchronousInputId="Package\STAGE VENTAS\Data Conversion.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\Data Conversion.Outputs[Data Conversion Output].Columns[CustomerID_CHAR]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="5"
-                      lineageId="Package\STAGE VENTAS\Data Conversion.Outputs[Data Conversion Output].Columns[CustomerID_CHAR]"
-                      name="CustomerID_CHAR"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].Columns[CustomerID]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\Data Conversion.Outputs[Data Conversion Output].Columns[Quantity_INT]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\STAGE VENTAS\Data Conversion.Outputs[Data Conversion Output].Columns[Quantity_INT]"
-                      name="Quantity_INT"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].Columns[Quantity]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\Data Conversion.Outputs[Data Conversion Output].Columns[UnitPrice_DECIMAL]"
-                      dataType="numeric"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\STAGE VENTAS\Data Conversion.Outputs[Data Conversion Output].Columns[UnitPrice_DECIMAL]"
-                      name="UnitPrice_DECIMAL"
-                      precision="15"
-                      scale="2"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].Columns[UnitPrice]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\Data Conversion.Outputs[Data Conversion Output].Columns[Discount_DECIMAL]"
-                      dataType="numeric"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\STAGE VENTAS\Data Conversion.Outputs[Data Conversion Output].Columns[Discount_DECIMAL]"
-                      name="Discount_DECIMAL"
-                      precision="15"
-                      scale="2"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].Columns[Discount]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\STAGE VENTAS\Data Conversion.Outputs[Data Conversion Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Data Conversion Error Output"
-                  synchronousInputId="Package\STAGE VENTAS\Data Conversion.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\STAGE VENTAS\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\STAGE VENTAS\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\STAGE VENTAS\FILTRAR VENTAS NUEVAS"
-              componentClassID="Microsoft.ConditionalSplit"
-              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
-              name="FILTRAR VENTAS NUEVAS"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\STAGE VENTAS\FILTRAR VENTAS NUEVAS.Inputs[Conditional Split Input]"
-                  description="Input to the Conditional Split Transformation"
-                  name="Conditional Split Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\FILTRAR VENTAS NUEVAS.Inputs[Conditional Split Input].Columns[cliente]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="5"
-                      cachedName="cliente"
-                      lineageId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[cliente]" />
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\FILTRAR VENTAS NUEVAS.Inputs[Conditional Split Input].Columns[empleadocodigo]"
-                      cachedDataType="i4"
-                      cachedName="empleadocodigo"
-                      lineageId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[empleadocodigo]" />
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\FILTRAR VENTAS NUEVAS.Inputs[Conditional Split Input].Columns[producto_codigo]"
-                      cachedDataType="i4"
-                      cachedName="producto_codigo"
-                      lineageId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[producto_codigo]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\STAGE VENTAS\FILTRAR VENTAS NUEVAS.Outputs[VENTAS_NUEVAS]"
-                  description="Output 1 of the Conditional Split Transformation"
-                  errorOrTruncationOperation="Computation"
-                  errorRowDisposition="FailComponent"
-                  exclusionGroup="1"
-                  name="VENTAS_NUEVAS"
-                  synchronousInputId="Package\STAGE VENTAS\FILTRAR VENTAS NUEVAS.Inputs[Conditional Split Input]"
-                  truncationRowDisposition="FailComponent">
-                  <properties>
-                    <property
-                      containsID="true"
-                      dataType="System.String"
-                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                      name="Expression">[ISNULL](#{Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[cliente]}) || [ISNULL](#{Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[empleadocodigo]}) || [ISNULL](#{Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[producto_codigo]})</property>
-                    <property
-                      containsID="true"
-                      dataType="System.String"
-                      description="Specifies the friendly version of the expression. This expression version uses column names."
-                      expressionType="Notify"
-                      name="FriendlyExpression">ISNULL(cliente) || ISNULL(empleadocodigo) || ISNULL(producto_codigo)</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
-                      name="EvaluationOrder">0</property>
-                  </properties>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\STAGE VENTAS\FILTRAR VENTAS NUEVAS.Outputs[Conditional Split Default Output]"
-                  description="Default Output of the Conditional Split Transformation"
-                  exclusionGroup="1"
-                  name="Conditional Split Default Output"
-                  synchronousInputId="Package\STAGE VENTAS\FILTRAR VENTAS NUEVAS.Inputs[Conditional Split Input]">
-                  <properties>
-                    <property
-                      dataType="System.Boolean"
-                      name="IsDefaultOut">true</property>
-                  </properties>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\STAGE VENTAS\FILTRAR VENTAS NUEVAS.Outputs[Conditional Split Error Output]"
-                  description="Error Output of the Conditional Split Transformation"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Conditional Split Error Output"
-                  synchronousInputId="Package\STAGE VENTAS\FILTRAR VENTAS NUEVAS.Inputs[Conditional Split Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\FILTRAR VENTAS NUEVAS.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\STAGE VENTAS\FILTRAR VENTAS NUEVAS.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\FILTRAR VENTAS NUEVAS.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\STAGE VENTAS\FILTRAR VENTAS NUEVAS.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS"
-              componentClassID="Microsoft.MergeJoin"
-              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
-              name="LEFT JOIN ORDENES_STAGE_VENTAS"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the type of join to perform."
-                  name="JoinType"
-                  typeConverter="JoinType">1</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the number of columns in the ordering key."
-                  name="NumKeyColumns">3</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the null values are treated as equal values."
-                  name="TreatNullsAsEqual">true</property>
-                <property
-                  dataType="System.Int32"
-                  description="Indicates the requested maximum buffers per input before blocking."
-                  name="MaxBuffersPerInput">5</property>
-              </properties>
-              <inputs>
-                <input
-                  refId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Inputs[Merge Join Left Input]"
-                  hasSideEffects="true"
-                  name="Merge Join Left Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Inputs[Merge Join Left Input].Columns[EmployeeID]"
-                      cachedDataType="i4"
-                      cachedName="EmployeeID"
-                      cachedSortKeyPosition="2"
-                      lineageId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Outputs[Sort Output].Columns[EmployeeID]" />
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Inputs[Merge Join Left Input].Columns[ProductID]"
-                      cachedDataType="i4"
-                      cachedName="ProductID"
-                      cachedSortKeyPosition="3"
-                      lineageId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Outputs[Sort Output].Columns[ProductID]" />
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Inputs[Merge Join Left Input].Columns[CustomerID_CHAR]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="5"
-                      cachedName="CustomerID_CHAR"
-                      cachedSortKeyPosition="1"
-                      lineageId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Outputs[Sort Output].Columns[CustomerID_CHAR]" />
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Inputs[Merge Join Left Input].Columns[OrderDate]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="OrderDate"
-                      lineageId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Outputs[Sort Output].Columns[OrderDate]" />
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Inputs[Merge Join Left Input].Columns[Quantity_INT]"
-                      cachedDataType="i4"
-                      cachedName="Quantity_INT"
-                      lineageId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Outputs[Sort Output].Columns[Quantity_INT]" />
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Inputs[Merge Join Left Input].Columns[UnitPrice_DECIMAL]"
-                      cachedDataType="numeric"
-                      cachedName="UnitPrice_DECIMAL"
-                      cachedPrecision="15"
-                      cachedScale="2"
-                      lineageId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Outputs[Sort Output].Columns[UnitPrice_DECIMAL]" />
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Inputs[Merge Join Left Input].Columns[Discount_DECIMAL]"
-                      cachedDataType="numeric"
-                      cachedName="Discount_DECIMAL"
-                      cachedPrecision="15"
-                      cachedScale="2"
-                      lineageId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Outputs[Sort Output].Columns[Discount_DECIMAL]" />
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Inputs[Merge Join Left Input].Columns[Monto]"
-                      cachedDataType="r4"
-                      cachedName="Monto"
-                      lineageId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Outputs[Sort Output].Columns[Monto]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-                <input
-                  refId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Inputs[Merge Join Right Input]"
-                  hasSideEffects="true"
-                  name="Merge Join Right Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Inputs[Merge Join Right Input].Columns[cliente]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="5"
-                      cachedName="cliente"
-                      cachedSortKeyPosition="1"
-                      lineageId="Package\STAGE VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[cliente]" />
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Inputs[Merge Join Right Input].Columns[empleadocodigo]"
-                      cachedDataType="i4"
-                      cachedName="empleadocodigo"
-                      cachedSortKeyPosition="2"
-                      lineageId="Package\STAGE VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[empleadocodigo]" />
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Inputs[Merge Join Right Input].Columns[producto_codigo]"
-                      cachedDataType="i4"
-                      cachedName="producto_codigo"
-                      cachedSortKeyPosition="3"
-                      lineageId="Package\STAGE VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[producto_codigo]" />
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Inputs[Merge Join Right Input].Columns[ventasorden]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="ventasorden"
-                      lineageId="Package\STAGE VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[ventasorden]" />
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Inputs[Merge Join Right Input].Columns[ventas_monto]"
-                      cachedDataType="numeric"
-                      cachedName="ventas_monto"
-                      cachedPrecision="15"
-                      cachedScale="2"
-                      lineageId="Package\STAGE VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[ventas_monto]" />
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Inputs[Merge Join Right Input].Columns[ventas_unidades]"
-                      cachedDataType="i4"
-                      cachedName="ventas_unidades"
-                      lineageId="Package\STAGE VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[ventas_unidades]" />
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Inputs[Merge Join Right Input].Columns[ventas_preciounitario]"
-                      cachedDataType="numeric"
-                      cachedName="ventas_preciounitario"
-                      cachedPrecision="15"
-                      cachedScale="2"
-                      lineageId="Package\STAGE VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[ventas_preciounitario]" />
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Inputs[Merge Join Right Input].Columns[ventas_descuento]"
-                      cachedDataType="numeric"
-                      cachedName="ventas_descuento"
-                      cachedPrecision="15"
-                      cachedScale="2"
-                      lineageId="Package\STAGE VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[ventas_descuento]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output]"
-                  isSorted="true"
-                  name="Merge Join Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[CustomerID_CHAR]"
-                      codePage="1252"
-                      dataType="str"
-                      length="5"
-                      lineageId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[CustomerID_CHAR]"
-                      name="CustomerID_CHAR"
-                      sortKeyPosition="1">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Inputs[Merge Join Left Input].Columns[CustomerID_CHAR]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[EmployeeID]"
-                      dataType="i4"
-                      lineageId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[EmployeeID]"
-                      name="EmployeeID"
-                      sortKeyPosition="2">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Inputs[Merge Join Left Input].Columns[EmployeeID]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[ProductID]"
-                      dataType="i4"
-                      lineageId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[ProductID]"
-                      name="ProductID"
-                      sortKeyPosition="3">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Inputs[Merge Join Left Input].Columns[ProductID]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[OrderDate]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[OrderDate]"
-                      name="OrderDate">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Inputs[Merge Join Left Input].Columns[OrderDate]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[Quantity_INT]"
-                      dataType="i4"
-                      lineageId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[Quantity_INT]"
-                      name="Quantity_INT">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Inputs[Merge Join Left Input].Columns[Quantity_INT]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[UnitPrice_DECIMAL]"
-                      dataType="numeric"
-                      lineageId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[UnitPrice_DECIMAL]"
-                      name="UnitPrice_DECIMAL"
-                      precision="15"
-                      scale="2">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Inputs[Merge Join Left Input].Columns[UnitPrice_DECIMAL]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[Discount_DECIMAL]"
-                      dataType="numeric"
-                      lineageId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[Discount_DECIMAL]"
-                      name="Discount_DECIMAL"
-                      precision="15"
-                      scale="2">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Inputs[Merge Join Left Input].Columns[Discount_DECIMAL]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[Monto]"
-                      dataType="r4"
-                      lineageId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[Monto]"
-                      name="Monto">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Inputs[Merge Join Left Input].Columns[Monto]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[cliente]"
-                      codePage="1252"
-                      dataType="str"
-                      length="5"
-                      lineageId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[cliente]"
-                      name="cliente">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Inputs[Merge Join Right Input].Columns[cliente]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[empleadocodigo]"
-                      dataType="i4"
-                      lineageId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[empleadocodigo]"
-                      name="empleadocodigo">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Inputs[Merge Join Right Input].Columns[empleadocodigo]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[producto_codigo]"
-                      dataType="i4"
-                      lineageId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[producto_codigo]"
-                      name="producto_codigo">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Inputs[Merge Join Right Input].Columns[producto_codigo]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[ventasorden]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[ventasorden]"
-                      name="ventasorden">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Inputs[Merge Join Right Input].Columns[ventasorden]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[ventas_monto]"
-                      dataType="numeric"
-                      lineageId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[ventas_monto]"
-                      name="ventas_monto"
-                      precision="15"
-                      scale="2">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Inputs[Merge Join Right Input].Columns[ventas_monto]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[ventas_unidades]"
-                      dataType="i4"
-                      lineageId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[ventas_unidades]"
-                      name="ventas_unidades">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Inputs[Merge Join Right Input].Columns[ventas_unidades]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[ventas_preciounitario]"
-                      dataType="numeric"
-                      lineageId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[ventas_preciounitario]"
-                      name="ventas_preciounitario"
-                      precision="15"
-                      scale="2">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Inputs[Merge Join Right Input].Columns[ventas_preciounitario]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[ventas_descuento]"
-                      dataType="numeric"
-                      lineageId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[ventas_descuento]"
-                      name="ventas_descuento"
-                      precision="15"
-                      scale="2">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Inputs[Merge Join Right Input].Columns[ventas_descuento]}</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\STAGE VENTAS\NORTHWIND_ORDENES"
-              componentClassID="Microsoft.OLEDBSource"
-              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
-              description="OLE DB Source"
-              name="NORTHWIND_ORDENES"
-              usesDispositions="true"
-              version="7">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset"></property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT c.CustomerID, e.EmployeeID, p.ProductID,
-o.OrderDate,
-(od.Quantity*od.UnitPrice *( 1 - od.Discount)) as [Monto],
-od.Quantity, od.UnitPrice, od.Discount
-FROM
-Northwind.dbo.Customers as c
-INNER JOIN Northwind.dbo.Orders as o
-on c.CustomerID = o.CustomerID
-INNER JOIN Northwind.dbo.Employees as e
-on e.EmployeeID = o.EmployeeID
-JOIN Northwind.dbo.[Order Details] as od
-on o.OrderID = od.OrderID
-JOIN Northwind.dbo.Products as p
-on p.ProductID = od.ProductID;</property>
-                <property
-                  dataType="System.String"
-                  description="The variable that contains the SQL command to be executed."
-                  name="SqlCommandVariable"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">2</property>
-                <property
-                  dataType="System.String"
-                  description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping"></property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost,1450.Northwind.sa]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.Northwind.sa]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output]"
-                  name="OLE DB Source Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].Columns[CustomerID]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].ExternalColumns[CustomerID]"
-                      length="5"
-                      lineageId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].Columns[CustomerID]"
-                      name="CustomerID"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].Columns[EmployeeID]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].ExternalColumns[EmployeeID]"
-                      lineageId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].Columns[EmployeeID]"
-                      name="EmployeeID"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].Columns[ProductID]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].ExternalColumns[ProductID]"
-                      lineageId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].Columns[ProductID]"
-                      name="ProductID"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].Columns[OrderDate]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].ExternalColumns[OrderDate]"
-                      lineageId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].Columns[OrderDate]"
-                      name="OrderDate"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].Columns[Monto]"
-                      dataType="r4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].ExternalColumns[Monto]"
-                      lineageId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].Columns[Monto]"
-                      name="Monto"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].Columns[Quantity]"
-                      dataType="i2"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].ExternalColumns[Quantity]"
-                      lineageId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].Columns[Quantity]"
-                      name="Quantity"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].Columns[UnitPrice]"
-                      dataType="cy"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].ExternalColumns[UnitPrice]"
-                      lineageId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].Columns[UnitPrice]"
-                      name="UnitPrice"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].Columns[Discount]"
-                      dataType="r4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].ExternalColumns[Discount]"
-                      lineageId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].Columns[Discount]"
-                      name="Discount"
-                      truncationRowDisposition="FailComponent" />
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].ExternalColumns[CustomerID]"
-                      dataType="wstr"
-                      length="5"
-                      name="CustomerID" />
-                    <externalMetadataColumn
-                      refId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].ExternalColumns[EmployeeID]"
-                      dataType="i4"
-                      name="EmployeeID" />
-                    <externalMetadataColumn
-                      refId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].ExternalColumns[ProductID]"
-                      dataType="i4"
-                      name="ProductID" />
-                    <externalMetadataColumn
-                      refId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].ExternalColumns[OrderDate]"
-                      dataType="dbTimeStamp"
-                      name="OrderDate" />
-                    <externalMetadataColumn
-                      refId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].ExternalColumns[Monto]"
-                      dataType="r4"
-                      name="Monto" />
-                    <externalMetadataColumn
-                      refId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].ExternalColumns[Quantity]"
-                      dataType="i2"
-                      name="Quantity" />
-                    <externalMetadataColumn
-                      refId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].ExternalColumns[UnitPrice]"
-                      dataType="cy"
-                      name="UnitPrice" />
-                    <externalMetadataColumn
-                      refId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].ExternalColumns[Discount]"
-                      dataType="r4"
-                      name="Discount" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Error Output]"
-                  isErrorOut="true"
-                  name="OLE DB Source Error Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Error Output].Columns[CustomerID]"
-                      dataType="wstr"
-                      length="5"
-                      lineageId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Error Output].Columns[CustomerID]"
-                      name="CustomerID" />
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Error Output].Columns[EmployeeID]"
-                      dataType="i4"
-                      lineageId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Error Output].Columns[EmployeeID]"
-                      name="EmployeeID" />
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Error Output].Columns[ProductID]"
-                      dataType="i4"
-                      lineageId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Error Output].Columns[ProductID]"
-                      name="ProductID" />
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Error Output].Columns[OrderDate]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Error Output].Columns[OrderDate]"
-                      name="OrderDate" />
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Error Output].Columns[Monto]"
-                      dataType="r4"
-                      lineageId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Error Output].Columns[Monto]"
-                      name="Monto" />
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Error Output].Columns[Quantity]"
-                      dataType="i2"
-                      lineageId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Error Output].Columns[Quantity]"
-                      name="Quantity" />
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Error Output].Columns[UnitPrice]"
-                      dataType="cy"
-                      lineageId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Error Output].Columns[UnitPrice]"
-                      name="UnitPrice" />
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Error Output].Columns[Discount]"
-                      dataType="r4"
-                      lineageId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Error Output].Columns[Discount]"
-                      name="Discount" />
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\STAGE VENTAS\OLE DB Destination"
-              componentClassID="Microsoft.OLEDBDestination"
-              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-              description="OLE DB Destination"
-              name="OLE DB Destination"
-              usesDispositions="true"
-              version="4">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[ventas]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\STAGE VENTAS\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\STAGE VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input]"
-                  errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CustomerID_CHAR]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="5"
-                      cachedName="CustomerID_CHAR"
-                      cachedSortKeyPosition="1"
-                      externalMetadataColumnId="Package\STAGE VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[cliente]"
-                      lineageId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[CustomerID_CHAR]" />
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Quantity_INT]"
-                      cachedDataType="i4"
-                      cachedName="Quantity_INT"
-                      externalMetadataColumnId="Package\STAGE VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ventas_unidades]"
-                      lineageId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[Quantity_INT]" />
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Discount_DECIMAL]"
-                      cachedDataType="numeric"
-                      cachedName="Discount_DECIMAL"
-                      cachedPrecision="15"
-                      cachedScale="2"
-                      externalMetadataColumnId="Package\STAGE VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ventas_descuento]"
-                      lineageId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[Discount_DECIMAL]" />
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UnitPrice_DECIMAL]"
-                      cachedDataType="numeric"
-                      cachedName="UnitPrice_DECIMAL"
-                      cachedPrecision="15"
-                      cachedScale="2"
-                      externalMetadataColumnId="Package\STAGE VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ventas_preciounitario]"
-                      lineageId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[UnitPrice_DECIMAL]" />
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[OrderDate]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="OrderDate"
-                      externalMetadataColumnId="Package\STAGE VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ventasorden]"
-                      lineageId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[OrderDate]" />
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ProductID]"
-                      cachedDataType="i4"
-                      cachedName="ProductID"
-                      cachedSortKeyPosition="3"
-                      externalMetadataColumnId="Package\STAGE VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[producto_codigo]"
-                      lineageId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[ProductID]" />
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EmployeeID]"
-                      cachedDataType="i4"
-                      cachedName="EmployeeID"
-                      cachedSortKeyPosition="2"
-                      externalMetadataColumnId="Package\STAGE VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[empleadocodigo]"
-                      lineageId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[EmployeeID]" />
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Monto]"
-                      cachedDataType="r4"
-                      cachedName="Monto"
-                      externalMetadataColumnId="Package\STAGE VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ventas_monto]"
-                      lineageId="Package\STAGE VENTAS\LEFT JOIN ORDENES_STAGE_VENTAS.Outputs[Merge Join Output].Columns[Monto]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\STAGE VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[cliente]"
-                      codePage="1252"
-                      dataType="str"
-                      length="5"
-                      name="cliente" />
-                    <externalMetadataColumn
-                      refId="Package\STAGE VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[empleadocodigo]"
-                      dataType="i4"
-                      name="empleadocodigo" />
-                    <externalMetadataColumn
-                      refId="Package\STAGE VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[producto_codigo]"
-                      dataType="i4"
-                      name="producto_codigo" />
-                    <externalMetadataColumn
-                      refId="Package\STAGE VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ventasorden]"
-                      dataType="dbTimeStamp"
-                      name="ventasorden" />
-                    <externalMetadataColumn
-                      refId="Package\STAGE VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ventas_monto]"
-                      dataType="numeric"
-                      name="ventas_monto"
-                      precision="15"
-                      scale="2" />
-                    <externalMetadataColumn
-                      refId="Package\STAGE VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ventas_unidades]"
-                      dataType="i4"
-                      name="ventas_unidades" />
-                    <externalMetadataColumn
-                      refId="Package\STAGE VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ventas_preciounitario]"
-                      dataType="numeric"
-                      name="ventas_preciounitario"
-                      precision="15"
-                      scale="2" />
-                    <externalMetadataColumn
-                      refId="Package\STAGE VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ventas_descuento]"
-                      dataType="numeric"
-                      name="ventas_descuento"
-                      precision="15"
-                      scale="2" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\STAGE VENTAS\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\STAGE VENTAS\OLE DB Destination.Inputs[OLE DB Destination Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\STAGE VENTAS\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\STAGE VENTAS\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS"
-              componentClassID="Microsoft.Sort"
-              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
-              name="ORDENAR NORTHWIND ORDERS"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
-                  name="EliminateDuplicates">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the maximum number of threads to use for sorting."
-                  expressionType="Notify"
-                  name="MaximumThreads">-1</property>
-              </properties>
-              <inputs>
-                <input
-                  refId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Inputs[Sort Input]"
-                  name="Sort Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Inputs[Sort Input].Columns[CustomerID]"
-                      cachedDataType="wstr"
-                      cachedLength="5"
-                      cachedName="CustomerID"
-                      lineageId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].Columns[CustomerID]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Inputs[Sort Input].Columns[EmployeeID]"
-                      cachedDataType="i4"
-                      cachedName="EmployeeID"
-                      lineageId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].Columns[EmployeeID]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">2</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Inputs[Sort Input].Columns[ProductID]"
-                      cachedDataType="i4"
-                      cachedName="ProductID"
-                      lineageId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].Columns[ProductID]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">3</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Inputs[Sort Input].Columns[OrderDate]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="OrderDate"
-                      lineageId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].Columns[OrderDate]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Inputs[Sort Input].Columns[Monto]"
-                      cachedDataType="r4"
-                      cachedName="Monto"
-                      lineageId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].Columns[Monto]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Inputs[Sort Input].Columns[Quantity]"
-                      cachedDataType="i2"
-                      cachedName="Quantity"
-                      lineageId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].Columns[Quantity]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Inputs[Sort Input].Columns[UnitPrice]"
-                      cachedDataType="cy"
-                      cachedName="UnitPrice"
-                      lineageId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].Columns[UnitPrice]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Inputs[Sort Input].Columns[Discount]"
-                      cachedDataType="r4"
-                      cachedName="Discount"
-                      lineageId="Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].Columns[Discount]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Inputs[Sort Input].Columns[CustomerID_CHAR]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="5"
-                      cachedName="CustomerID_CHAR"
-                      lineageId="Package\STAGE VENTAS\Data Conversion.Outputs[Data Conversion Output].Columns[CustomerID_CHAR]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">1</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Inputs[Sort Input].Columns[Quantity_INT]"
-                      cachedDataType="i4"
-                      cachedName="Quantity_INT"
-                      lineageId="Package\STAGE VENTAS\Data Conversion.Outputs[Data Conversion Output].Columns[Quantity_INT]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Inputs[Sort Input].Columns[UnitPrice_DECIMAL]"
-                      cachedDataType="numeric"
-                      cachedName="UnitPrice_DECIMAL"
-                      cachedPrecision="15"
-                      cachedScale="2"
-                      lineageId="Package\STAGE VENTAS\Data Conversion.Outputs[Data Conversion Output].Columns[UnitPrice_DECIMAL]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Inputs[Sort Input].Columns[Discount_DECIMAL]"
-                      cachedDataType="numeric"
-                      cachedName="Discount_DECIMAL"
-                      cachedPrecision="15"
-                      cachedScale="2"
-                      lineageId="Package\STAGE VENTAS\Data Conversion.Outputs[Data Conversion Output].Columns[Discount_DECIMAL]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Outputs[Sort Output]"
-                  isSorted="true"
-                  name="Sort Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Outputs[Sort Output].Columns[CustomerID]"
-                      dataType="wstr"
-                      length="5"
-                      lineageId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Outputs[Sort Output].Columns[CustomerID]"
-                      name="CustomerID">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].Columns[CustomerID]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Outputs[Sort Output].Columns[EmployeeID]"
-                      dataType="i4"
-                      lineageId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Outputs[Sort Output].Columns[EmployeeID]"
-                      name="EmployeeID"
-                      sortKeyPosition="2">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].Columns[EmployeeID]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Outputs[Sort Output].Columns[ProductID]"
-                      dataType="i4"
-                      lineageId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Outputs[Sort Output].Columns[ProductID]"
-                      name="ProductID"
-                      sortKeyPosition="3">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].Columns[ProductID]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Outputs[Sort Output].Columns[OrderDate]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Outputs[Sort Output].Columns[OrderDate]"
-                      name="OrderDate">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].Columns[OrderDate]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Outputs[Sort Output].Columns[Monto]"
-                      dataType="r4"
-                      lineageId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Outputs[Sort Output].Columns[Monto]"
-                      name="Monto">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].Columns[Monto]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Outputs[Sort Output].Columns[Quantity]"
-                      dataType="i2"
-                      lineageId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Outputs[Sort Output].Columns[Quantity]"
-                      name="Quantity">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].Columns[Quantity]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Outputs[Sort Output].Columns[UnitPrice]"
-                      dataType="cy"
-                      lineageId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Outputs[Sort Output].Columns[UnitPrice]"
-                      name="UnitPrice">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].Columns[UnitPrice]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Outputs[Sort Output].Columns[Discount]"
-                      dataType="r4"
-                      lineageId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Outputs[Sort Output].Columns[Discount]"
-                      name="Discount">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\STAGE VENTAS\NORTHWIND_ORDENES.Outputs[OLE DB Source Output].Columns[Discount]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Outputs[Sort Output].Columns[CustomerID_CHAR]"
-                      codePage="1252"
-                      dataType="str"
-                      length="5"
-                      lineageId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Outputs[Sort Output].Columns[CustomerID_CHAR]"
-                      name="CustomerID_CHAR"
-                      sortKeyPosition="1">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\STAGE VENTAS\Data Conversion.Outputs[Data Conversion Output].Columns[CustomerID_CHAR]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Outputs[Sort Output].Columns[Quantity_INT]"
-                      dataType="i4"
-                      lineageId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Outputs[Sort Output].Columns[Quantity_INT]"
-                      name="Quantity_INT">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\STAGE VENTAS\Data Conversion.Outputs[Data Conversion Output].Columns[Quantity_INT]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Outputs[Sort Output].Columns[UnitPrice_DECIMAL]"
-                      dataType="numeric"
-                      lineageId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Outputs[Sort Output].Columns[UnitPrice_DECIMAL]"
-                      name="UnitPrice_DECIMAL"
-                      precision="15"
-                      scale="2">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\STAGE VENTAS\Data Conversion.Outputs[Data Conversion Output].Columns[UnitPrice_DECIMAL]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Outputs[Sort Output].Columns[Discount_DECIMAL]"
-                      dataType="numeric"
-                      lineageId="Package\STAGE VENTAS\ORDENAR NORTHWIND ORDERS.Outputs[Sort Output].Columns[Discount_DECIMAL]"
-                      name="Discount_DECIMAL"
-                      precision="15"
-                      scale="2">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\STAGE VENTAS\Data Conversion.Outputs[Data Conversion Output].Columns[Discount_DECIMAL]}</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\STAGE VENTAS\ORDENAR STAGE VENTAS"
-              componentClassID="Microsoft.Sort"
-              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
-              name="ORDENAR STAGE VENTAS"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
-                  name="EliminateDuplicates">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the maximum number of threads to use for sorting."
-                  expressionType="Notify"
-                  name="MaximumThreads">-1</property>
-              </properties>
-              <inputs>
-                <input
-                  refId="Package\STAGE VENTAS\ORDENAR STAGE VENTAS.Inputs[Sort Input]"
-                  name="Sort Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\ORDENAR STAGE VENTAS.Inputs[Sort Input].Columns[cliente]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="5"
-                      cachedName="cliente"
-                      lineageId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].Columns[cliente]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">1</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\ORDENAR STAGE VENTAS.Inputs[Sort Input].Columns[empleadocodigo]"
-                      cachedDataType="i4"
-                      cachedName="empleadocodigo"
-                      lineageId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].Columns[empleadocodigo]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">2</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\ORDENAR STAGE VENTAS.Inputs[Sort Input].Columns[producto_codigo]"
-                      cachedDataType="i4"
-                      cachedName="producto_codigo"
-                      lineageId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].Columns[producto_codigo]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">3</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\ORDENAR STAGE VENTAS.Inputs[Sort Input].Columns[ventasorden]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="ventasorden"
-                      lineageId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].Columns[ventasorden]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\ORDENAR STAGE VENTAS.Inputs[Sort Input].Columns[ventas_monto]"
-                      cachedDataType="numeric"
-                      cachedName="ventas_monto"
-                      cachedPrecision="15"
-                      cachedScale="2"
-                      lineageId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].Columns[ventas_monto]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\ORDENAR STAGE VENTAS.Inputs[Sort Input].Columns[ventas_unidades]"
-                      cachedDataType="i4"
-                      cachedName="ventas_unidades"
-                      lineageId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].Columns[ventas_unidades]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\ORDENAR STAGE VENTAS.Inputs[Sort Input].Columns[ventas_preciounitario]"
-                      cachedDataType="numeric"
-                      cachedName="ventas_preciounitario"
-                      cachedPrecision="15"
-                      cachedScale="2"
-                      lineageId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].Columns[ventas_preciounitario]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\STAGE VENTAS\ORDENAR STAGE VENTAS.Inputs[Sort Input].Columns[ventas_descuento]"
-                      cachedDataType="numeric"
-                      cachedName="ventas_descuento"
-                      cachedPrecision="15"
-                      cachedScale="2"
-                      lineageId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].Columns[ventas_descuento]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\STAGE VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output]"
-                  isSorted="true"
-                  name="Sort Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[cliente]"
-                      codePage="1252"
-                      dataType="str"
-                      length="5"
-                      lineageId="Package\STAGE VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[cliente]"
-                      name="cliente"
-                      sortKeyPosition="1">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].Columns[cliente]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[empleadocodigo]"
-                      dataType="i4"
-                      lineageId="Package\STAGE VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[empleadocodigo]"
-                      name="empleadocodigo"
-                      sortKeyPosition="2">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].Columns[empleadocodigo]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[producto_codigo]"
-                      dataType="i4"
-                      lineageId="Package\STAGE VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[producto_codigo]"
-                      name="producto_codigo"
-                      sortKeyPosition="3">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].Columns[producto_codigo]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[ventasorden]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\STAGE VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[ventasorden]"
-                      name="ventasorden">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].Columns[ventasorden]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[ventas_monto]"
-                      dataType="numeric"
-                      lineageId="Package\STAGE VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[ventas_monto]"
-                      name="ventas_monto"
-                      precision="15"
-                      scale="2">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].Columns[ventas_monto]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[ventas_unidades]"
-                      dataType="i4"
-                      lineageId="Package\STAGE VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[ventas_unidades]"
-                      name="ventas_unidades">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].Columns[ventas_unidades]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[ventas_preciounitario]"
-                      dataType="numeric"
-                      lineageId="Package\STAGE VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[ventas_preciounitario]"
-                      name="ventas_preciounitario"
-                      precision="15"
-                      scale="2">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].Columns[ventas_preciounitario]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[ventas_descuento]"
-                      dataType="numeric"
-                      lineageId="Package\STAGE VENTAS\ORDENAR STAGE VENTAS.Outputs[Sort Output].Columns[ventas_descuento]"
-                      name="ventas_descuento"
-                      precision="15"
-                      scale="2">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].Columns[ventas_descuento]}</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\STAGE VENTAS\STAGE_VENTAS"
-              componentClassID="Microsoft.OLEDBSource"
-              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
-              description="OLE DB Source"
-              name="STAGE_VENTAS"
-              usesDispositions="true"
-              version="7">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[ventas]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.String"
-                  description="The variable that contains the SQL command to be executed."
-                  name="SqlCommandVariable"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
-                <property
-                  dataType="System.String"
-                  description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping"></property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\STAGE VENTAS\STAGE_VENTAS.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output]"
-                  name="OLE DB Source Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].Columns[cliente]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].ExternalColumns[cliente]"
-                      length="5"
-                      lineageId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].Columns[cliente]"
-                      name="cliente"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].Columns[empleadocodigo]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].ExternalColumns[empleadocodigo]"
-                      lineageId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].Columns[empleadocodigo]"
-                      name="empleadocodigo"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].Columns[producto_codigo]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].ExternalColumns[producto_codigo]"
-                      lineageId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].Columns[producto_codigo]"
-                      name="producto_codigo"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].Columns[ventasorden]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].ExternalColumns[ventasorden]"
-                      lineageId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].Columns[ventasorden]"
-                      name="ventasorden"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].Columns[ventas_monto]"
-                      dataType="numeric"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].ExternalColumns[ventas_monto]"
-                      lineageId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].Columns[ventas_monto]"
-                      name="ventas_monto"
-                      precision="15"
-                      scale="2"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].Columns[ventas_unidades]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].ExternalColumns[ventas_unidades]"
-                      lineageId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].Columns[ventas_unidades]"
-                      name="ventas_unidades"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].Columns[ventas_preciounitario]"
-                      dataType="numeric"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].ExternalColumns[ventas_preciounitario]"
-                      lineageId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].Columns[ventas_preciounitario]"
-                      name="ventas_preciounitario"
-                      precision="15"
-                      scale="2"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].Columns[ventas_descuento]"
-                      dataType="numeric"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].ExternalColumns[ventas_descuento]"
-                      lineageId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].Columns[ventas_descuento]"
-                      name="ventas_descuento"
-                      precision="15"
-                      scale="2"
-                      truncationRowDisposition="FailComponent" />
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].ExternalColumns[cliente]"
-                      codePage="1252"
-                      dataType="str"
-                      length="5"
-                      name="cliente" />
-                    <externalMetadataColumn
-                      refId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].ExternalColumns[empleadocodigo]"
-                      dataType="i4"
-                      name="empleadocodigo" />
-                    <externalMetadataColumn
-                      refId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].ExternalColumns[producto_codigo]"
-                      dataType="i4"
-                      name="producto_codigo" />
-                    <externalMetadataColumn
-                      refId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].ExternalColumns[ventasorden]"
-                      dataType="dbTimeStamp"
-                      name="ventasorden" />
-                    <externalMetadataColumn
-                      refId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].ExternalColumns[ventas_monto]"
-                      dataType="numeric"
-                      name="ventas_monto"
-                      precision="15"
-                      scale="2" />
-                    <externalMetadataColumn
-                      refId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].ExternalColumns[ventas_unidades]"
-                      dataType="i4"
-                      name="ventas_unidades" />
-                    <externalMetadataColumn
-                      refId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].ExternalColumns[ventas_preciounitario]"
-                      dataType="numeric"
-                      name="ventas_preciounitario"
-                      precision="15"
-                      scale="2" />
-                    <externalMetadataColumn
-                      refId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Output].ExternalColumns[ventas_descuento]"
-                      dataType="numeric"
-                      name="ventas_descuento"
-                      precision="15"
-                      scale="2" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Error Output]"
-                  isErrorOut="true"
-                  name="OLE DB Source Error Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Error Output].Columns[cliente]"
-                      codePage="1252"
-                      dataType="str"
-                      length="5"
-                      lineageId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Error Output].Columns[cliente]"
-                      name="cliente" />
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Error Output].Columns[empleadocodigo]"
-                      dataType="i4"
-                      lineageId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Error Output].Columns[empleadocodigo]"
-                      name="empleadocodigo" />
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Error Output].Columns[producto_codigo]"
-                      dataType="i4"
-                      lineageId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Error Output].Columns[producto_codigo]"
-                      name="producto_codigo" />
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Error Output].Columns[ventasorden]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Error Output].Columns[ventasorden]"
-                      name="ventasorden" />
-                    <outputColumn
-                      refId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Error Output].Columns[ventas_monto]"
-                      dataType="numeric"
-                      lineageId="Package\STAGE VENTAS\STAGE_VENTAS.Outputs[OLE DB Source Error OuóÖÏìªŸè‰h˜’0"˜E?À£¹hö*éÉ@HÔx'øÛ_À†jJuCÚ>}–Ô®}'Vôˆ³íÁ­ŞŞÔs›h&­E«İIoqúŞ%*‚q,DŒ§qğL`›³}œ¾zØ¯„m&ÎÚ©Ç‡†³*À@i¤¼Hœn}ğ%ˆLhJ²<AßÅğç¯‚÷|1tğ_[ÀõÓ±âcS=Ş€÷±–]–oÈ¾Ê‡şÓÕ¼ñ…cl¦o9˜ç,v7@±lãA…Ó
-¬äb‰Ş´Îàz­Ájò<h¸~|A¡¤¥4¿©»ÆĞa\E
-î™Æ&û‹á=½oôZĞİÃÀm¨¥TAÀáQzÃ—É´Û`ÎÁ¤w} ¥ÆÖlu*øW3*S™…Ø†¸Şê9%FæğBhU\gDCğoœšÅÄsĞ+°“ÈKQ°Âns;‹ÁÓybÊµ±Ôcş"D?WhÙˆ¥D3õ3[ğõÅ-"¬™¸•£:l'vºK°¥Œ¶#íá÷ÑFg<à­NÀøĞNwşÚ²ôşãÚóÛøÓ L{.¥[ÙªÊcŸ	ŞÑÉ94Tğ—ß@ c&¨ì5Ñ‰ê™Ên	“¥^IÙüÍœ•ì×4ğ¶'y¿­TûfuîÃ¨¿XdgÜ1Wug!óm[ïÊg7>tå‚JÊ±òÀW}	ÆÂ£,şv¹™é[U+HDËsµn7­ÎÁò•7¯Ê\ULğØR?›‘An\ ]tx<å=©ºz–š3nŞ™õ'òÛôŠÀèÉµÌq:+ŒÁKƒ27^ô7õ ‡Oõ7B^@':^Ë&Pâ^¿ÊAï=”Ÿğ ëÉ}æÌ¨Ÿ‡‘Ş¤3@_à´aL`˜Æ)èåoÄ›„«ükë1‚ÔùkáÊ!¼ğËW
-÷OZµ$ƒÑVpVvP h3z¢cãĞ±CYh:õ£¨\$·õPo1{ 'ù3&YÏ®ş8;&˜ÎõÖ"¦X6®>ÍôŠ<dD,R‚…V‡tàóâ@vµ¿ü!Oc ‰şİ6=(Ó>¨—°e9ìÕÁ9	€î„Ÿ¿ÃMpµØP1ŸÃ²#Şø~`Œ`ú<¯\75üˆ*ìù‰Ì+¸Çam+üZ.èü)ÚÌ×?İ/©~Ğ€­ÛŞ°uk£àïf?)$­{\·7ù±ÿd2Mæ¯È­í–Ñ,ã—_æáÌ#Ê9 JßÓˆ©¹ešr=^¤CÁ,i¥ÇÕzú¨û^Ğ“/½ŒI§/A™©aô»Ôi|‚£Ó÷$Á®Ou4ÒÉWM<ëœ»{Ó,ph&)ÛJ[>ÃXzÑ+ï^Or4/è²£Oƒ/ûîİè´:ÛŒ/Ñ9K¡«]:Ä¦°ïÍP¤}!˜<«ü ŸÏç”Ú“w3ù7·¹ã0 ;×0ÌpÆî,Å¯ÁIé…Ÿ>OB+—‡ÅAf°@h[pÚLÓÛZÇ¶syvó’ ((P-HÓëE³W¢¦!Ø37q"`gşb-œÏãˆ-ÁqMg¼À×—úÛPü‡q…~çàÃa£½BéCw(ÜåÎºï’V³X]ÖÀ0Æ'H×àV@O«-YoL¬X1@³'TbãcéŸæ3±²0$,Ş_Ùû•±Í›}ãÁenhgÁˆúÃ¾¾g^Õlz	¦¨ê¯Å<ŞV€;’kùóFó©Els™erkÖ„Ü  ¬•âë‡şg³iåJØM.½ªˆ°ášŞ˜FY¼íÃ²€yĞ°RÙoáßNÂı¾”w9Ú¿¦Zv(ğ5 M0‹¿]Dû†Šœˆ‹›ÏöiÇ;-›ñ¿Ú&Úªbî¢/Î‹1è©Í:× vsÔ[¶nácyÕ–Æ
-3Šım2QïÀ²Ã£pšßvptÿMƒµÓø{.²//‰Z»Ìíº4ÑÌ–vÒ¶N)d@6&¦¤9x´H%mæ¼éÎ\BŠ¶XqÖ‡>é=3¬bPgûm8^‰¢=©ÚVh“ÑrAñÿ+”ÁpkOT¤L} †–ß6{Àå…E±ÙÌ¢BolÕ¬d6»j¦2öåz—Ï0âz© j- hú•Áu%`»±*aÆ«0µØŒˆømğ3¸,ô¤*ÇÆ#(A+¹]ú6<)Ø{+Î€Š?\Rº4uYgı/(<õ7÷Q£öÖ<÷³¤“õï7©Qfm3B$ÃÆ	Š—tÀac_Sï!))«Š®ê1›FÒÔSõ)i°µH¬Ê*MÌ…è„'Ñ¥bm¹ Y¶“ŒgCtE­ÓÇ¼Ì]œ~§±7&ƒŞ£E@Çó$gIÚ[Ù^ØŠÆƒ½¿ß}V„\—°t­a]3Œâ,òÅ‰0SÑÂ@hwe8ÒCvH†š½#İnm‰`v)Œ›¶Áüè7D¡­uÔ×µØë/¥ÔÀÀä¾Qd6T/.ë3ÏÏÈ¢´Ì}“ s¶êÇrÆ¶^ìİ¬	‚›6`å}­âå$ W¨³¾.(‡u½.MwË!>9FWè•_¾ÚBç,nd­V®Û'xİÕä…)×ph$5¡4æÀÕ[g˜{",AÕQ&ùû/×I$­¶Û!âÕ‹*·ÁÀİä©ı„Ã³—‚ìZ‚g¿§0Ç §Èvİ{’,nhkû/Ù7};<¸6™ÊY»fy¹@È8ˆÚO!ÊbşóâŞÿ¼•I%šO`NfÌuÏ7I ¦`ı¶ô%Ô7)°÷Àú;œ@o?¥‰ÿ«òë‚g+2¦¦W"Y_ú&4nºìË¿_wó%Ñw2æM İVìœãø/“ÿçÛi1t§nsß—nê¨át2w»¹“Ch®[Í:²3@¦”Û†ğœOÅ¢yo¶O©ÛrW<zÔ›zeœAçéöÄè‚	.´0ÀwÒ/ıT¶K0µ×Ó1’2÷éÃÑÉ¬s‘ŠÜSˆC½ªD
-Qæ—&Çd¾i‹%'`çóW??I{¥Óyg«©~ÿ.xGBÈÅSˆşL~»¡œşBÉÏákúww<ğ< ›]K1üW‚ü	uGó©"Ak¿ºy„ü»9ü²o
-ºüÛ bºŒsÖ×Ñ—GÛ MÖO×ØµqpLİ«ï…LQiÎL0Şt¿ì­Bêíe(N¿24ÿ¥n‰ƒ¥DÆÍÿÇÇsXêæ¬\³,5êËØI:™1ÓZ:5Õ'e=juÍåÉƒOq-|7ƒÕ,vQ.LG¥]èß$¸@ËôŒ<³ë×ìp®…{•m</áÀWˆŸf9Çyy´0’ É‡\7_R™Sl@ıGX>ú S¶Ãk¹ñÁ1TÆNÌ ‹ã£úf>ˆ‹Ş~+-ùH³Ì,8?šiÊí£S>9¦1ßÖIy 7¾òìk=4Z<Gu£*SÎé£C*ÆçX÷ğvÂ¶ş¬B¼p7¬ µ×Â¹Ç4âåé(;}uÆÚvK?½"‡vV~\²	l¿EhN[êItÏa™YoÜx$.!‘ØòÄ»ú
-à «µç/$êY³Ş#²ß 6¶s+½œ2_<ê¿aÌ±e•Ï³é€
-ğ`–’1Oõ/nœ<ã+]öQ»8Œ `qÀƒ™åEŠü6Z ¯içÙ3E›'DZÅ´Å¦¸QãœWâ·Ë	P+{^·R{„èÍDßÀôÿZ„J[o%‚ÅÚ-ò8Wæ$–ïJ¸á=|kYÌm‘AKŒ›)Ã×ãÿy:ì>‡#YI±şû	¿*´i>Gã¡!(r£S*ŞHã:²F†¯¡ô5·mVês~À84Hc¿˜p)ìÊïµo
-Ùúû?QpC©ˆ¨Aúï£Ø'Ê^™¸Ö9Mí.ş‚T6®VÂ£É¶…B¼±WÄbûï
-K}ò¦Åa.EÚ€Œİ=İ´Æœ7 *¸;]hètu´^›äúß,Ytµ’Í›ãd…)Wí{Îñ÷ ÅEæ
-×wuîùÙd²¨	î´ïÈVÇƒF]î~%NQGA_NUïÅAÿ£ÓŞ·”à„sÃjß®k©»‘Ÿ¶Ül¹ÓïTÓÃ\?¿8‘/‡S&ıµECñVË°©säS8Ÿî&Õ³†7VVr5U¬³ïô¦ƒ‚oÚ0×—*+mƒ \Y‚¹‹S3R™Ï@#‰E–æ"±/¶OiUf5´¢ıŸ]¦ï›.òPˆ”EèMä»•ZÀ^H®¼ÁVòæËJø`ÿµrËïŞòBÖ·(ŠšÂ®oŠU# €*[)ÎGŒß/UØİÏéû¤_ù;õ4fr°zÚ.Èh°Bì#èª% ÜÏô¼+6û-„iòÛ |ïô},ãùó‚ÑŸöà¿ø¿KsFÙ-xtÓïfNÉdî6Ùêv„sÌ„¹tã£knÿk +œaõşG.ekşÚ¡é&cEƒ	æq<¸ıµèkı©pçŠ9T¼Æ•V·Û´Â{“²Œ\-Üd¨ô|‰rÜ)…z,ÖH‘û³üÿÎ‹ÇñGvFï÷D°áŸ^l×‚©îcé›ë8F(’—m+dÎ Fÿ+Ô"’$ùMˆ¼3‚l]ìË~¡ôycjuŸ.ŠÉÄŸÙ:”ÿ†ÖLªÀ–#Ä©Ÿ=”ì÷Ç‰¿³ÎÇ¾ÔÓƒ^ªŞªìÀIGò0¨ÛŞ­­”–ä¸Ó¼ÑÖî\_së›õ“ç×ñÒĞd®°:X|‰"Yº~ííô7›XîN¡BÂŒş%gî&
-ä1kHFşlT8$C,Ô& õ¹õWâ^ş•Y¦gØQ´–€ÿ ôá±ªğ:úFë›âqŞ¾WÌá´¹ºñè^f¤Õ·&Fök­ó+Ú|wƒó0<zwõŞ'±”TfzÔ0Q¤Òx¬‰³h^,äÂÉÂÚö(ìÂO1Ü0EºkëF”ü|¾ä Ïyøö··(uÊ³oDUcªôdİq
-°£×dï§©”´4ğèkÑ?Æ¨Ğ_I¹‡W9ÎĞ9Ÿ»ôOQUÀfAùètÔnŞ†”§õ&oqˆâ$İèÎPwíú÷A•10 ÉK«Úp>N%Bôï8]ÜÇAÑlLşâ|R”m0r¿3~›8´¹îpºßi·f@îaÛ½qMÂ|nä’‹wæÎÂ­gğyß[Ïğ‚˜â—/ğèFÊT¥TJkLˆ&Šş“EC‡4-÷lÁÍ~È÷tTŞbœŞøÍ’bÈŠñéı“ÏÔ‰S¦G‹}Ú×”n!ñ²›Ê–Y–òHzú%ÏÃÃ=ÏØmÎ½mĞ|jz®7l›¹·úŸ±í•wr8¦Û4íbYã©¹‚Ç	>µ<ñhî‘9ı(1«ëÎ.#q°hú®b&Ü)¦ï\6·´-d·†pà}”o“)‘Oæš@yÆŒhÿ¦™{V0•ùÁ{KT~#õªºïR‘J±ù›níùì¿qFºw|†2@‘+Zw•{=ˆ `;Èõ_ rJ¨ŒÙ4ËÀª½zĞ7…”ĞSÙ	föş§œcÏ6-7ıî€IÜ}ÿ÷‡ jÔKò…'aÆË%æ”î"nÂH¤z)¶°ŒóëHVìZ+[my<w"<Û–?%6ï®_l»»?–›^ÌÓ~,C	I¿é<„Õ’¾Æö·õnXÉ^”ÿÅÒ@(	Ùèf\àvÎŞU/Nš®¹7ı}Ÿñ»*í`øJè<â}¹ĞXÅ'ú!sZƒğºzÈ¸Í5¶Mèå´c²¢i¾q2’õò|‹Éí«]•~i§$gG ÛÄæ[b#¨pÿÌgBïB#ä¨¶1Â7ÎÓTU2ª	ÉaÄ6;Ã7Âÿ­!÷ÓXîm ¥¬‚/Ç” ˜	•cc™
-nK
-{Í”äùŞ-÷dîSÈh¼•:ªnU·;áÌ%½>OÈÎĞ=Œ§(·“,™Øû…•z@{T›„áê_MÚf•A‚#‚SÿÏY}¹?nR@×b|ê íh¾›Û@UUn¼bo;1®ÎšŞ‰ÑJ2Q_*VÖ?{ÔQ-ÍÃšâ¶äJw>¯şb± Pİ*Ş"Ñ ª8]6Á×%Ã <ÃOµ7@2éİPètE'rîÓÉë¦„¹|~MP%z±TÅÛı¿EÀËa(,Jáø×¾èÄ¨oòQ/”šZW”k®@d›ëPTïâmEjI5Š+—Ù4¯ÊGÍj¸4}èƒ
-ŸÓÓU¼n•ŸtÉ9ÌÙ5’Äh^IÓEéâ4‰¶5ÕéÇÚãÍOQ¹)Ô%HˆşhyF"-ñijFí†?ı´§¹4dŞ€ÛµR-ú&ØQ­ğ	l8èÓˆ €×+˜Éºˆ«KC I õ£È ıú Š*[ù3†ú
-ƒFä
-‰e<#zĞ¨”"²ÆìE±‚¾1Õ£öö€óS9é`[vpT•'/Ì’ô®«B4f)‡küp“/¤¬¯±zãÎF!ú§¤‘QèOˆÂÕ	1 ød—GQƒyF?ç,ÕßbéP’›
-2yoL'+”lW.›y%ùa° èºt)?@ño4Zù•I¿†Â¸GóÕ®²S?}o‹’Úlç6³érË–¢iÃQÀ\C Å¨<µà'¼KÀ’öï‰Wº°(s-^¨¥ëÒ£âš•N’&=´öÈ[ûÅ[ë·‰\:îb†ÂÏ2U7u>£¤ÇÜNVÙk“ñ(Ì;Šµ Œï¾œÇİ…A¡»íB5y…LâN²ÿ[qãà9!¢$‚è¤^T5º`¿à0Ø	,B”_Ù	ã¡òÑnÖr¾9^#'T’30Î¥¾‡¿’ƒ&Æ{ÛÄiËdFÊ5Âœ¼Ä&"Ÿ©ø÷¦=}ã´ä\! ]/Œª¢ï×fÓmr—xİP¦Çh+Ş><2«¡H©µw3åN¸-ü]Ã$²¥éö±‡ãjv«r¤ïœUšp2ŒH¨ÿm¯ÊB/_|T·şI´}3Oî'iL[üŞW@w.iHìk1mo±ÅïqX©×¬À½K}ÓJ¡˜/¤‡Oú¹ÆlÄR»WÎ5ˆ*â‘ëÚˆ¿L=Y&óf,g=—¥’†Cp,İ
-ñg7ôOö…”	qÒƒBá¡úÒ“çêG0&gªz-Üé&0ûQÛŒ¾Èxî)M»#CŠ¯„ª÷Äo¬æUâ gƒ‹ÉºØŞ 
-*dTXÂVµ¾j|´´í˜béàŠOdåT´×ì„'.¶÷–Ãá²¬8ë £Å0¬q†ÁÚßlü˜<°KÃõ?²˜–;_éÜşœæSRæâr)ÿş2ñÓ>zA¬˜ø]Ì]ş**ŒqíÆ½/Çh¼ÉxŒÒ*ÙÏÙˆÃ'ğ+fáÕ_Yï‹ÉKÃVÙBõ$˜¸Œ¼•zoØ2„gŠZ¶ëZ9uÉâÌ"ĞäÁê¹H¾~Fƒş+6#†ê
-3ÊÂ×¯ç*õjßvzãH®®F$Gœ’@6J\«Ùë×r2VØwZálWO¿£Ò¤=¶.µVvüí ÉT,«ÌO•WBAoáËÀu‡ô1œç‹„¡$;ƒ¶îş¿ïíµÀeWT–;æNeT…+úõÁWÍÌŞi¸k!‚ÿ7qü¨æÖ¹ç	T_ÃxÉõÆG;Ö³B’XÖ‘¦ÆsñÔDÑôêUİß>_ğU¨Jç³×†ÅÍ³ÒqJ‘}ãİZÒ½Ù°WËj
-b B·ùFW¨ÖÖikçàÚ©¶¿ô)7¿k‰ü®*ì7¡™«:+§·¯@U-'×AEd´,;—0¾¢{Ö¾
-N{¹ 6
-w`J÷™²İ©Nr?ŞÜƒ|Ş(jöN±{íVPnäA_«é¬˜*§"R­h¿U7T uùÖ0ÅÊ\ø˜	¶ã/‚Õ,£x;](à_’ÍSQ,¤WY±‚µ Ü\r^C¦º÷üÓKÙƒ÷ôá Cj³Ê™7¾¹©¤‘$‹eXå<°™ü«ËS$ãÅ°i=x•ÍÜeİ²+ÇvNOàÛ”\Y×ª<’İÈ—ª^(
-Õ¼¯n ,Ğ Î: Ü‘)lí<Ñºs›ÚKªk¾q5Ã ñp¸770	"İBøW#¶ŒTä«_Ù˜"Dz5^Šüò¢ŒÎ;ÊFFIÉkØç+½Ü,¢½æ/{Í!xéäùÚF„8WìoRÑ˜éÃùV¾L†›¾Ü„ˆrşí±Óüˆ¿¹_ce`Ôùùßï':?{àÓE¶D^µïò…ìƒË€©‚hğñ“soÔıaŒv(²cĞ¸dfÃ51s~œr’»T?ˆücØªâCğê®7Jza97“	÷/°Â
-©ÔìÉó¢½ä5a0¾Z"£„ä+ÒXƒ?¯æŠ÷ÑP_~p0ëãˆŞ:‚C%;6C‘dWo¿±)ØÑü¥Û”£	Ø—E-Œ`}Ãº¯õ¢Jµı}%&é=ØÇZ£¬h]îR¶P\\ß #g†Êû±PŒAÚÑÈqw¬’ &²'2À4í4üÿTèa‰ÇŸNÉ.-™L¸šw†×œfŒ?£-än¯ÃSºà	¯ˆîÜ°Ér‹2Ş¢è’SÅtÈXôiøô	ŸÑBIÓEïaj#¬búõéÍ’ä>«§ÙşÎQâY¸×ùƒÈ=<—-jç?{êf¬"œĞ32/ ".'”5Ç!– w}v`SÓşh˜4‰û†³pYq$Æ$Eæ*Z‡µ8üz–­”-0…)Çü³{.áœÚê“^nï”)òLÁOùìr2ª
-Â<•aÎ"ıváJƒ2'n"[çô,Û6ŸäËeT?é±±Õp9OÍLëü«éy`˜uPZ\$Òh²à¦k¯‡Ä´­U5>–ãñ°m7M`]ÈfÚÃª½ XüØ×SãÛé"Ôßƒ˜†ª*Ô‰»á,F{íáGôÛp‚ÌŸ†`WÖD.1KÎïÿg˜4ƒ Ørß¦/§÷	ü»÷¹Ñæ‰+¢ŞnŒ?®º¼´ö9ìñ¥Ï.kĞ¾P{ŠÚ.µğq}]1eÊÀšI4{Ãª<Ê§d‹CÃ¾	eÉ§ôuÖ¶÷Á,?û:µkÀé~[‹„pÔ#ò¿ZvjbËñ
-Sv3âîZmßx&^sj’ä¿(´¨0İµƒJÔE°iÃÕ0Ml·Ëa¤LHiúÚ,NÑ DÔ‰ï˜‰K2,¢Å¹ñ€ãy«¦®¡Ùm«ôBI)ÑO(’¢ô)ı]ØÃC¯˜†.[^….ËYë5Fs?™=fÚÃ¨ÉæB‡ZéV.ù“_îZ÷ğIeÍÎĞ©´B;R9s¤d_-9¢îà4¯ìsíÀŸog5Ücc-ÜZ/ñXÉw	ßù+ypQÿ`krÓ}‹ğ/åÕ½”^7Õh]¥Æ%²>nuş/ŒVfİºËL›m(ÿjò°d³ñi\ ër—1³é£c?Aå¯$}¸ã¿?ğûq}¶L´´½¶-nŒãj}¹Uƒ(6ñïØ;MF~[iÂÙë&1ÈÀ öaéëE‹n“éã‹7¶cÖ>1UD÷PÉÄÑ’ÙãÏ ^À7+´Ÿ<×W»ºìµj‹˜Ù9bû&4ušt¹_8¼³9– PJìÅ¯‡kè§¶Ğ!Ó8éå³6[“ç#7Tãµ,¯`ÓWßş¨….÷Ã›O®©½i;5(’4[,š£¿7sŠa5 Û%S®È,Xu,ÀJÉ%ùp$ìZtæ|cb;bG8x¬§› A¡Éht	ÏÙØöü¶U•{ÉÊö;é€ÒÍD«»O´Õx«(ç½8Fß9j³‚…¶D	ÄêéËúÚ”¸@ü>Êi!å¿ì©U–9Œ‹˜‚[ ElhhÙÜ¾‡J\Ò;F%íj£Z¿á¸ïÆ»¢33‘C=Í– İ§†lØ'°)7-Ó·Ö´É>Ş±‹µ5®…­Ù]íUƒ·•‰œ3«v±œ±à;âw€•€õfU°V²hÚõ»×/SÓ<3íN1fX>	$¾Êş++{áİÓâÖÁ‹Æv±ÑîL±©J@K}šÙL]Ú©‡C˜¯ùn†Å¡´3‚aĞ…®*}©3°Ú¯§	ô+zë¯‰7kDË²tşfÊ·ÓH?C¬…j`½W+»c"Äk="UJ/â”J6ö²NşUJï*nØ®ß`29ãŒáŸp<[´¶: èô8#pÎ–„«±a;Y­šGQ¯ =LZ¬·BŠ*TfoÆáŞêêì—Ø‡Ú®öH„'h”ó"äŸ…ÂªÇçSc­tœZrcRõ­Ñò“8àŸ(niÀÕ{IOÖ¨q;Ø­ƒ«,vDÈ©*æåY~õ
-ÉF•ƒ”M`,k¸ãpåìœü›S%ò-B¥Çë•J<£j
-~œ†ç”GóóÚ_M}®Ç«è)m»ò™²k§mœ¶á¥}¾‡Ï7”ct7º»LPË´å.g«ÕR“n³#‹Ş5nxëÎŸ,8èòw¿’Ú
-”ÊİkŞÜÎh¾W)§ı{´]¬Æwíg«y4ÂKÃ4f•£˜n)ŒOp?é—¸E|18)¹)ê(á‰„n'NhYú0ïy¶Şyd¡ZŒÑ£»y%,F–ü7ìDÃW”\:ï3Ë9f.^dÍpDyOŸ§[Ê-y“ª%¤ÃB¦'ô˜H`;”¾Íjäxä—PtSñyÄ~
-ê³L¯ó#” >É\´"hZiÆÆpÿÎ}L¹™q±†~K;y¥ˆU‚rª›çØöyFœîò),Û˜3Y¶#~ü‚Ü7\ÿÖ>¬‰5Õ·½Øv~ªŒ)4]:	]]q«ZŠW÷º ±ƒ^Ğ¼ß±»‹Í
-õşxxœsò‰ß~î(‡5ş”®¿¥
-Hièy)>ñø±†µŒïÏ)º·âl_¿(¼CÚÃkş)ßïÌ–.s©fÂá
-vûÚ¤İÚû=·öá²ŒÏ7+§I›£†‹¿Ôó,²À#+‡yC÷ÓËğH€g[¼SWKU8y)1znY´ı Eõ‰Q4¢ÂØ*¥P¬lßàxÍÖ“,öµSUq¨ŸÌ*‹jx>Oc‰ùˆüÉYs³x
-cÌ–f^kÜoñíá’4Í4[ 6Ó-¾¡âQ¡FH_ôÈ_¯õ4/HSŞ%ËÛPô-=ÔŞÄ·İ3¡´0hj”ôî¡ÒÓÇñ“Á¨ŠUyñ”c=À¯m¾;œÿ±¼+]·‡kó/´h°ĞÊ­ıÒù¾.P…HPóÄR)½ŞSDy*Üg¤ê	lÒÍ…Õ/6×cìUt&š”Øãï6N³.«”(2´€˜ŒëLwî2â¿8š½kNQöê–g%GÚå%Ãt°C$dë«à”jF_hodK ¥‡¿ê£ÀÀ'i/l~˜Fy˜Ä—I$mòw1Í°R?éÄ3üqQé¯##ı`†¾J}µÏñêÍì¥ì¸¢k*±Ëœ¶õ	õUy5ºr'`İY¹äPóEÏ%÷ïí·ºô·µ×Q°İi½EÔ»as[·j1Hp E'¼::>Ø¶hÀ_¹x‹R-|ÿ¾CAëª‘]áI'x4¢c1	mle'Ôd	
-m:!hD¶ÅJ#g"Ó0y_÷V6PÄK?Ù¦ÜË¸1¼)ä ×^õ°Ù´qk»ˆ˜ğ„c¥1ÅÎ	 ”ÇU§oÔœÏH–°Ä“é+ÚMşŸĞtŒ%ë[tá¢¶!Üé|CY¥€¸ë3fšÃo¥FËu{Kcòoge-B¨µD#Ñ¸"ÿK,çŒMj¤4ı§Hvéö=deµÀÚLi§`Iodó“ìåÜs­ªã|4¡V¾üSÆøòÁÏ&ÌL%~óˆÑlãn(VkDŸOªF›…SF
-×V“^l ÕöÆì*
-Ê4GñÅIVÎ8u~–j‡Åé%®ÊüÃ…lÜ#T!‹	Ì{{‚Æ¢3 ‰ò&íaÜYË©¡o“q#š? @Êë½å†‚dì¸[ÌJ¡Jöè^ˆ,Øˆ
-¿!æ‡Âê^íl˜ïôšüŠ±ùZ:€0	mf?İ8vû Iõ¨Ù½ÉMsß7Ç Œq•d63S]òJl:!¦İ“O±<8[ßùgØ†åB´ñğ°7b1>èi•yFb¼‘¢æ¿9ïÑÎİÉ+C3í’Ö^şêl£E­¹:wp¨›Íw%ÆÖÿæ»’9)^£T4l&·jÛ
-Û†_·¶•“8Ø5{8Â”Áæ|NM_©:i¥D_Xü¼/÷ì¥:oælƒôpÂìÂ0CjƒzšõaÖ½â×ù RĞÿ?	AÜ³ëıÄì®¨,¾]p—m¸bó,‹&Ÿ]ëàÙUÜÂOÛÏ—jfK¿ğâéğx8`ZgˆÂ`Y'š`¡QY§|î9"şÒ\Òó&ÙüCÛKeÆÇËYÒ-6~jÜ{ëá 1-CïXååİ:ÈÜWöX$İŠhÍ¤¿ú¸Ó2ñOÔ¾¢ìßgÆÊëM‹“a¶.PyÀRZ5:—ùÆ4VáŞÀzV”Ûä£éF¹“Ãmmg¾ZQúˆ±kŠx>éâ>Å~tBvğvuq‚tÏÅ†Çi~¾06D+ñ^Ã¹\‘ğ"ÿí…ÆTiİœ|3ú& äuY×±•‘ÓÛûJG}ˆÒad{BsAç1OòHûqR2¥™J?6şJ>«ùÿĞC:S>Hwø}GŠÌgÈ<ù%gş×PéÛ5Æ¦ÿûÚà·m]H…FKR)UjJ×˜çtÕE(î';õW/  »„¹z'´üJ Ìé'õëØqW¨—àw8xœ3Ui4oÕ}¨Õô‘úq£<D1í‘“.ê¿Ò×±Xòçl£ÜË³gwsæƒ>
-¢€¤óX~u‡ÜïuÔW›SÑÙê*?ò¹³ºOgÈ’ä½4z’»_Ç†•òï§¦¦[­Ò´Ür6G+¦n\ò~£Ì·4¯WD:Òı6§ñqLWT/›‡Û
-ª5D¹(¥ «ˆ)ŠÄq	Uj° š]Ïùéÿ{‚ëeB}F®›Á“' ©@6ÒsbÓ¢‚gàì‘¹¨˜Äº*¢£B[³tÂ[w/H‘ZG—?íc1-6‘Ë'&a¹‹¹´àñ/•³V§ybzïÅM†›‘¿òT¬Ù¦sàÌ_ÏwLUÒıAÓH¿ÆŸ¶8QY¶ğ@…Š²„_KÂŸq-d¸Ñ ‡îÔ~Zmµ}"aĞ-‡Ø½µGÒ_W êçG®Yfş)BÚY6ş8Çšˆ~¼™dÿ¨ó0NáÌù¤Àş¿|üH,™º%1ôÁŒM’Z­]CävX~Y’xGÈ+@söÈ-á¼_\Ï!™˜S.çŒ º ïü´#‚SñQ4u'#¥¯è cCQ
-aEÄ!|ÅĞ',³I5ÜW€b§çpf.[«ä«.`ÿPË÷ÉÂ6°ğ—ÿ$İéîÈ‰L!²€k`<+‡­z‚¬€­–?’¸©˜¬H¼ôAlâïhš2!ÃÁ‰—)tÿÈ4·í;õ‰sõ 9Y†ÁzÁIY˜¢!şÉõ¸Ç¹>ÿ=³µ²h×ÀÕØı1i?È|"İÛÂŞbÔ/öM±ú­±¾¨2½F™†ıà	±{KQ.·o@4««¯
-t´¯ûĞÃÈÍm¯÷«ÙŸÒV_º³W³ûŠ<qÓŸ”›ã¤C³«]#/"t¯W…ş6®>ƒÉé#T™¥å®©à3.	ÑKÇšû@jl’sğ\¡ª´’ÃcŠv@'Î0¸
-…-œÇğõ[ø#SŸTÚ3Ê‘â \ÃêÔ©]Õ#ÉÆx°JşrÕ+_Uü.‚Õ¹¡@‚mÓ“• uºŞ‰wM–K©Œ ¬`ÎÑãgæs×h¼¤Ë¤´9ünÜwd°Nı~P'€G/±«­‰<=ä»E(ğrËÔgØz]Jöâ ¶bqĞ¾È]òà1Ó\£ôR8ƒªö9j–Ê99@ïŞÒÿË	İìÎå˜ºö«ïíÆ.Ëfr'*¦Ô×Û”JòQ#¡›v¾Í—GB›b‰Ğ3LHÆ¨âÇÏ@@x™‹¦­ƒ.}M“Ğ]”JJQÔuE,%²ç)±`é?^Î…ù¾>ÅÑ¹
-f§;#.µX7ø‹|,«š6fıÉ}¦$%Å­Jdáü'¨ÍRS¶¸<Üæ·l”˜I.°‹‰|Ë–“Ø»rÚç$¯÷TÒíÓ”çX5Á¦‰ Èù˜š§6•À„»=2S¡—Aç„…iµÖ”ht§5Š?øs”˜ğ.PH|ûÚæE$3½LL±ÜµÛÇûeEÀ­¹OÒ*kúÈLèÔCnöò7ì²d/Y¥¸"`æˆ5æY`X²Œ7Àün”ß9-<}áî
-tÁ*3¿ÔX³\ç¨lxÿW¶Ø_ò÷´½tIVf|–Q ¸‘‹»½5Ãåş	dL‰åÆ·×NÉäÚROÜ™f]"›’4®QÊM ŞPôXVN?ÒÀhãàô“Ò°{[¥õ¯ó}ÍHæâT:†’ÎkTNs7@Ñ¿Å1¡«/©VowXöÌæ´)š‰äÆ)İW—}Ë5Ÿ²´k½U¬WWT Ï1íB/g¾ÄX%ÂÌ®:pìù_ £”ß•á)zı?†@T‚,?Á;9±æœæs{‹U¹5õŠíe·EşÕ¼uïÄî$Rˆ‚ëæ¿Šàª|bÎ¢‚°wŞfÃC¬¤RòÆÏCß"ˆtEAteÏ«,àÒÁÓmà²åÂ|PÔUÓ‰KÂø†ÿußÃ¨0UÌ–ì»tîô»È‰i
-UPÓÅ±
-¨©ˆô‡|ô‚×LF8ï•ğç·öÔ”ºÎî¨™®õI~Aøé&“•¡tŠG 9×Ï_x=q>ÇÍ‡ä^¯/FnA*´¶„ŒMë!AÌÙWÚŠCqË=ÕõÍÌ¬€bUÂ¢<«ÚJ³8š~«ÀŞŠß¿sêHK_|
-İ_—£™ÛW =µ´–'KÈDèâµ¡”\¹xëìˆÊö
-´÷œĞ{”/éÊEğOüÃwòª:Í –w[È%U])Ö¡Kr‹Œ¯]ÀAòµ“t•XN 9-Â¡^€1ºI¤¬ÆÕÄy<H›ôàejIÕêğÁ‘ˆßÑqxI&	Ï‰´Œî:q%ì VípFYhéÉ´DÏëÚ¦ŒèÜT£ƒ­@-{¬yäb¸<Âªu»j‚µWr	¾Ÿ¯Xü¢­ˆ7Ø™\0Í\k4iÎ‚ğu&D‡[¶â-Õ4Hé-.üÕrP°A Ú¸Ë¾Ğ†”
-7´v%•¿ÿu#Ú9/i‹M²¦”İtJ)Õ£·1<G°O”N´5FDè–p&fñÍ:Q“İx1³	§\a‡¨w%ºO(Ù¼œeT
-¦ã¬ÈAÚ¬PG*Û±¢ã3„B¨ƒúëÈÄsÁ·d!K›uöøV>êiV‡yÁ€«^ZïŸ·éÉº–&}W+	Ë§D%¼¹*Œt AÂŸZå’”:2¿*e0‰ÂüŒVúºaåcx{âÍX»·ÆD½¦]—¹,§(•1§•KVŸ´Ç&ÖÎ|¡Ø°\«øÓ°»æñØ l<v’†ÂóØá–â#f8ßÇêœ$Ş0oŠ£X^Œ5Ğ©ÌJKFO‘\s4”|×‚îägÚ¸ê§hi	ïİ_ckDÉ:ÜG~^o>yÂ/uĞ:÷‚˜^úuNÒKGËÁ‡¯|7Ğ§®¿Í÷øìÜ”r¦bTƒ’{²«’Z»ŞU@¼ ½×È«“
-,zdYÎ! \½ á·X:²¡¾×®oLŠÅäV·J[øfQ{¯«İ½®úşÚx9’eFÉA‚¬™Ù	¢È4H2n{…âò–az4de¤XTÅ9¶÷)’È„+Õe¹¤`$ŸÊ Œ.	c¾¦ê›¾¢?ÿ¨áÉÎ4‹Í³A6*F¼æô˜÷èü­[B)O:•›ø„'Ø£šáøœèd4Ç6Ş¹¢¨Â¥XU‹âd˜~61œkûÅ«‡uÙf×ú/ó~Få’ !Ë¹áƒypµ]0Ç|Şk³Ş¶–l|Ãõû»óÒ‘Qö†©7[vÅh€$Ÿd%£b=kÏH D‚¶ f˜FŞ÷=3w×Ji‡À'h5Rá4(²WO -sq^9paıNŸÒø·“¡Åä”Möíä\:ú“ªqädÍ‚„Mó°]ÙIªg€öB€Ğt¿h=ßó5+šÊoÖÎÍÇçûD›2P‘Yh÷Cå%?Ÿ'ˆªâñ>¯?zDâEÙ–à±o(ÊQ†¶,hÇ¢›¾Û~®Å½›æŞİâ½÷şI^µ[¸€¬Mìºº.g.öü¾)Cš•Óü‡¿¾9§ÀNÄîş•)UJn­Ş¯ƒß.IQß6Zä›á1ĞÊ	·Ÿ~Ê¢ÿç%»xrã¨::×—As{ùp&ß”Š[úR_ğEB;É"¼ï|Ô‚DÍ4¥R~Ğ	¾²
-™G·…eXyW³ˆš„}4ŠÇIG,‰@æ_' s3z€÷9dÁı€É'O>¯L•Œ '9>ïOÊ¸>kBé¼!Ëóøş`fåe×İ+× , Œ^Ù]¹œÔÃnyâûãĞÒ¹¯x±µj~†»İşAòÔ9ØEÌÆ¹i/Ë¶ş¸Ê
-UÿN©2yîâ|bDõå8J£İÃı¾ZY”,¼tÄ`¸+Ì'Ï`HhâÒO²@ß×d–æïÒ_‰J=ò—–…B",@Û7ˆ–İg•Ô-’ú ÉïË¾½ ÆEòã6öûÊ¶àeIsäxõşÕ&¤”aÉVÒ¥FDæ‘
-Çì²áeRˆƒı8½ sW#Äˆ9`ª87t‡œ^IiĞŠÑg¹ófœ|Äß§85áèá6$†Ï'VW"şÑ–=Zı“ÿÌ	½ø¯Š˜üØòôùÈÙl–Ş`¶RŸmZAG£:¤KU)İÀÀû_Úµ@ØÖ?Íô{§Ğzx:²AœÙ' ºË¥a—§rÎqšW%œÆ
-¥ŞC»MÕõô\c*¶º£k›BRuıF„{<9ùEªÎÚı­ËKŸT–a<%p.‚~Õß¾—]DLª#,%¬°.Ö¥²ÒWNGsšS
-ë),>H®ö§%hŠàPX'8ù‰OËZWQ¿Ñ8Vh £ÃVu†=ÉÂîQâ¯¸|±×ùDşóØJDVP=š	V·:naáÂp)¤qÂV÷)Á‡øÙ_
-ÿ.©’€«z‰–¶«<ì£U+“,õ
-İwÎI‰#ò¡qØÑHë\§ß!ı ƒh{+ĞsÃU‹ÚOoùŠ~ƒwPw)ÑP}yo}xHÿ-ºá$¥÷nö†åe}wğXY–S3ûW[yRø(ôn”Ô±/£îÉò{F]¢fÏ$kö¢_Ö™F6m/eDV„zM&@õûí¹^†5f	«™şq3ÌÔôâZ˜:Š¼êOzS*-|¾ÚŠaYc IÛswóc#È¼åG½ûY‘ÆÔ.Ì?¯ô›¶åÅ	Y_˜}ĞÁ`¤#±$ï¦o»ä¥€EéWl¾—¹T=Èÿ¿©˜ƒÉW>Á¿¢h§’Yğ©¸Ég æu½"¹R[öpÒ2«İ ¿Şıßjb¬®Ú/Qy‡:;Ö^//É^ã8z Xä–°?¯ó›»ÀsIhÓ*œwÃ{íyzó @šOšf'ë7w~„Õ¤fJwë1w‘m†AğçÀê}ae2±3½´y‘…Z¸:TÚºíI	@dzàé“÷°	sÀi1@ĞØƒ¡¡ä…“Š^ê™F©çŒ€®öÚiº¿õóÇ×0÷Ú|âA!y¹”áJPï°äh5Kè¤)©ş.{µhõíy[QÉÅFÓ¯~–ä«r:8-µSƒÈ«^ß„JFSÍ.Tõj)ôÎ«Å˜,ö÷Û·îÖb%@º™‡Æà@Š}ÁèŒƒg#Ù–âVÏOıÀ”2»äJãfâ’‹3lağg':Ld¦ğÎ3|è½'™à*7·Ìcİ¢ê¹ÚXo(òã•š¨è ç¸gçî¯œ8qhq›ÿ
-Öxt9V¦¾+Ê¢°¸7hzA*"Ññ6ìë|N¹!RÈ7¦›£Á÷áb±ÿV½²~ûÀ¿ıS%ª›÷LBë ïD$³PÈu¿$äçˆĞinb2¬­ÊÇÅª	›
-»]HB”Âñpzº2Äú¦i¹0
-nY~Í[5H–ÉÍˆâõŒÅĞ}90v0x^]xRóuìñtF,d}·)^Q4ò#MMÊ‘Ñ‰%wÆù+ŸÖfI\¡E,pk]˜ÍFB	±4ëğóí™7)â;{TğhY ¸ºjÁºFî Û‚”9ïSE6Áq^ÏBHˆ;-(õÄg9¿¬"?¼v K@/ëPÄ-–¡„¶§¦FºÔØÊ'äâ3’ò…1D±©v¤Oİöj…PL2$ÎşÚ.çPB	Ô°–#¬³-¿ûœ*Û­»pcIˆf¯6?¶Œ‹ØîºÙãÂŸLdò6OEÍf»Mº€ûRe—µlƒ8"y¡LÔÔ€%*omtjÖ\Yä1.v]ÕHŒUëLï!êd¢WŸ}ğâÜo`n$B”Nıˆ”q×àÈøŞ>“'ç¡6«¨`khf{<k6¼£øúa•k‡ËÃÒï)v{Œƒ?wùlš,¬Z¯„´‹‚?ıd§-Ÿh~ÈÓh8	<Í\”XÕÀÄÔ“U—Ïzún'ğ#’À¿Ï¢H£$ççQÃˆ\)Ö¿§´1ûOî20BšÙr*ÂÑÓ(‹î•KÊ›©­ÿvœ}+ˆĞ‚?ıàâoQxÓ¿¯µPé”!şE…w½mKÜJğwë'™óJ¾'®ÂÍG´ÒzêÚ¸ñ rãø4Í†{/Š„%ˆ¼}Òú>«c.' ¶ßWˆÖ<P¯nHC„|ZcHÆ6ÙrÈ£gNt& `Õœ?vËn‘5Wk)oÈ.ß”Îò÷S#)dÂ¬Mù;ÒdZcºÏø6}Ùî~Î'ü#m@ãñèR„ŠÔSjY €ôĞÃÂóÆHErm#~¥|Emî<ÃÃxğ± /œw¯S.:¬I‡½¼‹®À‡íuãùD®»(ÖØÜ"ÿ7èvİ§ºßEÆ•áÂûŠ{üòRYşONlñ4¦‹\ØI;Â†ßÓ/é İ†£¾GŠÙšÆ»r½ø 8L”$k"/hÁ o-½¿†wÅ¬òŞÓòI{¤ß:wˆê0‰®¡Ò“¡®|E\ºğıÊ8^Ê`Á$œ½j&Ô”©Z¨âºñxïÕõ~j¯·G
-Âg0^%	&"!~Ì`"‘•GçÒvã¿3oã;ŠIòyÓ¦yHrå«'»™ W·9À5%ãÇÀ˜·•À›áº£;g:-»Í–®½~ƒµn‡ßş=Ìë úlÀ»…bQ$<ìß3!DylNf†_R5Ìõ¢Q¥äÖ_T¸ñ‰ªz ŞÄ!¶)g5 +:Í€Š§ux/xƒ ¾vÇÔ]¥W+÷lõR>œ;”®_şú­?;q$(7d½CoapZ‰'ûä¨Ñ,gjEÃOÆ{½ÈaÙS/î-°Ua !DFzbgñìu+…µZÿÈñ×3b¾ãü‰Ì² kWÊ¸IøvJ`2}„)¾b~‚ 6Y0˜†{ÓÖ–(kkœ~©W,ÀÀ¹T¢JÎ8Å±k0±«zKËa’”ÑË“ÈpĞÈ51Õƒ¢£²»±ï[ÿ>¼=¼jRq{Z2ÿ.ÑÃ‹Ÿˆ2t›RØ¹l?2ŠúOŠØß*˜_€Q÷¦ßÕÂ| ÎiV¯öç:İ[EÉcR½‚ûëÀDãöš 
-ªA<wîÿ½ÍˆGìD’÷ò^%›Õïñ+,ÏäØÖø/èD3%n*bæ(€£Õt¨Åoİ/ø~™qãM¸¬¥îe=o[û"„Íü	£ó×bŒdÆdhüYªm/:ÔÆã$J
-c İ!M¤ş îhz~öwë™¡¾vØŞúMË¢ÚŠuµ#¾îI¢ÅÓû®d9xtŠœvˆôK¤ìËı*Ç2ûëC´$”LıÍfp³@Üzû[ÆQşÿ-rü¿ı Ò\0ÙÍ¢d:rìÉGÂá„‹×;ä_¸½0Cø{¿~Ğš¯qWÚ—JEbì\ÏbXÍğN³Å}<:Å^,–|Œ‚İ½Yw¼Â!äg+ê¹“äC^Ø¹\Ätßš'2,bP!š>Ycá…q–«ÙÏV¬Uµt’×@mÌî÷ ,Àë"»±é£B1nNÕùĞ56×|¦Ê¦«Ah,ìz•cG ³’cš'Wî¢Kv23ÀÙ )Õæ$I¯¨-~_îœ¯“;8“÷¡b´¬ëç6-Œ×3xaé8Š§6&«<í™îĞ´ÛŸ™Äf/7¨§åæak?Å…šuB=Äö|J°>ÅMIÉ\[I 	M“ûÇI>_­m$béY[sD6 X>{E·¢]ºF‰y2\Ò¢Úg‘T4JWø¨ú™g*ÍĞõ'!8Ò”!Znh‰ê­HD¦Š5aÈ‚ug¥]Îİúu€¢Èå]¨QëÑ´<@Î£/Ö®«Wİ_ˆ.Mi™MçäºC:‘	—¶ò§»ššïhF¾M*¨ßSø©	ú¥…Oé¼v˜B²K.%Kâto^¨`~³¢ µù’Ê‡ÓWÄd×éåU~2<™BzéKFZ¿¡ÿFù:š…MI}õy1í %§éĞÇÊ7MqH«¾ÿ<38 s‰‡ıºÓŒ„Ÿ÷ãs4SÄ3¯'è•o,Fy¹¦ÇeY†••<Å^äŒUkÉüïtøÚø~ºL¯lõÎÚ–‰nÆY»s&'Å:Y2øèÄÜ~‘1… ú ŒÄÔi‡	¡l†;¾@Ëf”÷6µ2¹^8û«àäœ÷ÜBÅMï	®a·ÕJîªnkA'qUS†ÕáÃ9ùò+è

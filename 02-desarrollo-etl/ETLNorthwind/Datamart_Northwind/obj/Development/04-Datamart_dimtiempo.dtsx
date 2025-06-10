@@ -1,0 +1,2073 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/30/2025 4:02:28 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-772JNFH"
+  DTS:CreatorName="DESKTOP-772JNFH\Bruno"
+  DTS:DTSID="{286B54E7-838D-4137-858E-6FC52FDF4DAC}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="2058"
+  DTS:ObjectName="04-Datamart_dimtiempo"
+  DTS:PackageType="5"
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{979313A5-FB4D-43AD-ABC5-365CD1BFD2F8}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost,1450.datamart_northwind.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{4F568D21-6461-45AA-946A-8367BF84FEF9}"
+      DTS:ObjectName="localhost,1450.datamart_northwind.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost,1450;User ID=sa;Initial Catalog=datamart_northwind;Provider=MSOLEDBSQL.1;Application Name=SSIS-04-Datamart_dimtiempo-{4F568D21-6461-45AA-946A-8367BF84FEF9}localhost,1450.datamart_northwind.sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbnRWTxIt6kyg4Q8YGpNkdgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABm+kwrruAKSIya14LUs5chijS1at+qNoNmMfXbw5X7+wAAAAAOgAAAAAIAACAAAAAStZqXjnMEgZTw0Q2a13KGOcHX9TbtQ9V2SBHhnkMlQiAAAACNQhCqDWJBSM2HUAkyAt7bU8R0CbIgAmsXPzrLAt4czUAAAACY7o4D5o0fvPON0Dd3pLH5hLqmSBMxAFl7lLTRY19e+ySi71OGnVU+t0ZksSfNYt0u8ri5NAa2eaXMgW1DEQRQ</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost,1450.datamart_northwind.sa 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A6C51FBA-850D-463F-8610-84B288315499}"
+      DTS:ObjectName="localhost,1450.datamart_northwind.sa 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost,1450;User ID=sa;Initial Catalog=datamart_northwind;Provider=MSOLEDBSQL.1;Application Name=SSIS-04-Datamart_dimtiempo-{A6C51FBA-850D-463F-8610-84B288315499}localhost,1450.datamart_northwind.sa 1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbnRWTxIt6kyg4Q8YGpNkdgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACoVyU52BxcAIGlui4SyFM3V9XQy0AGEDu9SZZWUR65hwAAAAAOgAAAAAIAACAAAAB6i4Ua7uB6SnxgYKIl9lK6rDIbBzsakc1wsKxhriJf3CAAAAAaCXrtqireONfFcnGPdR6Na6ikEsZ4dCEdCp14ETB3q0AAAABfJjGs2EfydySgb2QwjwNVio3kc/c+vCroysUmfTfHEZNzr50ThbCdDNoVdQlC4IK619Mo3/U3scko6FPllsFw</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C4C28507-F225-4D01-9C1D-2538C52F9FB8}"
+      DTS:ObjectName="localhost,1450.stage_northwind.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost,1450;User ID=sa;Initial Catalog=stage_northwind;Provider=MSOLEDBSQL.1;Application Name=SSIS-04-Datamart_dimtiempo-{C4C28507-F225-4D01-9C1D-2538C52F9FB8}localhost,1450.stage_northwind.sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbnRWTxIt6kyg4Q8YGpNkdgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA0XzQsPg5CaXZafJTmEXAsy7IS7HE24w/92u9Hn+R1SwAAAAAOgAAAAAIAACAAAAAqYkk9C/tJRTbt3InVCs78cE3F8aRSYxmfWVMT2r7jECAAAABiKpPBXFkECBz/SilYNF83kQXs7cq/ozPHpTLWFx0h/kAAAADbtacdCBimdJ471+8CT5F0B5n0OaQuQ/YfgMzfD2iWv2Ibb3ydOU4LCcMw8o2gpMRoR7mlgZI2W1e2fBhHYF/z</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.datamart_northwind]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{378B944C-D0E0-4CF3-B19A-4771A3D387B9}"
+      DTS:ObjectName="LocalHost.datamart_northwind">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=datamart_northwind;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-04-Datamart_dimtiempo-{378B944C-D0E0-4CF3-B19A-4771A3D387B9}LocalHost.datamart_northwind;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.stage_northwind]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9D24C5AD-EB83-478E-A906-7E5B9585CB93}"
+      DTS:ObjectName="LocalHost.stage_northwind">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=stage_northwind;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-04-Datamart_dimtiempo-{9D24C5AD-EB83-478E-A906-7E5B9585CB93}LocalHost.stage_northwind;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{B1671F95-295D-427B-8473-B34BD8E44C6F}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\Conditional Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Conditional Split"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input].Columns[timepo_fechaActualDIMTIEMPO]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="timepo_fechaActualDIMTIEMPO"
+                      lineageId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Outputs[Merge Join Output].Columns[timepo_fechaActualDIMTIEMPO]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Conditional Split.Outputs[NUEVOS_TIEMPOS]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="NUEVOS_TIEMPOS"
+                  synchronousInputId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">[ISNULL](#{Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Outputs[Merge Join Output].Columns[timepo_fechaActualDIMTIEMPO]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">ISNULL(timepo_fechaActualDIMTIEMPO)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\DATAMART_TIEMPO"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="DATAMART_TIEMPO"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[dim_tiempo]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\DATAMART_TIEMPO.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost,1450.datamart_northwind.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.datamart_northwind.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].Columns[tiempo_SKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].ExternalColumns[tiempo_SKey]"
+                      lineageId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].Columns[tiempo_SKey]"
+                      name="tiempo_SKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].Columns[timepo_fechaActual]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].ExternalColumns[timepo_fechaActual]"
+                      lineageId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].Columns[timepo_fechaActual]"
+                      name="timepo_fechaActual"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].Columns[tiempo_anio]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].ExternalColumns[tiempo_anio]"
+                      lineageId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].Columns[tiempo_anio]"
+                      name="tiempo_anio"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].Columns[tiempo_trimestre]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].ExternalColumns[tiempo_trimestre]"
+                      lineageId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].Columns[tiempo_trimestre]"
+                      name="tiempo_trimestre"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].Columns[tiempo_mes]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].ExternalColumns[tiempo_mes]"
+                      lineageId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].Columns[tiempo_mes]"
+                      name="tiempo_mes"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].Columns[tiempo_semana]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].ExternalColumns[tiempo_semana]"
+                      lineageId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].Columns[tiempo_semana]"
+                      name="tiempo_semana"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].Columns[tiempo_diadeanio]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].ExternalColumns[tiempo_diadeanio]"
+                      lineageId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].Columns[tiempo_diadeanio]"
+                      name="tiempo_diadeanio"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].Columns[tiempo_diademes]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].ExternalColumns[tiempo_diademes]"
+                      lineageId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].Columns[tiempo_diademes]"
+                      name="tiempo_diademes"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].Columns[timepo_diasemana]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].ExternalColumns[timepo_diasemana]"
+                      lineageId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].Columns[timepo_diasemana]"
+                      name="timepo_diasemana"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].ExternalColumns[tiempo_SKey]"
+                      dataType="i4"
+                      name="tiempo_SKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].ExternalColumns[timepo_fechaActual]"
+                      dataType="dbTimeStamp"
+                      name="timepo_fechaActual" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].ExternalColumns[tiempo_anio]"
+                      dataType="i4"
+                      name="tiempo_anio" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].ExternalColumns[tiempo_trimestre]"
+                      dataType="i4"
+                      name="tiempo_trimestre" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].ExternalColumns[tiempo_mes]"
+                      dataType="i4"
+                      name="tiempo_mes" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].ExternalColumns[tiempo_semana]"
+                      dataType="i4"
+                      name="tiempo_semana" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].ExternalColumns[tiempo_diadeanio]"
+                      dataType="i4"
+                      name="tiempo_diadeanio" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].ExternalColumns[tiempo_diademes]"
+                      dataType="i4"
+                      name="tiempo_diademes" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].ExternalColumns[timepo_diasemana]"
+                      dataType="i4"
+                      name="timepo_diasemana" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Error Output].Columns[tiempo_SKey]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Error Output].Columns[tiempo_SKey]"
+                      name="tiempo_SKey" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Error Output].Columns[timepo_fechaActual]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Error Output].Columns[timepo_fechaActual]"
+                      name="timepo_fechaActual" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Error Output].Columns[tiempo_anio]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Error Output].Columns[tiempo_anio]"
+                      name="tiempo_anio" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Error Output].Columns[tiempo_trimestre]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Error Output].Columns[tiempo_trimestre]"
+                      name="tiempo_trimestre" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Error Output].Columns[tiempo_mes]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Error Output].Columns[tiempo_mes]"
+                      name="tiempo_mes" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Error Output].Columns[tiempo_semana]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Error Output].Columns[tiempo_semana]"
+                      name="tiempo_semana" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Error Output].Columns[tiempo_diadeanio]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Error Output].Columns[tiempo_diadeanio]"
+                      name="tiempo_diadeanio" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Error Output].Columns[tiempo_diademes]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Error Output].Columns[tiempo_diademes]"
+                      name="tiempo_diademes" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Error Output].Columns[timepo_diasemana]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Error Output].Columns[timepo_diasemana]"
+                      name="timepo_diasemana" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="LEFT JOIN STAGE TIEMPO"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Inputs[Merge Join Left Input].Columns[Tiempo_FechaActual]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Tiempo_FechaActual"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Data Flow Task\ORDENAR STAGE TIEMPO.Outputs[Sort Output].Columns[Tiempo_FechaActual]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Inputs[Merge Join Left Input].Columns[Tiempo_Anio]"
+                      cachedDataType="i4"
+                      cachedName="Tiempo_Anio"
+                      lineageId="Package\Data Flow Task\ORDENAR STAGE TIEMPO.Outputs[Sort Output].Columns[Tiempo_Anio]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Inputs[Merge Join Left Input].Columns[Tiempo_Trimestre]"
+                      cachedDataType="i4"
+                      cachedName="Tiempo_Trimestre"
+                      lineageId="Package\Data Flow Task\ORDENAR STAGE TIEMPO.Outputs[Sort Output].Columns[Tiempo_Trimestre]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Inputs[Merge Join Left Input].Columns[Tiempo_Mes]"
+                      cachedDataType="i4"
+                      cachedName="Tiempo_Mes"
+                      lineageId="Package\Data Flow Task\ORDENAR STAGE TIEMPO.Outputs[Sort Output].Columns[Tiempo_Mes]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Inputs[Merge Join Left Input].Columns[Tiempo_Semana]"
+                      cachedDataType="i4"
+                      cachedName="Tiempo_Semana"
+                      lineageId="Package\Data Flow Task\ORDENAR STAGE TIEMPO.Outputs[Sort Output].Columns[Tiempo_Semana]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Inputs[Merge Join Left Input].Columns[Tiempo_DiaDeAnio]"
+                      cachedDataType="i4"
+                      cachedName="Tiempo_DiaDeAnio"
+                      lineageId="Package\Data Flow Task\ORDENAR STAGE TIEMPO.Outputs[Sort Output].Columns[Tiempo_DiaDeAnio]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Inputs[Merge Join Left Input].Columns[Tiempo_DiaDeMes]"
+                      cachedDataType="i4"
+                      cachedName="Tiempo_DiaDeMes"
+                      lineageId="Package\Data Flow Task\ORDENAR STAGE TIEMPO.Outputs[Sort Output].Columns[Tiempo_DiaDeMes]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Inputs[Merge Join Left Input].Columns[Tiempo_DiaDeSemana]"
+                      cachedDataType="i4"
+                      cachedName="Tiempo_DiaDeSemana"
+                      lineageId="Package\Data Flow Task\ORDENAR STAGE TIEMPO.Outputs[Sort Output].Columns[Tiempo_DiaDeSemana]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Inputs[Merge Join Right Input].Columns[timepo_fechaActual]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="timepo_fechaActual"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Data Flow Task\ORDENAR DATAMART TIEMPO.Outputs[Sort Output].Columns[timepo_fechaActual]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Inputs[Merge Join Right Input].Columns[tiempo_anio]"
+                      cachedDataType="i4"
+                      cachedName="tiempo_anio"
+                      lineageId="Package\Data Flow Task\ORDENAR DATAMART TIEMPO.Outputs[Sort Output].Columns[tiempo_anio]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Inputs[Merge Join Right Input].Columns[tiempo_trimestre]"
+                      cachedDataType="i4"
+                      cachedName="tiempo_trimestre"
+                      lineageId="Package\Data Flow Task\ORDENAR DATAMART TIEMPO.Outputs[Sort Output].Columns[tiempo_trimestre]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Inputs[Merge Join Right Input].Columns[tiempo_mes]"
+                      cachedDataType="i4"
+                      cachedName="tiempo_mes"
+                      lineageId="Package\Data Flow Task\ORDENAR DATAMART TIEMPO.Outputs[Sort Output].Columns[tiempo_mes]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Inputs[Merge Join Right Input].Columns[tiempo_semana]"
+                      cachedDataType="i4"
+                      cachedName="tiempo_semana"
+                      lineageId="Package\Data Flow Task\ORDENAR DATAMART TIEMPO.Outputs[Sort Output].Columns[tiempo_semana]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Inputs[Merge Join Right Input].Columns[tiempo_diadeanio]"
+                      cachedDataType="i4"
+                      cachedName="tiempo_diadeanio"
+                      lineageId="Package\Data Flow Task\ORDENAR DATAMART TIEMPO.Outputs[Sort Output].Columns[tiempo_diadeanio]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Inputs[Merge Join Right Input].Columns[tiempo_diademes]"
+                      cachedDataType="i4"
+                      cachedName="tiempo_diademes"
+                      lineageId="Package\Data Flow Task\ORDENAR DATAMART TIEMPO.Outputs[Sort Output].Columns[tiempo_diademes]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Inputs[Merge Join Right Input].Columns[timepo_diasemana]"
+                      cachedDataType="i4"
+                      cachedName="timepo_diasemana"
+                      lineageId="Package\Data Flow Task\ORDENAR DATAMART TIEMPO.Outputs[Sort Output].Columns[timepo_diasemana]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Outputs[Merge Join Output]"
+                  isSorted="true"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Outputs[Merge Join Output].Columns[Tiempo_FechaActual]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Outputs[Merge Join Output].Columns[Tiempo_FechaActual]"
+                      name="Tiempo_FechaActual"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Inputs[Merge Join Left Input].Columns[Tiempo_FechaActual]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Outputs[Merge Join Output].Columns[Tiempo_Anio]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Outputs[Merge Join Output].Columns[Tiempo_Anio]"
+                      name="Tiempo_Anio">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Inputs[Merge Join Left Input].Columns[Tiempo_Anio]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Outputs[Merge Join Output].Columns[Tiempo_Trimestre]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Outputs[Merge Join Output].Columns[Tiempo_Trimestre]"
+                      name="Tiempo_Trimestre">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Inputs[Merge Join Left Input].Columns[Tiempo_Trimestre]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Outputs[Merge Join Output].Columns[Tiempo_Mes]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Outputs[Merge Join Output].Columns[Tiempo_Mes]"
+                      name="Tiempo_Mes">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Inputs[Merge Join Left Input].Columns[Tiempo_Mes]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Outputs[Merge Join Output].Columns[Tiempo_Semana]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Outputs[Merge Join Output].Columns[Tiempo_Semana]"
+                      name="Tiempo_Semana">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Inputs[Merge Join Left Input].Columns[Tiempo_Semana]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Outputs[Merge Join Output].Columns[Tiempo_DiaDeAnio]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Outputs[Merge Join Output].Columns[Tiempo_DiaDeAnio]"
+                      name="Tiempo_DiaDeAnio">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Inputs[Merge Join Left Input].Columns[Tiempo_DiaDeAnio]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Outputs[Merge Join Output].Columns[Tiempo_DiaDeMes]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Outputs[Merge Join Output].Columns[Tiempo_DiaDeMes]"
+                      name="Tiempo_DiaDeMes">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Inputs[Merge Join Left Input].Columns[Tiempo_DiaDeMes]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Outputs[Merge Join Output].Columns[Tiempo_DiaDeSemana]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Outputs[Merge Join Output].Columns[Tiempo_DiaDeSemana]"
+                      name="Tiempo_DiaDeSemana">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Inputs[Merge Join Left Input].Columns[Tiempo_DiaDeSemana]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Outputs[Merge Join Output].Columns[timepo_fechaActualDIMTIEMPO]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Outputs[Merge Join Output].Columns[timepo_fechaActualDIMTIEMPO]"
+                      name="timepo_fechaActualDIMTIEMPO">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Inputs[Merge Join Right Input].Columns[timepo_fechaActual]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Outputs[Merge Join Output].Columns[tiempo_anioDIMTIEMPO]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Outputs[Merge Join Output].Columns[tiempo_anioDIMTIEMPO]"
+                      name="tiempo_anioDIMTIEMPO">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Inputs[Merge Join Right Input].Columns[tiempo_anio]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Outputs[Merge Join Output].Columns[tiempo_trimestreDIMTIEMPO]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Outputs[Merge Join Output].Columns[tiempo_trimestreDIMTIEMPO]"
+                      name="tiempo_trimestreDIMTIEMPO">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Inputs[Merge Join Right Input].Columns[tiempo_trimestre]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Outputs[Merge Join Output].Columns[tiempo_mesDIMTIEMPO]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Outputs[Merge Join Output].Columns[tiempo_mesDIMTIEMPO]"
+                      name="tiempo_mesDIMTIEMPO">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Inputs[Merge Join Right Input].Columns[tiempo_mes]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Outputs[Merge Join Output].Columns[tiempo_semanaDIMTIEMPO]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Outputs[Merge Join Output].Columns[tiempo_semanaDIMTIEMPO]"
+                      name="tiempo_semanaDIMTIEMPO">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Inputs[Merge Join Right Input].Columns[tiempo_semana]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Outputs[Merge Join Output].Columns[tiempo_diadeanioDIMTIEMPO]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Outputs[Merge Join Output].Columns[tiempo_diadeanioDIMTIEMPO]"
+                      name="tiempo_diadeanioDIMTIEMPO">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Inputs[Merge Join Right Input].Columns[tiempo_diadeanio]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Outputs[Merge Join Output].Columns[tiempo_diademesDIMTIEMPO]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Outputs[Merge Join Output].Columns[tiempo_diademesDIMTIEMPO]"
+                      name="tiempo_diademesDIMTIEMPO">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Inputs[Merge Join Right Input].Columns[tiempo_diademes]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Outputs[Merge Join Output].Columns[timepo_diasemanaDIMTIEMPO]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Outputs[Merge Join Output].Columns[timepo_diasemanaDIMTIEMPO]"
+                      name="timepo_diasemanaDIMTIEMPO">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Inputs[Merge Join Right Input].Columns[timepo_diasemana]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[dim_tiempo]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost,1450.datamart_northwind.sa 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.datamart_northwind.sa 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Tiempo_Anio]"
+                      cachedDataType="i4"
+                      cachedName="Tiempo_Anio"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tiempo_anio]"
+                      lineageId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Outputs[Merge Join Output].Columns[Tiempo_Anio]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Tiempo_Trimestre]"
+                      cachedDataType="i4"
+                      cachedName="Tiempo_Trimestre"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tiempo_trimestre]"
+                      lineageId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Outputs[Merge Join Output].Columns[Tiempo_Trimestre]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Tiempo_Mes]"
+                      cachedDataType="i4"
+                      cachedName="Tiempo_Mes"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tiempo_mes]"
+                      lineageId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Outputs[Merge Join Output].Columns[Tiempo_Mes]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Tiempo_Semana]"
+                      cachedDataType="i4"
+                      cachedName="Tiempo_Semana"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tiempo_semana]"
+                      lineageId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Outputs[Merge Join Output].Columns[Tiempo_Semana]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Tiempo_DiaDeAnio]"
+                      cachedDataType="i4"
+                      cachedName="Tiempo_DiaDeAnio"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tiempo_diadeanio]"
+                      lineageId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Outputs[Merge Join Output].Columns[Tiempo_DiaDeAnio]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Tiempo_DiaDeMes]"
+                      cachedDataType="i4"
+                      cachedName="Tiempo_DiaDeMes"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tiempo_diademes]"
+                      lineageId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Outputs[Merge Join Output].Columns[Tiempo_DiaDeMes]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Tiempo_FechaActual]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Tiempo_FechaActual"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[timepo_fechaActual]"
+                      lineageId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Outputs[Merge Join Output].Columns[Tiempo_FechaActual]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Tiempo_DiaDeSemana]"
+                      cachedDataType="i4"
+                      cachedName="Tiempo_DiaDeSemana"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[timepo_diasemana]"
+                      lineageId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Outputs[Merge Join Output].Columns[Tiempo_DiaDeSemana]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tiempo_SKey]"
+                      dataType="i4"
+                      name="tiempo_SKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[timepo_fechaActual]"
+                      dataType="dbTimeStamp"
+                      name="timepo_fechaActual" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tiempo_anio]"
+                      dataType="i4"
+                      name="tiempo_anio" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tiempo_trimestre]"
+                      dataType="i4"
+                      name="tiempo_trimestre" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tiempo_mes]"
+                      dataType="i4"
+                      name="tiempo_mes" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tiempo_semana]"
+                      dataType="i4"
+                      name="tiempo_semana" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tiempo_diadeanio]"
+                      dataType="i4"
+                      name="tiempo_diadeanio" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tiempo_diademes]"
+                      dataType="i4"
+                      name="tiempo_diademes" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[timepo_diasemana]"
+                      dataType="i4"
+                      name="timepo_diasemana" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\ORDENAR DATAMART TIEMPO"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="ORDENAR DATAMART TIEMPO"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\ORDENAR DATAMART TIEMPO.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\ORDENAR DATAMART TIEMPO.Inputs[Sort Input].Columns[tiempo_SKey]"
+                      cachedDataType="i4"
+                      cachedName="tiempo_SKey"
+                      lineageId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].Columns[tiempo_SKey]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\ORDENAR DATAMART TIEMPO.Inputs[Sort Input].Columns[timepo_fechaActual]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="timepo_fechaActual"
+                      lineageId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].Columns[timepo_fechaActual]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\ORDENAR DATAMART TIEMPO.Inputs[Sort Input].Columns[tiempo_anio]"
+                      cachedDataType="i4"
+                      cachedName="tiempo_anio"
+                      lineageId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].Columns[tiempo_anio]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\ORDENAR DATAMART TIEMPO.Inputs[Sort Input].Columns[tiempo_trimestre]"
+                      cachedDataType="i4"
+                      cachedName="tiempo_trimestre"
+                      lineageId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].Columns[tiempo_trimestre]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\ORDENAR DATAMART TIEMPO.Inputs[Sort Input].Columns[tiempo_mes]"
+                      cachedDataType="i4"
+                      cachedName="tiempo_mes"
+                      lineageId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].Columns[tiempo_mes]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\ORDENAR DATAMART TIEMPO.Inputs[Sort Input].Columns[tiempo_semana]"
+                      cachedDataType="i4"
+                      cachedName="tiempo_semana"
+                      lineageId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].Columns[tiempo_semana]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\ORDENAR DATAMART TIEMPO.Inputs[Sort Input].Columns[tiempo_diadeanio]"
+                      cachedDataType="i4"
+                      cachedName="tiempo_diadeanio"
+                      lineageId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].Columns[tiempo_diadeanio]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\ORDENAR DATAMART TIEMPO.Inputs[Sort Input].Columns[tiempo_diademes]"
+                      cachedDataType="i4"
+                      cachedName="tiempo_diademes"
+                      lineageId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].Columns[tiempo_diademes]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\ORDENAR DATAMART TIEMPO.Inputs[Sort Input].Columns[timepo_diasemana]"
+                      cachedDataType="i4"
+                      cachedName="timepo_diasemana"
+                      lineageId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].Columns[timepo_diasemana]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\ORDENAR DATAMART TIEMPO.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\ORDENAR DATAMART TIEMPO.Outputs[Sort Output].Columns[tiempo_SKey]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ORDENAR DATAMART TIEMPO.Outputs[Sort Output].Columns[tiempo_SKey]"
+                      name="tiempo_SKey">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].Columns[tiempo_SKey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\ORDENAR DATAMART TIEMPO.Outputs[Sort Output].Columns[timepo_fechaActual]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\ORDENAR DATAMART TIEMPO.Outputs[Sort Output].Columns[timepo_fechaActual]"
+                      name="timepo_fechaActual"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].Columns[timepo_fechaActual]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\ORDENAR DATAMART TIEMPO.Outputs[Sort Output].Columns[tiempo_anio]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ORDENAR DATAMART TIEMPO.Outputs[Sort Output].Columns[tiempo_anio]"
+                      name="tiempo_anio">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].Columns[tiempo_anio]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\ORDENAR DATAMART TIEMPO.Outputs[Sort Output].Columns[tiempo_trimestre]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ORDENAR DATAMART TIEMPO.Outputs[Sort Output].Columns[tiempo_trimestre]"
+                      name="tiempo_trimestre">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].Columns[tiempo_trimestre]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\ORDENAR DATAMART TIEMPO.Outputs[Sort Output].Columns[tiempo_mes]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ORDENAR DATAMART TIEMPO.Outputs[Sort Output].Columns[tiempo_mes]"
+                      name="tiempo_mes">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].Columns[tiempo_mes]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\ORDENAR DATAMART TIEMPO.Outputs[Sort Output].Columns[tiempo_semana]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ORDENAR DATAMART TIEMPO.Outputs[Sort Output].Columns[tiempo_semana]"
+                      name="tiempo_semana">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].Columns[tiempo_semana]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\ORDENAR DATAMART TIEMPO.Outputs[Sort Output].Columns[tiempo_diadeanio]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ORDENAR DATAMART TIEMPO.Outputs[Sort Output].Columns[tiempo_diadeanio]"
+                      name="tiempo_diadeanio">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].Columns[tiempo_diadeanio]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\ORDENAR DATAMART TIEMPO.Outputs[Sort Output].Columns[tiempo_diademes]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ORDENAR DATAMART TIEMPO.Outputs[Sort Output].Columns[tiempo_diademes]"
+                      name="tiempo_diademes">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].Columns[tiempo_diademes]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\ORDENAR DATAMART TIEMPO.Outputs[Sort Output].Columns[timepo_diasemana]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ORDENAR DATAMART TIEMPO.Outputs[Sort Output].Columns[timepo_diasemana]"
+                      name="timepo_diasemana">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output].Columns[timepo_diasemana]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\ORDENAR STAGE TIEMPO"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="ORDENAR STAGE TIEMPO"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\ORDENAR STAGE TIEMPO.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\ORDENAR STAGE TIEMPO.Inputs[Sort Input].Columns[Tiempo_FechaActual]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Tiempo_FechaActual"
+                      lineageId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].Columns[Tiempo_FechaActual]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\ORDENAR STAGE TIEMPO.Inputs[Sort Input].Columns[Tiempo_Anio]"
+                      cachedDataType="i4"
+                      cachedName="Tiempo_Anio"
+                      lineageId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].Columns[Tiempo_Anio]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\ORDENAR STAGE TIEMPO.Inputs[Sort Input].Columns[Tiempo_Trimestre]"
+                      cachedDataType="i4"
+                      cachedName="Tiempo_Trimestre"
+                      lineageId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].Columns[Tiempo_Trimestre]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\ORDENAR STAGE TIEMPO.Inputs[Sort Input].Columns[Tiempo_Mes]"
+                      cachedDataType="i4"
+                      cachedName="Tiempo_Mes"
+                      lineageId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].Columns[Tiempo_Mes]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\ORDENAR STAGE TIEMPO.Inputs[Sort Input].Columns[Tiempo_Semana]"
+                      cachedDataType="i4"
+                      cachedName="Tiempo_Semana"
+                      lineageId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].Columns[Tiempo_Semana]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\ORDENAR STAGE TIEMPO.Inputs[Sort Input].Columns[Tiempo_DiaDeAnio]"
+                      cachedDataType="i4"
+                      cachedName="Tiempo_DiaDeAnio"
+                      lineageId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].Columns[Tiempo_DiaDeAnio]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\ORDENAR STAGE TIEMPO.Inputs[Sort Input].Columns[Tiempo_DiaDeMes]"
+                      cachedDataType="i4"
+                      cachedName="Tiempo_DiaDeMes"
+                      lineageId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].Columns[Tiempo_DiaDeMes]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\ORDENAR STAGE TIEMPO.Inputs[Sort Input].Columns[Tiempo_DiaDeSemana]"
+                      cachedDataType="i4"
+                      cachedName="Tiempo_DiaDeSemana"
+                      lineageId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].Columns[Tiempo_DiaDeSemana]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\ORDENAR STAGE TIEMPO.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\ORDENAR STAGE TIEMPO.Outputs[Sort Output].Columns[Tiempo_FechaActual]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\ORDENAR STAGE TIEMPO.Outputs[Sort Output].Columns[Tiempo_FechaActual]"
+                      name="Tiempo_FechaActual"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].Columns[Tiempo_FechaActual]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\ORDENAR STAGE TIEMPO.Outputs[Sort Output].Columns[Tiempo_Anio]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ORDENAR STAGE TIEMPO.Outputs[Sort Output].Columns[Tiempo_Anio]"
+                      name="Tiempo_Anio">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].Columns[Tiempo_Anio]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\ORDENAR STAGE TIEMPO.Outputs[Sort Output].Columns[Tiempo_Trimestre]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ORDENAR STAGE TIEMPO.Outputs[Sort Output].Columns[Tiempo_Trimestre]"
+                      name="Tiempo_Trimestre">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].Columns[Tiempo_Trimestre]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\ORDENAR STAGE TIEMPO.Outputs[Sort Output].Columns[Tiempo_Mes]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ORDENAR STAGE TIEMPO.Outputs[Sort Output].Columns[Tiempo_Mes]"
+                      name="Tiempo_Mes">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].Columns[Tiempo_Mes]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\ORDENAR STAGE TIEMPO.Outputs[Sort Output].Columns[Tiempo_Semana]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ORDENAR STAGE TIEMPO.Outputs[Sort Output].Columns[Tiempo_Semana]"
+                      name="Tiempo_Semana">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].Columns[Tiempo_Semana]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\ORDENAR STAGE TIEMPO.Outputs[Sort Output].Columns[Tiempo_DiaDeAnio]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ORDENAR STAGE TIEMPO.Outputs[Sort Output].Columns[Tiempo_DiaDeAnio]"
+                      name="Tiempo_DiaDeAnio">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].Columns[Tiempo_DiaDeAnio]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\ORDENAR STAGE TIEMPO.Outputs[Sort Output].Columns[Tiempo_DiaDeMes]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ORDENAR STAGE TIEMPO.Outputs[Sort Output].Columns[Tiempo_DiaDeMes]"
+                      name="Tiempo_DiaDeMes">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].Columns[Tiempo_DiaDeMes]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\ORDENAR STAGE TIEMPO.Outputs[Sort Output].Columns[Tiempo_DiaDeSemana]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ORDENAR STAGE TIEMPO.Outputs[Sort Output].Columns[Tiempo_DiaDeSemana]"
+                      name="Tiempo_DiaDeSemana">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].Columns[Tiempo_DiaDeSemana]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\STAGE TIEMPO"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="STAGE TIEMPO"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select Tiempo_FechaActual, Tiempo_Anio, Tiempo_Trimestre, Tiempo_Mes, Tiempo_Semana, Tiempo_DiaDeAnio, Tiempo_DiaDeMes, Tiempo_DiaDeSemana
+from stage_northwind.dbo.Stage_Tiempo;</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\STAGE TIEMPO.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].Columns[Tiempo_FechaActual]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].ExternalColumns[Tiempo_FechaActual]"
+                      lineageId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].Columns[Tiempo_FechaActual]"
+                      name="Tiempo_FechaActual"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].Columns[Tiempo_Anio]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].ExternalColumns[Tiempo_Anio]"
+                      lineageId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].Columns[Tiempo_Anio]"
+                      name="Tiempo_Anio"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].Columns[Tiempo_Trimestre]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].ExternalColumns[Tiempo_Trimestre]"
+                      lineageId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].Columns[Tiempo_Trimestre]"
+                      name="Tiempo_Trimestre"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].Columns[Tiempo_Mes]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].ExternalColumns[Tiempo_Mes]"
+                      lineageId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].Columns[Tiempo_Mes]"
+                      name="Tiempo_Mes"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].Columns[Tiempo_Semana]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].ExternalColumns[Tiempo_Semana]"
+                      lineageId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].Columns[Tiempo_Semana]"
+                      name="Tiempo_Semana"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].Columns[Tiempo_DiaDeAnio]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].ExternalColumns[Tiempo_DiaDeAnio]"
+                      lineageId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].Columns[Tiempo_DiaDeAnio]"
+                      name="Tiempo_DiaDeAnio"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].Columns[Tiempo_DiaDeMes]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].ExternalColumns[Tiempo_DiaDeMes]"
+                      lineageId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].Columns[Tiempo_DiaDeMes]"
+                      name="Tiempo_DiaDeMes"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].Columns[Tiempo_DiaDeSemana]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].ExternalColumns[Tiempo_DiaDeSemana]"
+                      lineageId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].Columns[Tiempo_DiaDeSemana]"
+                      name="Tiempo_DiaDeSemana"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].ExternalColumns[Tiempo_FechaActual]"
+                      dataType="dbTimeStamp"
+                      name="Tiempo_FechaActual" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].ExternalColumns[Tiempo_Anio]"
+                      dataType="i4"
+                      name="Tiempo_Anio" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].ExternalColumns[Tiempo_Trimestre]"
+                      dataType="i4"
+                      name="Tiempo_Trimestre" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].ExternalColumns[Tiempo_Mes]"
+                      dataType="i4"
+                      name="Tiempo_Mes" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].ExternalColumns[Tiempo_Semana]"
+                      dataType="i4"
+                      name="Tiempo_Semana" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].ExternalColumns[Tiempo_DiaDeAnio]"
+                      dataType="i4"
+                      name="Tiempo_DiaDeAnio" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].ExternalColumns[Tiempo_DiaDeMes]"
+                      dataType="i4"
+                      name="Tiempo_DiaDeMes" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output].ExternalColumns[Tiempo_DiaDeSemana]"
+                      dataType="i4"
+                      name="Tiempo_DiaDeSemana" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Error Output].Columns[Tiempo_FechaActual]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Error Output].Columns[Tiempo_FechaActual]"
+                      name="Tiempo_FechaActual" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Error Output].Columns[Tiempo_Anio]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Error Output].Columns[Tiempo_Anio]"
+                      name="Tiempo_Anio" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Error Output].Columns[Tiempo_Trimestre]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Error Output].Columns[Tiempo_Trimestre]"
+                      name="Tiempo_Trimestre" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Error Output].Columns[Tiempo_Mes]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Error Output].Columns[Tiempo_Mes]"
+                      name="Tiempo_Mes" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Error Output].Columns[Tiempo_Semana]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Error Output].Columns[Tiempo_Semana]"
+                      name="Tiempo_Semana" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Error Output].Columns[Tiempo_DiaDeAnio]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Error Output].Columns[Tiempo_DiaDeAnio]"
+                      name="Tiempo_DiaDeAnio" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Error Output].Columns[Tiempo_DiaDeMes]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Error Output].Columns[Tiempo_DiaDeMes]"
+                      name="Tiempo_DiaDeMes" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Error Output].Columns[Tiempo_DiaDeSemana]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Error Output].Columns[Tiempo_DiaDeSemana]"
+                      name="Tiempo_DiaDeSemana" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[Merge Join Output]"
+              endId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]"
+              name="Merge Join Output"
+              startId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[NUEVOS_TIEMPOS]"
+              endId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="NUEVOS_TIEMPOS"
+              startId="Package\Data Flow Task\Conditional Split.Outputs[NUEVOS_TIEMPOS]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task\ORDENAR STAGE TIEMPO.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\STAGE TIEMPO.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output1]"
+              endId="Package\Data Flow Task\ORDENAR DATAMART TIEMPO.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\DATAMART_TIEMPO.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Sort Output]"
+              endId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Data Flow Task\ORDENAR STAGE TIEMPO.Outputs[Sort Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Sort Output1]"
+              endId="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Data Flow Task\ORDENAR DATAMART TIEMPO.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Data Flow Task"
+          TopLeft="341.666647998824,125.666665792796" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="181.6,41.6"
+          Id="Package\Data Flow Task\DATAMART_TIEMPO"
+          TopLeft="470.833307608135,12.9999999095996" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Data Flow Task\OLE DB Destination"
+          TopLeft="319.999982515971,369.06666432831" />
+        <NodeLayout
+          Size="211.2,41.6"
+          Id="Package\Data Flow Task\ORDENAR STAGE TIEMPO"
+          TopLeft="119.999993443489,134.333332399196" />
+        <NodeLayout
+          Size="211.2,41.6"
+          Id="Package\Data Flow Task\LEFT JOIN STAGE TIEMPO"
+          TopLeft="295.833317169713,220.999998463194" />
+        <NodeLayout
+          Size="232.8,41.6"
+          Id="Package\Data Flow Task\ORDENAR DATAMART TIEMPO"
+          TopLeft="444.166642398471,143.866665666236" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\Data Flow Task\STAGE TIEMPO"
+          TopLeft="152.499991667768,18.1999998734395" />
+        <NodeLayout
+          Size="153.6,41.6"
+          Id="Package\Data Flow Task\Conditional Split"
+          TopLeft="323.33331566718,292.933331296312" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Sort Output1]"
+          TopLeft="560.566642398471,185.466665666236">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-125.266658562091,35.5333327969579"
+              Start="0,0"
+              End="-125.266658562091,28.0333327969579">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.1596989287148" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.1596989287148"
+                    Point2="0,21.1596989287148"
+                    Point3="-4,21.1596989287148" />
+                  <mssgle:LineSegment
+                    End="-121.266658562091,21.1596989287148" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-121.266658562091,21.1596989287148"
+                    Point2="-125.266658562091,21.1596989287148"
+                    Point3="-125.266658562091,25.1596989287148" />
+                  <mssgle:LineSegment
+                    End="-125.266658562091,28.0333327969579" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Sort Output]"
+          TopLeft="225.599993443489,175.933332399196">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="141.966657059557,45.0666660639976"
+              Start="0,0"
+              End="141.966657059557,37.5666660639976">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.8366913704407" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.8366913704407"
+                    Point2="0,26.8366913704407"
+                    Point3="4,26.8366913704407" />
+                  <mssgle:LineSegment
+                    End="137.966657059557,26.8366913704407" />
+                  <mssgle:CubicBezierSegment
+                    Point1="137.966657059557,26.8366913704407"
+                    Point2="141.966657059557,26.8366913704407"
+                    Point3="141.966657059557,30.8366913704407" />
+                  <mssgle:LineSegment
+                    End="141.966657059557,37.5666660639976" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output1]"
+          TopLeft="561.099975003303,54.5999999095996">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,89.2666657566364"
+              Start="0,0"
+              End="0,81.7666657566364">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,81.7666657566364" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="228.049992555628,59.7999998734395">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,74.5333325257565"
+              Start="0,0"
+              End="0,67.0333325257565">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,67.0333325257565" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[NUEVOS_TIEMPOS]"
+          TopLeft="402.866649091576,334.533331296312">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.533333031998"
+              Start="0,0"
+              End="0,27.033333031998">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.033333031998" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-42.49248046875,8.07330714099902,84.9849609375,10.88671875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Merge Join Output]"
+          TopLeft="400.783316418446,262.599998463194">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.3333328331178"
+              Start="0,0"
+              End="0,22.8333328331178">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.8333328331178" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\DATAMART_TIEMPO">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\STAGE TIEMPO">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

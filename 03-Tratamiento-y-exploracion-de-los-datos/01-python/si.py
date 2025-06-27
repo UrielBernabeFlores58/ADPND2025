@@ -1,11 +1,10 @@
-try:
-    value = input("Ingresa un valor: ")
-    print(value/value)
-except ValueError:
-    print("Entrada incorrecta...")
-except ZeroDivisionError:
-    print("Entrada errónea...")
-except TypeError:
-    print("Entrada muy errónea...")
-except:
-    print("¡Buuu!")
+my_numbers = [10, 20, 30, 40, 50]
+
+for i in range(4):
+    my_numbers.insert(i, my_numbers[-1])
+
+print(my_numbers)
+
+
+
+

@@ -11,45 +11,11 @@
   DTS:LocaleID="2058"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{B5901866-C085-49E2-A740-4C9325CE1EB4}">
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{7256682C-23E9-45A8-88D1-4DC906BC0833}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost,1450.northwind.sa]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{13BDAE1F-3F68-4E2E-AAF5-CC50CBE5A2F4}"
-      DTS:ObjectName="localhost,1450.northwind.sa">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost,1450;User ID=sa;Initial Catalog=northwind;Provider=MSOLEDBSQL.1;Application Name=SSIS-Package1-{13BDAE1F-3F68-4E2E-AAF5-CC50CBE5A2F4}localhost,1450.northwind.sa;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbnRWTxIt6kyg4Q8YGpNkdgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADQKdv0ifSFEbI0GOqebxHzaXA0cDjbRmnrJ3+9cEe64wAAAAAOgAAAAAIAACAAAABdinJncaOGFefcJqTejpyyjfYERkU8ieS0EUeys1gqDSAAAACtKNPLe8SMOAJILe030UvhTIDgC73eWTzC07qdMGFsbUAAAAB2FP3hHB7U9P0EvOGCtUiRUfAYr9JsHl3GVz9ovxSMbUfzJU1Kj/8hCNkQUaNPMc5K+NjbhIFRDBgLfM0JNPLO</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{947813DD-2AF0-48AB-AF28-A8919EDF8248}"
-      DTS:ObjectName="localhost,1450.stage_northwind.sa">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost,1450;User ID=sa;Initial Catalog=stage_northwind;Provider=MSOLEDBSQL.1;Application Name=SSIS-Package1-{947813DD-2AF0-48AB-AF28-A8919EDF8248}localhost,1450.stage_northwind.sa;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbnRWTxIt6kyg4Q8YGpNkdgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABRqtnUbOks6mSzGnpFALuIqm8xIiXKDLDISzHR9R7eawAAAAAOgAAAAAIAACAAAAB0Kw5Q8hp4IYykXahrKV+c1CO2hADi1JajN4vHcgyhFCAAAAA0s4wBIyR0MpK5WY+esvhKFfumNuuUs1ty3qdyO0jeV0AAAADTAWEzUzgQyDAPhtaVYVnQ6Bqe8d/s3rUp5P4VeE0QhLv1GgjGY8tnvaaryV+k2f7JYzCvtS0snNZCLdlRfn4G</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LocalHost.Northwind]"
       DTS:CreationName="OLEDB"
@@ -673,8 +639,8 @@ from Northwind.dbo.Suppliers;</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Task\NORTHWIND SUPPLIERS.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost,1450.northwind.sa]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.northwind.sa]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.Northwind]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.Northwind]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -871,8 +837,8 @@ from Northwind.dbo.Suppliers;</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.stage_northwind]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.stage_northwind]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1566,8 +1532,8 @@ from Northwind.dbo.Suppliers;</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Task\STAGE PROVEEDOR.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.stage_northwind]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.stage_northwind]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1786,27 +1752,27 @@ from Northwind.dbo.Suppliers;</property>
         <NodeLayout
           Size="156,41.6"
           Id="Package\Data Flow Task\Data Conversion"
-          TopLeft="219.166654691929,142.133332344956" />
+          TopLeft="244.999986613791,121.333332489597" />
         <NodeLayout
           Size="153.6,41.6"
           Id="Package\Data Flow Task\Conditional Split"
-          TopLeft="402.499978008371,367.799997703831" />
+          TopLeft="404.166644583975,324.466664671832" />
         <NodeLayout
           Size="240.8,41.6"
           Id="Package\Data Flow Task\ORDENAR STAGE_PROVEEDOR"
-          TopLeft="481.666640349562,185.466665376955" />
+          TopLeft="459.99997486671,129.999999095997" />
         <NodeLayout
           Size="171.2,41.6"
           Id="Package\Data Flow Task\OLE DB Destination"
-          TopLeft="397.499978281558,439.53333098895" />
+          TopLeft="396.666644993756,391.866664653751" />
         <NodeLayout
           Size="191.2,41.6"
           Id="Package\Data Flow Task\ORDENAR SUPPLIERS"
-          TopLeft="250.833319628405,232.266665051513" />
+          TopLeft="222.499987843137,192.399998662074" />
         <NodeLayout
           Size="183.2,41.6"
           Id="Package\Data Flow Task\STAGE PROVEEDOR"
-          TopLeft="471.666640895937,36.399999746879" />
+          TopLeft="490.833306515383,36.399999746879" />
         <NodeLayout
           Size="204,41.6"
           Id="Package\Data Flow Task\NORTHWIND SUPPLIERS"
@@ -1814,33 +1780,33 @@ from Northwind.dbo.Suppliers;</property>
         <NodeLayout
           Size="129.6,41.6"
           Id="Package\Data Flow Task\Merge Join"
-          TopLeft="420.833310340015,298.133331260151" />
+          TopLeft="419.999977052213,258.266664870712" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Sort Output1]"
-          TopLeft="602.066640349562,227.066665376955">
+          TopLeft="580.39997486671,171.599999095997">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-96.1666633428805,71.0666658831968"
+              EndConnector="-75.33333114783,86.6666657747156"
               Start="0,0"
-              End="-96.1666633428805,63.5666658831968">
+              End="-75.33333114783,79.1666657747156">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,38.1199995356508" />
+                    End="0,47.3658531298924" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,38.1199995356508"
-                    Point2="0,42.1199995356508"
-                    Point3="-4,42.1199995356508" />
+                    Point1="0,47.3658531298924"
+                    Point2="0,51.3658531298924"
+                    Point3="-4,51.3658531298924" />
                   <mssgle:LineSegment
-                    End="-92.1666633428805,42.1199995356508" />
+                    End="-71.33333114783,51.3658531298924" />
                   <mssgle:CubicBezierSegment
-                    Point1="-92.1666633428805,42.1199995356508"
-                    Point2="-96.1666633428805,42.1199995356508"
-                    Point3="-96.1666633428805,46.1199995356508" />
+                    Point1="-71.33333114783,51.3658531298924"
+                    Point2="-75.33333114783,51.3658531298924"
+                    Point3="-75.33333114783,55.3658531298924" />
                   <mssgle:LineSegment
-                    End="-96.1666633428805,63.5666658831968" />
+                    End="-75.33333114783,79.1666657747156" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1851,13 +1817,13 @@ from Northwind.dbo.Suppliers;</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Sort Output]"
-          TopLeft="346.433319628405,273.866665051513">
+          TopLeft="318.099987843137,233.999998662074">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="118.933324044943,24.2666662086381"
+              EndConnector="146.43332254241,24.2666662086381"
               Start="0,0"
-              End="118.933324044943,16.7666662086381">
+              End="146.43332254241,16.7666662086381">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -1868,13 +1834,13 @@ from Northwind.dbo.Suppliers;</property>
                     Point2="0,14.3824387529245"
                     Point3="4,14.3824387529245" />
                   <mssgle:LineSegment
-                    End="114.933324044943,14.3824387529245" />
+                    End="142.43332254241,14.3824387529245" />
                   <mssgle:CubicBezierSegment
-                    Point1="114.933324044943,14.3824387529245"
-                    Point2="118.933324044943,14.3824387529245"
-                    Point3="118.933324044943,18.3824387529245" />
+                    Point1="142.43332254241,14.3824387529245"
+                    Point2="146.43332254241,14.3824387529245"
+                    Point3="146.43332254241,18.3824387529245" />
                   <mssgle:LineSegment
-                    End="118.933324044943,16.7666662086381" />
+                    End="146.43332254241,16.7666662086381" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1885,54 +1851,42 @@ from Northwind.dbo.Suppliers;</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Proveedor_nuevo]"
-          TopLeft="481.199978144965,409.399997703831">
+          TopLeft="481.616644788866,366.066664671832">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,30.1333332851196"
+              EndConnector="0,25.7999999819191"
               Start="0,0"
-              End="0,22.6333332851196">
+              End="0,18.2999999819191">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.6333332851196" />
+                    End="0,18.2999999819191" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-38.93703125,5.78541664255982,77.8740625,11.0625"
+              BoundingBox="-38.93703125,3.61874999095954,77.8740625,11.0625"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output1]"
-          TopLeft="563.266640895937,77.999999746879">
+          TopLeft="581.416640691046,77.999999746879">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="38.7999994536243,107.466665630076"
+              EndConnector="0,51.9999993491176"
               Start="0,0"
-              End="38.7999994536243,99.9666656300756">
+              End="0,44.4999993491176">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,49.7333328150378" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,49.7333328150378"
-                    Point2="0,53.7333328150378"
-                    Point3="4,53.7333328150378" />
-                  <mssgle:LineSegment
-                    End="34.7999994536243,53.7333328150378" />
-                  <mssgle:CubicBezierSegment
-                    Point1="34.7999994536243,53.7333328150378"
-                    Point2="38.7999994536243,53.7333328150378"
-                    Point3="38.7999994536243,57.7333328150378" />
-                  <mssgle:LineSegment
-                    End="38.7999994536243,99.9666656300756" />
+                    End="0,44.4999993491176" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1943,30 +1897,18 @@ from Northwind.dbo.Suppliers;</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="327.833320994345,73.6666664436791">
+          TopLeft="325.416653804068,73.6666664436791">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-30.6666663024161,68.4666659012769"
+              EndConnector="0,47.6666660459175"
               Start="0,0"
-              End="-30.6666663024161,60.9666659012769">
+              End="0,40.1666660459175">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.2333329506384" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30.2333329506384"
-                    Point2="0,34.2333329506384"
-                    Point3="-4,34.2333329506384" />
-                  <mssgle:LineSegment
-                    End="-26.6666663024161,34.2333329506384" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-26.6666663024161,34.2333329506384"
-                    Point2="-30.6666663024161,34.2333329506384"
-                    Point3="-30.6666663024161,38.2333329506384" />
-                  <mssgle:LineSegment
-                    End="-30.6666663024161,60.9666659012769" />
+                    End="0,40.1666660459175" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1977,18 +1919,18 @@ from Northwind.dbo.Suppliers;</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Merge Join Output]"
-          TopLeft="482.466644174193,339.733331260151">
+          TopLeft="482.883310818094,299.866664870712">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,28.0666664436791"
+              EndConnector="0,24.5999998011201"
               Start="0,0"
-              End="0,20.5666664436791">
+              End="0,17.0999998011201">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.5666664436791" />
+                    End="0,17.0999998011201" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1999,30 +1941,18 @@ from Northwind.dbo.Suppliers;</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Data Conversion Output]"
-          TopLeft="297.166654691929,183.733332344956">
+          TopLeft="320.549987228464,162.933332489597">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="49.2666649364762,48.5333327065574"
+              EndConnector="0,29.4666661724775"
               Start="0,0"
-              End="49.2666649364762,41.0333327065574">
+              End="0,21.9666661724775">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.2666663532787" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.2666663532787"
-                    Point2="0,24.2666663532787"
-                    Point3="4,24.2666663532787" />
-                  <mssgle:LineSegment
-                    End="45.2666649364762,24.2666663532787" />
-                  <mssgle:CubicBezierSegment
-                    Point1="45.2666649364762,24.2666663532787"
-                    Point2="49.2666649364762,24.2666663532787"
-                    Point3="49.2666649364762,28.2666663532787" />
-                  <mssgle:LineSegment
-                    End="49.2666649364762,41.0333327065574" />
+                    End="0,21.9666661724775" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

@@ -1,15 +1,13 @@
-# Analitica de Datos para negocios digitales 2025
- ### En este repositorio se encue3ntra informacion en relacion al analisis de datos utilizando como tecnologia python, se pueden encontrar informacion de los siguientes temas
+# Analitica de datos para negocios digitales
 
- 1. Introduccion al analisis de los grandes volumenes de datos
- 
- 1. Tratamiento y exploracion de datos 
+En este repositorio se encuentra informacion en relacion al analisis de datos utilizando como
+tecnologia python.
+Se puede encontrar informacion de los siguientes temas:
 
- 1. Analisis de Datos
+1. Introduccion al analisis de los grandes volumenes de datos.
+1. Tratamiento y exploracion de datos.
+1. Analisis de datos
+1. Fundamentos de python
+1. Visualizacion
 
- 1. Fundamentos de Python
-
- 1. Visualizacion
-
-
- ![Big Data](img/Big%20Data.jpg)
+![Analitica de datos](./img/analitica_datos.jpg)

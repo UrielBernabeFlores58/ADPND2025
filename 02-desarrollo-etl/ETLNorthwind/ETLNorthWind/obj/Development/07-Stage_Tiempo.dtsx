@@ -11,45 +11,11 @@
   DTS:LocaleID="2058"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{F40E77F2-3709-4F69-B447-BBD3D5D79AB9}">
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{7697364B-C027-4FC7-A089-B352753C1413}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost,1450.northwind.sa]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{F4377AD2-61FE-427F-8E65-B1B0724960B3}"
-      DTS:ObjectName="localhost,1450.northwind.sa">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost,1450;User ID=sa;Initial Catalog=northwind;Provider=MSOLEDBSQL.1;Application Name=SSIS-Package1-{F4377AD2-61FE-427F-8E65-B1B0724960B3}localhost,1450.northwind.sa;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbnRWTxIt6kyg4Q8YGpNkdgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADSE3B7AFEli9onW5/1XMF3jRoxgWgBN6+8/Tpuy35QjQAAAAAOgAAAAAIAACAAAAAfDMj5RZriVAwjbPO7tCTMUCFxG9m2nruJacJvbDYvkiAAAAAyO9m/afSGdvuuXNz1zRrU6GuNzLd3O/1ZLZtkTVP3+UAAAABK0YfhbsM/TBMAYzNLpg/YsWwCE28vIb/ozCfYtMqyDSRPnizq0Zfqm7XST+g26FiMc+cu+tgSNklgZddDz7pO</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{0938EF50-6CAC-43F3-894E-BE6A3D781E1E}"
-      DTS:ObjectName="localhost,1450.stage_northwind.sa">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost,1450;User ID=sa;Initial Catalog=stage_northwind;Provider=MSOLEDBSQL.1;Application Name=SSIS-Package1-{0938EF50-6CAC-43F3-894E-BE6A3D781E1E}localhost,1450.stage_northwind.sa;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbnRWTxIt6kyg4Q8YGpNkdgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAUdo1TSKcxPiVmyfxfO1++IqNo6Q/ncrpJp7aXp5ruOAAAAAAOgAAAAAIAACAAAAALbzNH/7GjeXua+coEPFP5EwNeWWNdyHYDn8t8HxF4miAAAACzpm/hWJoBrEzfkFoBGEMAo1DPJC4Ru51P9rHKO+FAFEAAAACyhQ3RjtZoR/Nb42Dvt3mD2xnw4q/fYpCLoNVslwSoaSCLoeXCVsTSq09H+VYWGJ+NOvu2MYEDIvPofQ1Yfmjh</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LocalHost.Northwind]"
       DTS:CreationName="OLEDB"
@@ -579,8 +545,8 @@
               <connections>
                 <connection
                   refId="Package\CARGA STAGE TIEMPO\Northwind Orders.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost,1450.northwind.sa]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.northwind.sa]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.Northwind]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.Northwind]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -798,7 +764,7 @@
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">0</property>
+                  typeConverter="AccessMode">3</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
@@ -819,8 +785,8 @@
               <connections>
                 <connection
                   refId="Package\CARGA STAGE TIEMPO\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.stage_northwind 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.stage_northwind 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1541,8 +1507,8 @@
               <connections>
                 <connection
                   refId="Package\CARGA STAGE TIEMPO\STAGE TIEMPO.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.stage_northwind]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.stage_northwind]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1806,17 +1772,21 @@
           Id="Package\CARGA STAGE TIEMPO\Northwind Orders"
           TopLeft="209.166655238304,82.3333327607976" />
         <NodeLayout
-          Size="144.8,41.6"
-          Id="Package\CARGA STAGE TIEMPO\Ordenar stage"
-          TopLeft="556.666636251742,194.133331983354" />
-        <NodeLayout
           Size="260.8,41.6"
           Id="Package\CARGA STAGE TIEMPO\LEFT JOIN ORDERS_STAGE TIEMPO"
           TopLeft="349.999980876844,301.599997902711" />
         <NodeLayout
+          Size="144.8,41.6"
+          Id="Package\CARGA STAGE TIEMPO\Ordenar stage"
+          TopLeft="556.666636251742,194.133331983354" />
+        <NodeLayout
           Size="156,41.6"
           Id="Package\CARGA STAGE TIEMPO\STAGE TIEMPO"
           TopLeft="484.166640212967,73.6666661543979" />
+        <NodeLayout
+          Size="148.8,41.6"
+          Id="Package\CARGA STAGE TIEMPO\Ordenar orders"
+          TopLeft="259.999985794227,190.666665340794" />
         <NodeLayout
           Size="171.2,41.6"
           Id="Package\CARGA STAGE TIEMPO\OLE DB Destination"
@@ -1825,10 +1795,64 @@
           Size="212,41.6"
           Id="Package\CARGA STAGE TIEMPO\FILTRAR FECHAS NUEVAS"
           TopLeft="374.166646223102,383.93333095279" />
-        <NodeLayout
-          Size="148.8,41.6"
-          Id="Package\CARGA STAGE TIEMPO\Ordenar orders"
-          TopLeft="259.999985794227,190.666665340794" />
+        <EdgeLayout
+          Id="Package\CARGA STAGE TIEMPO.Paths[Merge Join Output]"
+          TopLeft="480.283313549973,343.199997902711">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.7333330500788"
+              Start="0,0"
+              End="0,33.2333330500788">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.2333330500788" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\CARGA STAGE TIEMPO.Paths[FECHAS_NUEVAS]"
+          TopLeft="480.166646223102,425.53333095279">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="20.4333311022984,39.9333333393599"
+              Start="0,0"
+              End="20.4333311022984,32.4333333393599">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.9666666696799" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.9666666696799"
+                    Point2="0,19.9666666696799"
+                    Point3="4,19.9666666696799" />
+                  <mssgle:LineSegment
+                    End="16.4333311022984,19.9666666696799" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16.4333311022984,19.9666666696799"
+                    Point2="20.4333311022984,19.9666666696799"
+                    Point3="20.4333311022984,23.9666666696799" />
+                  <mssgle:LineSegment
+                    End="20.4333311022984,32.4333333393599" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-28.7858149176008,24.9666666696799,78.0049609375,10.8671875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA STAGE TIEMPO.Paths[Sort Output1]"
           TopLeft="629.066636251742,235.733331983354">
@@ -1963,64 +1987,6 @@
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\CARGA STAGE TIEMPO.Paths[Merge Join Output]"
-          TopLeft="480.283313549973,343.199997902711">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,40.7333330500788"
-              Start="0,0"
-              End="0,33.2333330500788">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.2333330500788" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\CARGA STAGE TIEMPO.Paths[FECHAS_NUEVAS]"
-          TopLeft="480.166646223102,425.53333095279">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="20.4333311022984,39.9333333393599"
-              Start="0,0"
-              End="20.4333311022984,32.4333333393599">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15.9666666696799" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,15.9666666696799"
-                    Point2="0,19.9666666696799"
-                    Point3="4,19.9666666696799" />
-                  <mssgle:LineSegment
-                    End="16.4333311022984,19.9666666696799" />
-                  <mssgle:CubicBezierSegment
-                    Point1="16.4333311022984,19.9666666696799"
-                    Point2="20.4333311022984,19.9666666696799"
-                    Point3="20.4333311022984,23.9666666696799" />
-                  <mssgle:LineSegment
-                    End="20.4333311022984,32.4333333393599" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-28.7858149176008,24.9666666696799,78.0049609375,10.8671875"
-              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

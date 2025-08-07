@@ -2,43 +2,43 @@
 <BuildLog xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <ProjectInfo>
     <Name>DataMart_Northwind</Name>
-    <LastWriteTime>2025-06-03T20:42:20.2395007Z</LastWriteTime>
+    <LastWriteTime>2025-06-03T20:46:07.9206292Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>01-Datamart_dimcliente.dtsx</Name>
-      <LastWriteTime>2025-06-06T08:38:15.4540176Z</LastWriteTime>
+      <LastWriteTime>2025-05-27T22:30:24.757762Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>02-Datamart_dimempleado.dtsx</Name>
-      <LastWriteTime>2025-06-06T08:38:06.0111768Z</LastWriteTime>
+      <LastWriteTime>2025-06-02T23:44:34.0704992Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>03-Datamart_dimproducto.dtsx</Name>
-      <LastWriteTime>2025-06-06T08:37:57.3848026Z</LastWriteTime>
+      <LastWriteTime>2025-06-02T23:48:48.3751756Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>04-Datamart_dimtiempo.dtsx</Name>
-      <LastWriteTime>2025-06-06T08:38:01.1300358Z</LastWriteTime>
+      <LastWriteTime>2025-05-30T22:44:00.1777287Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
-      <Name>05-datamart_dim_facventas.dtsx</Name>
-      <LastWriteTime>2025-06-06T08:38:09.6802269Z</LastWriteTime>
+      <Name>05-Datamart_facventas.dtsx</Name>
+      <LastWriteTime>2025-06-03T21:35:23.907388Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
-      <Name>Carga_Master_DataMart.dtsx</Name>
-      <LastWriteTime>2025-06-03T20:42:20.1234872Z</LastWriteTime>
+      <Name>Datamart_Carga_Master.dtsx</Name>
+      <LastWriteTime>2025-06-03T20:30:21.9319502Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
-      <Name>Limpiar Datamart.dtsx</Name>
-      <LastWriteTime>2025-06-06T08:38:21.1853861Z</LastWriteTime>
+      <Name>Datamart_Limpiar.dtsx</Name>
+      <LastWriteTime>2025-06-03T20:51:45.4717469Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

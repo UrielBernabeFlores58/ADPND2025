@@ -11,62 +11,11 @@
   DTS:LocaleID="2058"
   DTS:ObjectName="01-Stage_Empleado"
   DTS:PackageType="5"
-  DTS:VersionBuild="18"
-  DTS:VersionGUID="{31C4DB2A-D619-442E-AEBC-C7FA37667744}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{0D359F7D-CACF-4311-AE64-A172073A6341}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost,1450.northwind.sa]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{E0947D26-33F5-43F7-AF36-F662141C8B1F}"
-      DTS:ObjectName="localhost,1450.northwind.sa">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost,1450;User ID=sa;Initial Catalog=northwind;Provider=MSOLEDBSQL.1;Application Name=SSIS-01-Stage_Empleado-{E0947D26-33F5-43F7-AF36-F662141C8B1F}localhost,1450.northwind.sa;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbnRWTxIt6kyg4Q8YGpNkdgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACMmPNiLhT1qzLcbSVqvPVoeYXa0eEw6WcqemDxHd2BuwAAAAAOgAAAAAIAACAAAADS3f3yAQb8xdsr/JEUccLRxkTDji6xSlACtcaRpjncHSAAAAAd5/CiIg7GpKHGz3FLCMO+g5MLMjlm7/B0c7vgMXDiuEAAAAAEFLaMrznvv30scqL2Ihcc65Q8z9C0VOPLCGY0Ts8STdHB9lW8g5xVYrPa+ie+m8/dUs66p19+yEv0+IhtZQb/</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{DC8F7721-8E80-494A-83E7-A9E77907B6F2}"
-      DTS:ObjectName="localhost,1450.stage_northwind.sa">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost,1450;User ID=sa;Initial Catalog=stage_northwind;Provider=MSOLEDBSQL.1;Application Name=SSIS-01-Stage_Empleado-{DC8F7721-8E80-494A-83E7-A9E77907B6F2}localhost,1450.stage_northwind.sa;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbnRWTxIt6kyg4Q8YGpNkdgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACB+/cpGNxxW252TCuAclMak7hJGT83rSLe7JqvnCaiJwAAAAAOgAAAAAIAACAAAAB3HNM3CC52TQ/UNXEKyY0EJe6nip8DGefiPb9lFGFT2iAAAAChAZqK8zoK2IphwrHbYolcegU3vW7mF4msau6a08JBDUAAAAAugskmrSbq+4yryGCTnTbKkrZ2NtixEvxf2ShXuQYjHFnqt/xrDvmcu3P6qkd/oiQAPhJrmgNlA2DBdhxndC/2</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa 1]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{9095F094-624A-4179-BDFC-F0384C6A323D}"
-      DTS:ObjectName="localhost,1450.stage_northwind.sa 1">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost,1450;User ID=sa;Initial Catalog=stage_northwind;Provider=MSOLEDBSQL.1;Application Name=SSIS-01-Stage_Empleado-{9095F094-624A-4179-BDFC-F0384C6A323D}localhost,1450.stage_northwind.sa 1;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbnRWTxIt6kyg4Q8YGpNkdgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAQeDw9R/cD8vSNXTrwPI6s8jkA9R7EUTl0Okzsmgb+pAAAAAAOgAAAAAIAACAAAAByfgo+8TxiCkNRHkyqagwwBSCwTq4dHciBxE4MTi5vCCAAAACrjm+skIxBjk02MWV8JMWHJ0NtmgHVMFuTIjI4iLiU3kAAAAARGYLqbNW/9XfXqRdzWrTFWG8gfcAKvBBvlXKdyqMGlrKsXpK3Ypzwi2w/qztEG4DE7ZqjAsSoJbxfifrHgecg</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LocalHost.Northwind]"
       DTS:CreationName="OLEDB"
@@ -354,8 +303,8 @@
               <connections>
                 <connection
                   refId="Package\CARGA_STAGE_EMPLEADO\EMPLEADO_STAGE.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.stage_northwind]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.stage_northwind]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -527,8 +476,8 @@ from Northwind.dbo.Employees;</property>
               <connections>
                 <connection
                   refId="Package\CARGA_STAGE_EMPLEADO\EMPLOYEE_NORTHWIND.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost,1450.northwind.sa]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.northwind.sa]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.Northwind]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.Northwind]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -919,8 +868,8 @@ from Northwind.dbo.Employees;</property>
               <connections>
                 <connection
                   refId="Package\CARGA_STAGE_EMPLEADO\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost,1450.stage_northwind.sa 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa 1]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.stage_northwind]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.stage_northwind]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>

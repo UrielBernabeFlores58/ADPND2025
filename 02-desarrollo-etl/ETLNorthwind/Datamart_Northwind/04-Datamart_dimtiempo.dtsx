@@ -11,62 +11,11 @@
   DTS:LocaleID="2058"
   DTS:ObjectName="04-Datamart_dimtiempo"
   DTS:PackageType="5"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{979313A5-FB4D-43AD-ABC5-365CD1BFD2F8}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{16A61B25-1895-46AC-943F-1A2A9CD7B746}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost,1450.datamart_northwind.sa]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{4F568D21-6461-45AA-946A-8367BF84FEF9}"
-      DTS:ObjectName="localhost,1450.datamart_northwind.sa">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost,1450;User ID=sa;Initial Catalog=datamart_northwind;Provider=MSOLEDBSQL.1;Application Name=SSIS-04-Datamart_dimtiempo-{4F568D21-6461-45AA-946A-8367BF84FEF9}localhost,1450.datamart_northwind.sa;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbnRWTxIt6kyg4Q8YGpNkdgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAbLm3WYS1T5tGG7KiBKpfioZsYhBMFzpbVO21SdmD8ugAAAAAOgAAAAAIAACAAAAA2IckYB5hbGCR2sXll85t1+GIHbUzzJ+fnLSm06lSO0CAAAAA9TLtxcSSAHmquMf35+ci4RkD+Pg1flGW1clWSnucZQkAAAABDXYOcbKC50L0KPNH5A5unj3kqT18o/YTymqzrROxEQsGROSI48Y8o0BJpuQxmn4DWCEoIPUoN2As3z9g4HjtW</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost,1450.datamart_northwind.sa 1]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{A6C51FBA-850D-463F-8610-84B288315499}"
-      DTS:ObjectName="localhost,1450.datamart_northwind.sa 1">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost,1450;User ID=sa;Initial Catalog=datamart_northwind;Provider=MSOLEDBSQL.1;Application Name=SSIS-04-Datamart_dimtiempo-{A6C51FBA-850D-463F-8610-84B288315499}localhost,1450.datamart_northwind.sa 1;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbnRWTxIt6kyg4Q8YGpNkdgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAC6urEgnZ8cV4EqOhTL+gEeQUMnZqmRqJuoR60b8gaCTAAAAAAOgAAAAAIAACAAAAA5ENl/A92CZ3NLXiEdD9VdP1cWzfH28a1mBzbaA5WVvSAAAABN7Y4iAy/NKxPCW0IagLFFb/0nKQTa7K4BVz9+1NF7AEAAAACM+MOpHSoOE2POMVciXIQaaV1DSLrt5z/e3xxZNxdP+X7QE0AbUecIL+AVIZMNlpVlb+geD8/Fccy3Tb1Q/r0+</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{C4C28507-F225-4D01-9C1D-2538C52F9FB8}"
-      DTS:ObjectName="localhost,1450.stage_northwind.sa">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost,1450;User ID=sa;Initial Catalog=stage_northwind;Provider=MSOLEDBSQL.1;Application Name=SSIS-04-Datamart_dimtiempo-{C4C28507-F225-4D01-9C1D-2538C52F9FB8}localhost,1450.stage_northwind.sa;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbnRWTxIt6kyg4Q8YGpNkdgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAOiLseqvN2A58omE6IQmfJ5F3eGuP+WLF/DyfQu3uoIAAAAAAOgAAAAAIAACAAAAD+A/Rdf/GKUV75jYV26khnladFBzjpy5DsVkcMHC5P9iAAAABrFmG8KCua1i0o2YM4MjwUEzutmCLnaZsoudpKkYQu9UAAAADM28elJ1Eq1Gh0I3uTil6KD7iaRMytMssWjQTDBKW4YtQd3GqLKzQzW1l096aTnQLYszyyH/3d1CDuGXLL7rAP</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LocalHost.datamart_northwind]"
       DTS:CreationName="OLEDB"
@@ -248,8 +197,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\DATAMART_TIEMPO.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost,1450.datamart_northwind.sa]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.datamart_northwind.sa]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.datamart_northwind]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.datamart_northwind]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -831,7 +780,7 @@
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">0</property>
+                  typeConverter="AccessMode">3</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
@@ -852,8 +801,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost,1450.datamart_northwind.sa 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.datamart_northwind.sa 1]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.datamart_northwind]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.datamart_northwind]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1604,8 +1553,8 @@ from stage_northwind.dbo.Stage_Tiempo;</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Task\STAGE TIEMPO.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.stage_northwind]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.stage_northwind]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1849,7 +1798,7 @@ from stage_northwind.dbo.Stage_Tiempo;</property>
         <NodeLayout
           Size="181.6,41.6"
           Id="Package\Data Flow Task\DATAMART_TIEMPO"
-          TopLeft="470.833307608135,12.9999999095996" />
+          TopLeft="467.499974456927,59.7999995841583" />
         <NodeLayout
           Size="171.2,41.6"
           Id="Package\Data Flow Task\OLE DB Destination"
@@ -1869,7 +1818,7 @@ from stage_northwind.dbo.Stage_Tiempo;</property>
         <NodeLayout
           Size="156,41.6"
           Id="Package\Data Flow Task\STAGE TIEMPO"
-          TopLeft="152.499991667768,18.1999998734395" />
+          TopLeft="153.33332495557,49.3999996564786" />
         <NodeLayout
           Size="153.6,41.6"
           Id="Package\Data Flow Task\Conditional Split"
@@ -1944,18 +1893,18 @@ from stage_northwind.dbo.Stage_Tiempo;</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output1]"
-          TopLeft="561.099975003303,54.5999999095996">
+          TopLeft="559.433308427699,101.399999584158">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,89.2666657566364"
+              EndConnector="0,42.4666660820777"
               Start="0,0"
-              End="0,81.7666657566364">
+              End="0,34.9666660820777">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,81.7666657566364" />
+                    End="0,34.9666660820777" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1966,18 +1915,18 @@ from stage_northwind.dbo.Stage_Tiempo;</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="228.049992555628,59.7999998734395">
+          TopLeft="228.466659199529,90.9999996564786">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,74.5333325257565"
+              EndConnector="0,43.3333327427175"
               Start="0,0"
-              End="0,67.0333325257565">
+              End="0,35.8333327427175">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,67.0333325257565" />
+                    End="0,35.8333327427175" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

@@ -11,62 +11,11 @@
   DTS:LocaleID="2058"
   DTS:ObjectName="02-Stage_Categoria"
   DTS:PackageType="5"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{9314ABF2-CDE0-410B-ADEA-12F2FC4C52C7}">
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{BE889469-C36A-4FFA-A1E5-1D3C332E5BD0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost,1450.northwind.sa]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{3EB6E7EB-4845-498E-9690-F1EE6E9AA97E}"
-      DTS:ObjectName="localhost,1450.northwind.sa">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost,1450;User ID=sa;Initial Catalog=northwind;Provider=MSOLEDBSQL.1;Application Name=SSIS-02-Stage_Categoria-{3EB6E7EB-4845-498E-9690-F1EE6E9AA97E}localhost,1450.northwind.sa;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbnRWTxIt6kyg4Q8YGpNkdgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADvL4vHLgArEGTdJgJP5z4dkmKbDNZh6K3plO6pfTpc0wAAAAAOgAAAAAIAACAAAABAT9+syOsCYlvsYJXuw4ya7awafGqGHAZH0RmD2WLOqSAAAABeRYt68/KkEAjJ9Au7Sv+zN1T+5jtL+Pxw33RZIieQOkAAAAABlq9GEkKjZMxTEn7o2QhkmCWpdziaD3CDtk+xszXYsuOufpaGObzYooyxj5pp9D2yLwPIJCw1seRecDBJ/jbe</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{EF86B5EA-DE55-4687-ACF9-0E64D0E405DB}"
-      DTS:ObjectName="localhost,1450.stage_northwind.sa">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost,1450;User ID=sa;Initial Catalog=stage_northwind;Provider=MSOLEDBSQL.1;Application Name=SSIS-02-Stage_Categoria-{EF86B5EA-DE55-4687-ACF9-0E64D0E405DB}localhost,1450.stage_northwind.sa;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbnRWTxIt6kyg4Q8YGpNkdgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACu0lQSPrSGAIWrai1dTTuTzvanoCeS/9EYFc0ve5+XwwAAAAAOgAAAAAIAACAAAABLaL/hrDOh9dOr9cq+MAc7wipOJoH2WBtxpR+kFbaDCSAAAACn+kF5ctI8W2jH4fvy4FTZ3QLW5CpP5Nmw86gzrOJth0AAAABTyZgM5fI4UWEgDgYjiZkVAfxbC0WDTKYHPQEq7Umj6O24l/7XgNLowlEYC6N1ILI211yIWkxus1hlmHTmE1U/</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa 1]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{EE252FAC-634F-4DC9-9AD6-2FD70EB0E841}"
-      DTS:ObjectName="localhost,1450.stage_northwind.sa 1">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost,1450;User ID=sa;Initial Catalog=stage_northwind;Provider=MSOLEDBSQL.1;Application Name=SSIS-02-Stage_Categoria-{EE252FAC-634F-4DC9-9AD6-2FD70EB0E841}localhost,1450.stage_northwind.sa 1;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbnRWTxIt6kyg4Q8YGpNkdgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACS+ZcBIBeovEkQ2HsKGPLweoAsHfCthFwuq/ovvbA74wAAAAAOgAAAAAIAACAAAAB2HIYAHE+sX/VKoUtGdHKy/+zbw9eJEJvltfu3NSQsfyAAAAAFGdWudrpm9ZVSmimov7e5s/geBjg94uI1KBWBUVO1k0AAAADAEg55q4PvlWRNZ6U3XJ+C6MgQpNd5mIEPPOaDpP6gdUSCyUs0jJ7i0uJf0r9lSce+7OjwV73oYYT5MePcMAS9</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LocalHost.Northwind]"
       DTS:CreationName="OLEDB"
@@ -160,8 +109,8 @@ from Northwind.dbo.Categories;</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Task\CATEGORIES_NORTHWIND.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost,1450.northwind.sa]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.northwind.sa]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.Northwind]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.Northwind]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -586,8 +535,8 @@ from Northwind.dbo.Categories;</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost,1450.stage_northwind.sa 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa 1]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.stage_northwind]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.stage_northwind]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -907,8 +856,8 @@ from Northwind.dbo.Categories;</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Task\STAGE_CATEGORIA.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.stage_northwind]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.stage_northwind]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1053,37 +1002,119 @@ from Northwind.dbo.Categories;</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="197.6,41.6"
-          Id="Package\Data Flow Task\ORDENAR_CATEGORIA"
-          TopLeft="476.666640622749,152.799999059836" />
-        <NodeLayout
-          Size="204,41.6"
-          Id="Package\Data Flow Task\ORDENAR_CATEGORIES"
-          TopLeft="83.3333287802009,138.066665828957" />
-        <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\Data Flow Task\OLE DB Destination"
-          TopLeft="338.333314847616,491.26666427407" />
-        <NodeLayout
-          Size="303.2,41.6"
-          Id="Package\Data Flow Task\LEFT JOIN CATEGORIES STAGE CATEGORIA"
-          TopLeft="344.16664786223,319.666665611996" />
-        <NodeLayout
-          Size="153.6,41.6"
-          Id="Package\Data Flow Task\Conditional Split"
-          TopLeft="344.999981150032,407.466665340795" />
+          Size="180.8,41.6"
+          Id="Package\Data Flow Task\STAGE_CATEGORIA"
+          TopLeft="433.3333129353,60" />
         <NodeLayout
           Size="216.8,41.6"
           Id="Package\Data Flow Task\CATEGORIES_NORTHWIND"
           TopLeft="60.8333332878021,60.8666666606399" />
         <NodeLayout
+          Size="204,41.6"
+          Id="Package\Data Flow Task\ORDENAR_CATEGORIES"
+          TopLeft="83.3333287802009,138.066665828957" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="169.233333287802,102.46666666064">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="16.0999954923988,35.5999991683166"
+              Start="0,0"
+              End="16.0999954923988,28.0999991683166">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.7999995841583" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.7999995841583"
+                    Point2="0,17.7999995841583"
+                    Point3="4,17.7999995841583" />
+                  <mssgle:LineSegment
+                    End="12.0999954923988,17.7999995841583" />
+                  <mssgle:CubicBezierSegment
+                    Point1="12.0999954923988,17.7999995841583"
+                    Point2="16.0999954923988,17.7999995841583"
+                    Point3="16.0999954923988,21.7999995841583" />
+                  <mssgle:LineSegment
+                    End="16.0999954923988,28.0999991683166" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
           Size="156,41.6"
           Id="Package\Data Flow Task\Data Conversion"
           TopLeft="107.499994126459,243.799998427033" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Sort Output]"
+          TopLeft="185.41666145333,179.666665828956">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,64.1333325980768"
+              Start="0,0"
+              End="0,56.6333325980768">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,56.6333325980768" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <NodeLayout
-          Size="180.8,41.6"
-          Id="Package\Data Flow Task\STAGE_CATEGORIA"
-          TopLeft="433.3333129353,60" />
+          Size="197.6,41.6"
+          Id="Package\Data Flow Task\ORDENAR_CATEGORIA"
+          TopLeft="476.666640622749,152.799999059836" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output1]"
+          TopLeft="523.7333129353,101.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="51.7333276874494,51.1999990598361"
+              Start="0,0"
+              End="51.7333276874494,43.6999990598361">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5999995299181" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.5999995299181"
+                    Point2="0,25.5999995299181"
+                    Point3="4,25.5999995299181" />
+                  <mssgle:LineSegment
+                    End="47.7333276874494,25.5999995299181" />
+                  <mssgle:CubicBezierSegment
+                    Point1="47.7333276874494,25.5999995299181"
+                    Point2="51.7333276874494,25.5999995299181"
+                    Point3="51.7333276874494,29.5999995299181" />
+                  <mssgle:LineSegment
+                    End="51.7333276874494,43.6999990598361" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="303.2,41.6"
+          Id="Package\Data Flow Task\LEFT JOIN CATEGORIES STAGE CATEGORIA"
+          TopLeft="344.16664786223,319.666665611996" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Data Conversion Output]"
           TopLeft="185.499994126459,285.399998427033">
@@ -1152,120 +1183,10 @@ from Northwind.dbo.Categories;</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Sort Output]"
-          TopLeft="185.41666145333,179.666665828956">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,64.1333325980768"
-              Start="0,0"
-              End="0,56.6333325980768">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,56.6333325980768" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[OLE DB Source Output1]"
-          TopLeft="523.7333129353,101.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="51.7333276874494,51.1999990598361"
-              Start="0,0"
-              End="51.7333276874494,43.6999990598361">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.5999995299181" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.5999995299181"
-                    Point2="0,25.5999995299181"
-                    Point3="4,25.5999995299181" />
-                  <mssgle:LineSegment
-                    End="47.7333276874494,25.5999995299181" />
-                  <mssgle:CubicBezierSegment
-                    Point1="47.7333276874494,25.5999995299181"
-                    Point2="51.7333276874494,25.5999995299181"
-                    Point3="51.7333276874494,29.5999995299181" />
-                  <mssgle:LineSegment
-                    End="51.7333276874494,43.6999990598361" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="169.233333287802,102.46666666064">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="16.0999954923988,35.5999991683166"
-              Start="0,0"
-              End="16.0999954923988,28.0999991683166">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,13.7999995841583" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,13.7999995841583"
-                    Point2="0,17.7999995841583"
-                    Point3="4,17.7999995841583" />
-                  <mssgle:LineSegment
-                    End="12.0999954923988,17.7999995841583" />
-                  <mssgle:CubicBezierSegment
-                    Point1="12.0999954923988,17.7999995841583"
-                    Point2="16.0999954923988,17.7999995841583"
-                    Point3="16.0999954923988,21.7999995841583" />
-                  <mssgle:LineSegment
-                    End="16.0999954923988,28.0999991683166" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[NuevasCategorias]"
-          TopLeft="422.866647998824,449.066665340795">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,42.1999989332755"
-              Start="0,0"
-              End="0,34.6999989332755">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.6999989332755" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-39.847578125,11.6161127478877,79.69515625,11.4677734375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="153.6,41.6"
+          Id="Package\Data Flow Task\Conditional Split"
+          TopLeft="344.999981150032,407.466665340795" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Merge Join Output]"
           TopLeft="495.76664786223,361.266665611996">
@@ -1300,11 +1221,39 @@ from Northwind.dbo.Categories;</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Data Flow Task\OLE DB Destination"
+          TopLeft="338.333314847616,491.26666427407" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[NuevasCategorias]"
+          TopLeft="422.866647998824,449.066665340795">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.1999989332755"
+              Start="0,0"
+              End="0,34.6999989332755">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.6999989332755" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-39.847578125,11.6161127478877,79.69515625,11.4677734375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Destination">
+    design-time-name="Package\Data Flow Task\STAGE_CATEGORIA">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1325,7 +1274,7 @@ from Northwind.dbo.Categories;</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\STAGE_CATEGORIA">
+    design-time-name="Package\Data Flow Task\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

@@ -11,57 +11,11 @@
   DTS:LocaleID="2058"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="47"
-  DTS:VersionGUID="{4CB6A6AA-5A6D-4BB4-A70F-5BD5DBF0BF47}">
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{2FEEEF9E-66C6-4D06-B1E9-F4B49BF8C0C8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost,1450.datamart_northwind.sa]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{BAE562EF-8063-4FBF-8D6F-81D6E147FC04}"
-      DTS:ObjectName="localhost,1450.datamart_northwind.sa">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost,1450;User ID=sa;Initial Catalog=datamart_northwind;Provider=MSOLEDBSQL.1;Application Name=SSIS-Package1-{BAE562EF-8063-4FBF-8D6F-81D6E147FC04}localhost,1450.datamart_northwind.sa;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbnRWTxIt6kyg4Q8YGpNkdgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADZTD+f2fNZyeWJEUtWj10jdm9E2Cq++8CkJvQ2IJyvBAAAAAAOgAAAAAIAACAAAADlhl8BzbFmuItSNMoR2E+eiBxLMgksNQS8fAgjbG2BqCAAAACieicSj8ynz53vBSIN7T9mlmSXvZY8wQWb8baTYLWAyEAAAAAIeWEpYkfGqiE6nbCRx/qHIzpQIZQ2bSwpGsS7iGpOAbvOx1mZ9QoPiMjTBUfoxIy6iUYXnsqRbWKwiDCyB64u</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost,1450.datamart_northwind.sa 1]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{0F51A458-3DBE-47AC-8CD5-4C552771467A}"
-      DTS:ObjectName="localhost,1450.datamart_northwind.sa 1">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=TTT;Initial Catalog=datamart_northwind;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{0F51A458-3DBE-47AC-8CD5-4C552771467A}localhost,1450.datamart_northwind.sa 1;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{874B15FD-E6AB-4E3A-8186-B23E16DBA9FA}"
-      DTS:ObjectName="localhost,1450.stage_northwind.sa">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost,1450;User ID=sa;Initial Catalog=stage_northwind;Provider=MSOLEDBSQL.1;Application Name=SSIS-Package1-{874B15FD-E6AB-4E3A-8186-B23E16DBA9FA}localhost,1450.stage_northwind.sa;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbnRWTxIt6kyg4Q8YGpNkdgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADtVSaDl4kSsxCqNMjiueYT99k63egkcUCJMDiVO2gh2QAAAAAOgAAAAAIAACAAAAAactXwsHUcIwwV8AJuCaCP7MUMvyrEkgrtP6h8Oo4TJCAAAAAIGchpKCOo20TCg5rxOoR2FKhxVGhW1UGfI7sMBTSkhEAAAABAyKfmYsY+8nhbk2K776UZFVxtcqvkcEGqmyk3X8UyPTIAf8a8pj/dnJkgEEQNAU1XEA0dPMjqB7UqgjBZcQdS</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LocalHost.datamart_northwind]"
       DTS:CreationName="OLEDB"
@@ -127,12 +81,12 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\CARGA DIMEMPLEADO\Conditional Split.Outputs[NEW EMPLEADOS]"
+                  refId="Package\CARGA DIMEMPLEADO\Conditional Split.Outputs[new empleados]"
                   description="Output 1 of the Conditional Split Transformation"
                   errorOrTruncationOperation="Computation"
                   errorRowDisposition="FailComponent"
                   exclusionGroup="1"
-                  name="NEW EMPLEADOS"
+                  name="new empleados"
                   synchronousInputId="Package\CARGA DIMEMPLEADO\Conditional Split.Inputs[Conditional Split Input]"
                   truncationRowDisposition="FailComponent">
                   <properties>
@@ -243,8 +197,8 @@
               <connections>
                 <connection
                   refId="Package\CARGA DIMEMPLEADO\DIM EMPLEADO.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost,1450.datamart_northwind.sa]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.datamart_northwind.sa]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.datamart_northwind]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.datamart_northwind]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -352,7 +306,7 @@
                   dataType="System.Int32"
                   description="Specifies the type of join to perform."
                   name="JoinType"
-                  typeConverter="JoinType">0</property>
+                  typeConverter="JoinType">1</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the number of columns in the ordering key."
@@ -377,14 +331,14 @@
                       cachedDataType="i4"
                       cachedName="empleadoid"
                       cachedSortKeyPosition="1"
-                      lineageId="Package\CARGA DIMEMPLEADO\Sort.Outputs[Sort Output].Columns[empleadoid]" />
+                      lineageId="Package\CARGA DIMEMPLEADO\ORDENAR STAGE EMPLEADO.Outputs[Sort Output].Columns[empleadoid]" />
                     <inputColumn
-                      refId="Package\CARGA DIMEMPLEADO\Merge Join.Inputs[Merge Join Left Input].Columns[NombreCompleto]"
+                      refId="Package\CARGA DIMEMPLEADO\Merge Join.Inputs[Merge Join Left Input].Columns[Nombre Completo]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="31"
-                      cachedName="NombreCompleto"
-                      lineageId="Package\CARGA DIMEMPLEADO\Sort.Outputs[Sort Output].Columns[NombreCompleto]" />
+                      cachedName="Nombre Completo"
+                      lineageId="Package\CARGA DIMEMPLEADO\ORDENAR STAGE EMPLEADO.Outputs[Sort Output].Columns[Nombre Completo]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -431,21 +385,6 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\CARGA DIMEMPLEADO\Merge Join.Outputs[Merge Join Output].Columns[NombreCompleto]"
-                      codePage="1252"
-                      dataType="str"
-                      length="31"
-                      lineageId="Package\CARGA DIMEMPLEADO\Merge Join.Outputs[Merge Join Output].Columns[NombreCompleto]"
-                      name="NombreCompleto">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\CARGA DIMEMPLEADO\Merge Join.Inputs[Merge Join Left Input].Columns[NombreCompleto]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
                       refId="Package\CARGA DIMEMPLEADO\Merge Join.Outputs[Merge Join Output].Columns[empleado_codigoBkey]"
                       dataType="i4"
                       lineageId="Package\CARGA DIMEMPLEADO\Merge Join.Outputs[Merge Join Output].Columns[empleado_codigoBkey]"
@@ -456,6 +395,21 @@
                           dataType="System.Int32"
                           description="The input column associated with this output column"
                           name="InputColumnID">#{Package\CARGA DIMEMPLEADO\Merge Join.Inputs[Merge Join Right Input].Columns[empleado_codigoBkey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA DIMEMPLEADO\Merge Join.Outputs[Merge Join Output].Columns[Nombre Completo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="31"
+                      lineageId="Package\CARGA DIMEMPLEADO\Merge Join.Outputs[Merge Join Output].Columns[Nombre Completo]"
+                      name="Nombre Completo">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\CARGA DIMEMPLEADO\Merge Join.Inputs[Merge Join Left Input].Columns[Nombre Completo]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -537,8 +491,8 @@
               <connections>
                 <connection
                   refId="Package\CARGA DIMEMPLEADO\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost,1450.datamart_northwind.sa]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.datamart_northwind.sa]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.datamart_northwind]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.datamart_northwind]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -558,13 +512,13 @@
                       externalMetadataColumnId="Package\CARGA DIMEMPLEADO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[empleado_codigoBkey]"
                       lineageId="Package\CARGA DIMEMPLEADO\Merge Join.Outputs[Merge Join Output].Columns[empleadoid]" />
                     <inputColumn
-                      refId="Package\CARGA DIMEMPLEADO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[NombreCompleto]"
+                      refId="Package\CARGA DIMEMPLEADO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Nombre Completo]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="31"
-                      cachedName="NombreCompleto"
+                      cachedName="Nombre Completo"
                       externalMetadataColumnId="Package\CARGA DIMEMPLEADO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[empleado_NombreCompleto]"
-                      lineageId="Package\CARGA DIMEMPLEADO\Merge Join.Outputs[Merge Join Output].Columns[NombreCompleto]" />
+                      lineageId="Package\CARGA DIMEMPLEADO\Merge Join.Outputs[Merge Join Output].Columns[Nombre Completo]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -741,11 +695,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\CARGA DIMEMPLEADO\Sort"
+              refId="Package\CARGA DIMEMPLEADO\ORDENAR STAGE EMPLEADO"
               componentClassID="Microsoft.Sort"
               contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
-              name="Sort"
+              name="ORDENAR STAGE EMPLEADO"
               version="1">
               <properties>
                 <property
@@ -760,11 +714,11 @@
               </properties>
               <inputs>
                 <input
-                  refId="Package\CARGA DIMEMPLEADO\Sort.Inputs[Sort Input]"
+                  refId="Package\CARGA DIMEMPLEADO\ORDENAR STAGE EMPLEADO.Inputs[Sort Input]"
                   name="Sort Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\CARGA DIMEMPLEADO\Sort.Inputs[Sort Input].Columns[empleadoid]"
+                      refId="Package\CARGA DIMEMPLEADO\ORDENAR STAGE EMPLEADO.Inputs[Sort Input].Columns[empleadoid]"
                       cachedDataType="i4"
                       cachedName="empleadoid"
                       lineageId="Package\CARGA DIMEMPLEADO\STAGE EMPLEADO.Outputs[OLE DB Source Output].Columns[empleadoid]">
@@ -780,12 +734,12 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\CARGA DIMEMPLEADO\Sort.Inputs[Sort Input].Columns[NombreCompleto]"
+                      refId="Package\CARGA DIMEMPLEADO\ORDENAR STAGE EMPLEADO.Inputs[Sort Input].Columns[Nombre Completo]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="31"
-                      cachedName="NombreCompleto"
-                      lineageId="Package\CARGA DIMEMPLEADO\STAGE EMPLEADO.Outputs[OLE DB Source Output].Columns[NombreCompleto]">
+                      cachedName="Nombre Completo"
+                      lineageId="Package\CARGA DIMEMPLEADO\STAGE EMPLEADO.Outputs[OLE DB Source Output].Columns[Nombre Completo]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -803,14 +757,14 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\CARGA DIMEMPLEADO\Sort.Outputs[Sort Output]"
+                  refId="Package\CARGA DIMEMPLEADO\ORDENAR STAGE EMPLEADO.Outputs[Sort Output]"
                   isSorted="true"
                   name="Sort Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\CARGA DIMEMPLEADO\Sort.Outputs[Sort Output].Columns[empleadoid]"
+                      refId="Package\CARGA DIMEMPLEADO\ORDENAR STAGE EMPLEADO.Outputs[Sort Output].Columns[empleadoid]"
                       dataType="i4"
-                      lineageId="Package\CARGA DIMEMPLEADO\Sort.Outputs[Sort Output].Columns[empleadoid]"
+                      lineageId="Package\CARGA DIMEMPLEADO\ORDENAR STAGE EMPLEADO.Outputs[Sort Output].Columns[empleadoid]"
                       name="empleadoid"
                       sortKeyPosition="1">
                       <properties>
@@ -822,18 +776,18 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\CARGA DIMEMPLEADO\Sort.Outputs[Sort Output].Columns[NombreCompleto]"
+                      refId="Package\CARGA DIMEMPLEADO\ORDENAR STAGE EMPLEADO.Outputs[Sort Output].Columns[Nombre Completo]"
                       codePage="1252"
                       dataType="str"
                       length="31"
-                      lineageId="Package\CARGA DIMEMPLEADO\Sort.Outputs[Sort Output].Columns[NombreCompleto]"
-                      name="NombreCompleto">
+                      lineageId="Package\CARGA DIMEMPLEADO\ORDENAR STAGE EMPLEADO.Outputs[Sort Output].Columns[Nombre Completo]"
+                      name="Nombre Completo">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\CARGA DIMEMPLEADO\STAGE EMPLEADO.Outputs[OLE DB Source Output].Columns[NombreCompleto]}</property>
+                          name="SortColumnId">#{Package\CARGA DIMEMPLEADO\STAGE EMPLEADO.Outputs[OLE DB Source Output].Columns[Nombre Completo]}</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -857,7 +811,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[empleado]</property>
+                  name="OpenRowset"></property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -866,10 +820,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT se.empleadoid, 
-CONCAT(se.nombre,' ',se.apellido) as 'NombreCompleto'
-FROM 
-stage_northwind.dbo.empleado as se;</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select se.empleadoid, concat(se.nombre, ' ', se.apellido) as [Nombre Completo]  from stage_northwind.dbo.empleado as se;</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -895,8 +846,8 @@ stage_northwind.dbo.empleado as se;</property>
               <connections>
                 <connection
                   refId="Package\CARGA DIMEMPLEADO\STAGE EMPLEADO.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.stage_northwind]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.stage_northwind]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -915,15 +866,15 @@ stage_northwind.dbo.empleado as se;</property>
                       name="empleadoid"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\CARGA DIMEMPLEADO\STAGE EMPLEADO.Outputs[OLE DB Source Output].Columns[NombreCompleto]"
+                      refId="Package\CARGA DIMEMPLEADO\STAGE EMPLEADO.Outputs[OLE DB Source Output].Columns[Nombre Completo]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\CARGA DIMEMPLEADO\STAGE EMPLEADO.Outputs[OLE DB Source Output].ExternalColumns[NombreCompleto]"
+                      externalMetadataColumnId="Package\CARGA DIMEMPLEADO\STAGE EMPLEADO.Outputs[OLE DB Source Output].ExternalColumns[Nombre Completo]"
                       length="31"
-                      lineageId="Package\CARGA DIMEMPLEADO\STAGE EMPLEADO.Outputs[OLE DB Source Output].Columns[NombreCompleto]"
-                      name="NombreCompleto"
+                      lineageId="Package\CARGA DIMEMPLEADO\STAGE EMPLEADO.Outputs[OLE DB Source Output].Columns[Nombre Completo]"
+                      name="Nombre Completo"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -933,11 +884,11 @@ stage_northwind.dbo.empleado as se;</property>
                       dataType="i4"
                       name="empleadoid" />
                     <externalMetadataColumn
-                      refId="Package\CARGA DIMEMPLEADO\STAGE EMPLEADO.Outputs[OLE DB Source Output].ExternalColumns[NombreCompleto]"
+                      refId="Package\CARGA DIMEMPLEADO\STAGE EMPLEADO.Outputs[OLE DB Source Output].ExternalColumns[Nombre Completo]"
                       codePage="1252"
                       dataType="str"
                       length="31"
-                      name="NombreCompleto" />
+                      name="Nombre Completo" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -951,12 +902,12 @@ stage_northwind.dbo.empleado as se;</property>
                       lineageId="Package\CARGA DIMEMPLEADO\STAGE EMPLEADO.Outputs[OLE DB Source Error Output].Columns[empleadoid]"
                       name="empleadoid" />
                     <outputColumn
-                      refId="Package\CARGA DIMEMPLEADO\STAGE EMPLEADO.Outputs[OLE DB Source Error Output].Columns[NombreCompleto]"
+                      refId="Package\CARGA DIMEMPLEADO\STAGE EMPLEADO.Outputs[OLE DB Source Error Output].Columns[Nombre Completo]"
                       codePage="1252"
                       dataType="str"
                       length="31"
-                      lineageId="Package\CARGA DIMEMPLEADO\STAGE EMPLEADO.Outputs[OLE DB Source Error Output].Columns[NombreCompleto]"
-                      name="NombreCompleto" />
+                      lineageId="Package\CARGA DIMEMPLEADO\STAGE EMPLEADO.Outputs[OLE DB Source Error Output].Columns[Nombre Completo]"
+                      name="Nombre Completo" />
                     <outputColumn
                       refId="Package\CARGA DIMEMPLEADO\STAGE EMPLEADO.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -982,25 +933,25 @@ stage_northwind.dbo.empleado as se;</property>
               name="Merge Join Output"
               startId="Package\CARGA DIMEMPLEADO\Merge Join.Outputs[Merge Join Output]" />
             <path
-              refId="Package\CARGA DIMEMPLEADO.Paths[NEW EMPLEADOS]"
+              refId="Package\CARGA DIMEMPLEADO.Paths[new empleados]"
               endId="Package\CARGA DIMEMPLEADO\OLE DB Destination.Inputs[OLE DB Destination Input]"
-              name="NEW EMPLEADOS"
-              startId="Package\CARGA DIMEMPLEADO\Conditional Split.Outputs[NEW EMPLEADOS]" />
+              name="new empleados"
+              startId="Package\CARGA DIMEMPLEADO\Conditional Split.Outputs[new empleados]" />
             <path
               refId="Package\CARGA DIMEMPLEADO.Paths[OLE DB Source Output]"
+              endId="Package\CARGA DIMEMPLEADO\ORDENAR STAGE EMPLEADO.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\CARGA DIMEMPLEADO\STAGE EMPLEADO.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\CARGA DIMEMPLEADO.Paths[OLE DB Source Output1]"
               endId="Package\CARGA DIMEMPLEADO\ORDENAR DIM EMPLEADO.Inputs[Sort Input]"
               name="OLE DB Source Output"
               startId="Package\CARGA DIMEMPLEADO\DIM EMPLEADO.Outputs[OLE DB Source Output]" />
             <path
-              refId="Package\CARGA DIMEMPLEADO.Paths[OLE DB Source Output1]"
-              endId="Package\CARGA DIMEMPLEADO\Sort.Inputs[Sort Input]"
-              name="OLE DB Source Output"
-              startId="Package\CARGA DIMEMPLEADO\STAGE EMPLEADO.Outputs[OLE DB Source Output]" />
-            <path
               refId="Package\CARGA DIMEMPLEADO.Paths[Sort Output]"
               endId="Package\CARGA DIMEMPLEADO\Merge Join.Inputs[Merge Join Left Input]"
               name="Sort Output"
-              startId="Package\CARGA DIMEMPLEADO\Sort.Outputs[Sort Output]" />
+              startId="Package\CARGA DIMEMPLEADO\ORDENAR STAGE EMPLEADO.Outputs[Sort Output]" />
             <path
               refId="Package\CARGA DIMEMPLEADO.Paths[Sort Output1]"
               endId="Package\CARGA DIMEMPLEADO\Merge Join.Inputs[Merge Join Right Input]"
@@ -1036,59 +987,59 @@ stage_northwind.dbo.empleado as se;</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="97.6,41.6"
-          Id="Package\CARGA DIMEMPLEADO\Sort"
-          TopLeft="191.666656194462,138.666665702396" />
+          Size="228.8,41.6"
+          Id="Package\CARGA DIMEMPLEADO\ORDENAR STAGE EMPLEADO"
+          TopLeft="135.833325911728,133.466665738556" />
         <NodeLayout
           Size="158.4,41.6"
           Id="Package\CARGA DIMEMPLEADO\DIM EMPLEADO"
-          TopLeft="569.166635568773,40.7333330500788" />
+          TopLeft="479.166640486156,38.9999997287989" />
         <NodeLayout
           Size="174.4,41.6"
           Id="Package\CARGA DIMEMPLEADO\STAGE EMPLEADO"
-          TopLeft="156.666658106778,36.3999997468789" />
+          TopLeft="144.99999207755,39.8666663894388" />
         <NodeLayout
           Size="212.8,41.6"
           Id="Package\CARGA DIMEMPLEADO\ORDENAR DIM EMPLEADO"
-          TopLeft="539.1666372079,129.133332435356" />
+          TopLeft="489.999973227582,132.599999077916" />
         <NodeLayout
           Size="171.2,41.6"
           Id="Package\CARGA DIMEMPLEADO\OLE DB Destination"
-          TopLeft="106.666660838657,323.599998155833" />
+          TopLeft="377.49997937431,424.866663840148" />
         <NodeLayout
           Size="129.6,41.6"
           Id="Package\CARGA DIMEMPLEADO\Merge Join"
-          TopLeft="372.499979647498,204.533331911034" />
+          TopLeft="397.499978281559,227.933331748313" />
         <NodeLayout
           Size="153.6,41.6"
           Id="Package\CARGA DIMEMPLEADO\Conditional Split"
-          TopLeft="354.999980603656,318.066664454871" />
+          TopLeft="579.999968310198,311.999997830391" />
         <EdgeLayout
           Id="Package\CARGA DIMEMPLEADO.Paths[Sort Output1]"
-          TopLeft="645.5666372079,170.733332435356">
+          TopLeft="596.399973227582,174.199999077916">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-187.999990893735,33.7999994756779"
+              EndConnector="-113.833328279357,53.7333326703974"
               Start="0,0"
-              End="-187.999990893735,26.2999994756779">
+              End="-113.833328279357,46.2333326703974">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.0326826160725" />
+                    End="0,27.8468288753819" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,16.0326826160725"
-                    Point2="0,20.0326826160725"
-                    Point3="-4,20.0326826160725" />
+                    Point1="0,27.8468288753819"
+                    Point2="0,31.8468288753819"
+                    Point3="-4,31.8468288753819" />
                   <mssgle:LineSegment
-                    End="-183.999990893735,20.0326826160725" />
+                    End="-109.833328279357,31.8468288753819" />
                   <mssgle:CubicBezierSegment
-                    Point1="-183.999990893735,20.0326826160725"
-                    Point2="-187.999990893735,20.0326826160725"
-                    Point3="-187.999990893735,24.0326826160725" />
+                    Point1="-109.833328279357,31.8468288753819"
+                    Point2="-113.833328279357,31.8468288753819"
+                    Point3="-113.833328279357,35.8468288753819" />
                   <mssgle:LineSegment
-                    End="-187.999990893735,26.2999994756779" />
+                    End="-113.833328279357,46.2333326703974" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1099,30 +1050,30 @@ stage_northwind.dbo.empleado as se;</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA DIMEMPLEADO.Paths[Sort Output]"
-          TopLeft="240.466656194462,180.266665702396">
+          TopLeft="250.233325911728,175.066665738556">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="196.833323453036,24.2666662086381"
+              EndConnector="191.799985703164,52.8666660097574"
               Start="0,0"
-              End="196.833323453036,16.7666662086381">
+              End="191.799985703164,45.3666660097574">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,8.13333310431905" />
+                    End="0,27.3331703423684" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,8.13333310431905"
-                    Point2="0,12.133333104319"
-                    Point3="4,12.133333104319" />
+                    Point1="0,27.3331703423684"
+                    Point2="0,31.3331703423684"
+                    Point3="4,31.3331703423684" />
                   <mssgle:LineSegment
-                    End="192.833323453036,12.133333104319" />
+                    End="187.799985703164,31.3331703423684" />
                   <mssgle:CubicBezierSegment
-                    Point1="192.833323453036,12.133333104319"
-                    Point2="196.833323453036,12.133333104319"
-                    Point3="196.833323453036,16.133333104319" />
+                    Point1="187.799985703164,31.3331703423684"
+                    Point2="191.799985703164,31.3331703423684"
+                    Point3="191.799985703164,35.3331703423684" />
                   <mssgle:LineSegment
-                    End="196.833323453036,16.7666662086381" />
+                    End="191.799985703164,45.3666660097574" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1133,18 +1084,30 @@ stage_northwind.dbo.empleado as se;</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA DIMEMPLEADO.Paths[OLE DB Source Output1]"
-          TopLeft="242.16665715062,77.9999997468789">
+          TopLeft="558.366640486156,80.5999997287989">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60.666665955517"
+              EndConnector="38.033332741426,51.9999993491171"
               Start="0,0"
-              End="0,53.166665955517">
+              End="38.033332741426,44.4999993491171">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,53.166665955517" />
+                    End="0,21.9999996745586" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.9999996745586"
+                    Point2="0,25.9999996745586"
+                    Point3="4,25.9999996745586" />
+                  <mssgle:LineSegment
+                    End="34.033332741426,25.9999996745586" />
+                  <mssgle:CubicBezierSegment
+                    Point1="34.033332741426,25.9999996745586"
+                    Point2="38.033332741426,25.9999996745586"
+                    Point3="38.033332741426,29.9999996745586" />
+                  <mssgle:LineSegment
+                    End="38.033332741426,44.4999993491171" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1155,18 +1118,30 @@ stage_northwind.dbo.empleado as se;</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA DIMEMPLEADO.Paths[OLE DB Source Output]"
-          TopLeft="646.966636388336,82.3333330500788">
+          TopLeft="232.19999207755,81.4666663894388">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,46.7999993852774"
+              EndConnector="18.0333338341779,51.9999993491173"
               Start="0,0"
-              End="0,39.2999993852774">
+              End="18.0333338341779,44.4999993491173">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.2999993852774" />
+                    End="0,21.9999996745587" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.9999996745587"
+                    Point2="0,25.9999996745587"
+                    Point3="4,25.9999996745587" />
+                  <mssgle:LineSegment
+                    End="14.0333338341779,25.9999996745587" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.0333338341779,25.9999996745587"
+                    Point2="18.0333338341779,25.9999996745587"
+                    Point3="18.0333338341779,29.9999996745587" />
+                  <mssgle:LineSegment
+                    End="18.0333338341779,44.4999993491173" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1176,43 +1151,67 @@ stage_northwind.dbo.empleado as se;</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\CARGA DIMEMPLEADO.Paths[NEW EMPLEADOS]"
-          TopLeft="354.999980603656,341.633331305352">
+          Id="Package\CARGA DIMEMPLEADO.Paths[new empleados]"
+          TopLeft="656.799968310198,353.599997830391">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-77.1333197649992,0"
+              EndConnector="-193.699988935888,71.2666660097568"
               Start="0,0"
-              End="-69.6333197649992,0">
+              End="-193.699988935888,63.7666660097568">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-69.6333197649992,0" />
+                    End="0,31.6333330048784" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.6333330048784"
+                    Point2="0,35.6333330048784"
+                    Point3="-4,35.6333330048784" />
+                  <mssgle:LineSegment
+                    End="-189.699988935888,35.6333330048784" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-189.699988935888,35.6333330048784"
+                    Point2="-193.699988935888,35.6333330048784"
+                    Point3="-193.699988935888,39.6333330048784" />
+                  <mssgle:LineSegment
+                    End="-193.699988935888,63.7666660097568" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-74.9641403512496,5,80.2949609375,9.5732421875"
+              BoundingBox="-131.824193686694,40.6333330048784,69.9483984375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA DIMEMPLEADO.Paths[Merge Join Output]"
-          TopLeft="434.549980125577,246.133331911034">
+          TopLeft="462.299978281559,269.533331748313">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,71.9333325438368"
+              EndConnector="194.499990028639,42.4666660820782"
               Start="0,0"
-              End="0,64.4333325438368">
+              End="194.499990028639,34.9666660820782">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,64.4333325438368" />
+                    End="0,17.2333330410391" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.2333330410391"
+                    Point2="0,21.2333330410391"
+                    Point3="4,21.2333330410391" />
+                  <mssgle:LineSegment
+                    End="190.499990028639,21.2333330410391" />
+                  <mssgle:CubicBezierSegment
+                    Point1="190.499990028639,21.2333330410391"
+                    Point2="194.499990028639,21.2333330410391"
+                    Point3="194.499990028639,25.2333330410391" />
+                  <mssgle:LineSegment
+                    End="194.499990028639,34.9666660820782" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1242,11 +1241,6 @@ stage_northwind.dbo.empleado as se;</property>
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

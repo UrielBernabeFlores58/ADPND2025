@@ -11,28 +11,11 @@
   DTS:LocaleID="2058"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="14"
-  DTS:VersionGUID="{980543AC-855C-45B0-854D-28282A130B9B}">
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{24FE7ED9-316D-4D10-AAF4-874064C68140}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{940862AE-384E-4DA7-AD9F-682301E87932}"
-      DTS:ObjectName="localhost,1450.stage_northwind.sa">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost,1450;User ID=sa;Initial Catalog=stage_northwind;Provider=MSOLEDBSQL.1;Application Name=SSIS-Package1-{940862AE-384E-4DA7-AD9F-682301E87932}localhost,1450.stage_northwind.sa;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbnRWTxIt6kyg4Q8YGpNkdgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACdhQqL2JnpkBQuO2BjZ3L5v/oR6Ks1CfesaNjOUs3dHQAAAAAOgAAAAAIAACAAAAByCNvWnd0mXGNpDBI3xKiL/ZgNHflVfXI5Gu2vyV+djSAAAADzc4RUSmVOGkwTqsBq1xUwzLVo5R4e7hSxiGPd+BHsAUAAAACU03Iij34s50QpiBXf069uX9COuaWOubJ5kR6vX8SGyJRaRuErUBTGxDba/SYmVjij4bD/EdkdF6ufzJmuQ0XX</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LocalHost.stage_northwind]"
       DTS:CreationName="OLEDB"
@@ -61,7 +44,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{940862AE-384E-4DA7-AD9F-682301E87932}"
+          SQLTask:Connection="{F74E2CF8-EC6F-4C01-9D1B-B89BA1C8D411}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE&#xA;[dbo].[categorias];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -78,7 +61,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{940862AE-384E-4DA7-AD9F-682301E87932}"
+          SQLTask:Connection="{F74E2CF8-EC6F-4C01-9D1B-B89BA1C8D411}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE&#xA;[dbo].[clientes];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -95,7 +78,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{940862AE-384E-4DA7-AD9F-682301E87932}"
+          SQLTask:Connection="{F74E2CF8-EC6F-4C01-9D1B-B89BA1C8D411}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE&#xA;[dbo].[empleado];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -112,7 +95,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{940862AE-384E-4DA7-AD9F-682301E87932}"
+          SQLTask:Connection="{F74E2CF8-EC6F-4C01-9D1B-B89BA1C8D411}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE&#xA;[dbo].[producto];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -129,7 +112,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{940862AE-384E-4DA7-AD9F-682301E87932}"
+          SQLTask:Connection="{F74E2CF8-EC6F-4C01-9D1B-B89BA1C8D411}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE&#xA;[dbo].[proveedor];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -146,7 +129,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{940862AE-384E-4DA7-AD9F-682301E87932}"
+          SQLTask:Connection="{F74E2CF8-EC6F-4C01-9D1B-B89BA1C8D411}"
           SQLTask:SqlStatementSource="truncate table Stage_Tiempo;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -163,7 +146,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{940862AE-384E-4DA7-AD9F-682301E87932}"
+          SQLTask:Connection="{F74E2CF8-EC6F-4C01-9D1B-B89BA1C8D411}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE&#xA;[dbo].[ventas];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -180,7 +163,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{940862AE-384E-4DA7-AD9F-682301E87932}"
+          SQLTask:Connection="{F74E2CF8-EC6F-4C01-9D1B-B89BA1C8D411}"
           SQLTask:SqlStatementSource="DBCC CHECKIDENT ('Stage_Tiempo',RESEED,0);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -278,7 +261,7 @@
         <NodeLayout
           Size="162.4,41.6"
           Id="Package\LIMPIAR TIEMPO"
-          TopLeft="745.411214683781,14.508225007337" />
+          TopLeft="575.411223972171,92.5082244649348" />
         <NodeLayout
           Size="164,41.6"
           Id="Package\LIMPIAR VENTAS"
@@ -286,55 +269,33 @@
         <NodeLayout
           Size="180.8,41.6"
           Id="Package\REINICIAR IDENTITY"
-          TopLeft="453.019455767588,64.5610385120896" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Restricción]"
-          TopLeft="745.411214683781,35.308225007337">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-111.591758916193,50.0528135047526"
-              Start="0,0"
-              End="-104.091758916193,50.0528135047526">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-51.7958794580964,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-51.7958794580964,0"
-                    Point2="-55.7958794580964,0"
-                    Point3="-55.7958794580964,4" />
-                  <mssgle:LineSegment
-                    End="-55.7958794580964,46.0528135047526" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-55.7958794580964,46.0528135047526"
-                    Point2="-55.7958794580964,50.0528135047526"
-                    Point3="-59.7958794580964,50.0528135047526" />
-                  <mssgle:LineSegment
-                    End="-104.091758916193,50.0528135047526" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="343.019461777723,3.02770560665133" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 1]"
-          TopLeft="453.019455767588,88.6138523422838">
+          TopLeft="404.619461777723,44.6277056066513">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-187.352793562991,0"
+              EndConnector="-230.952799573126,26.4389605658266"
               Start="0,0"
-              End="-179.852793562991,0">
+              End="-230.952799573126,18.9389605658266">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-179.852793562991,0" />
+                    End="0,6.71473665036133" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,6.71473665036133"
+                    Point2="0,10.7147366503613"
+                    Point3="-4,10.7147366503613" />
+                  <mssgle:LineSegment
+                    End="-226.952799573126,10.7147366503613" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-226.952799573126,10.7147366503613"
+                    Point2="-230.952799573126,10.7147366503613"
+                    Point3="-230.952799573126,14.7147366503613" />
+                  <mssgle:LineSegment
+                    End="-230.952799573126,18.9389605658266" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -457,6 +418,40 @@
                     Point3="17.1047607079388,27.1523806467415" />
                   <mssgle:LineSegment
                     End="17.1047607079388,38.804761293483" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="656.611223972172,92.5082244649348">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-194.391762194448,-47.8805188582835"
+              Start="0,0"
+              End="-194.391762194448,-40.3805188582835">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-24.476308584137" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-24.476308584137"
+                    Point2="0,-28.476308584137"
+                    Point3="-4,-28.476308584137" />
+                  <mssgle:LineSegment
+                    End="-190.391762194448,-28.476308584137" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-190.391762194448,-28.476308584137"
+                    Point2="-194.391762194448,-28.476308584137"
+                    Point3="-194.391762194448,-32.476308584137" />
+                  <mssgle:LineSegment
+                    End="-194.391762194448,-40.3805188582835" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

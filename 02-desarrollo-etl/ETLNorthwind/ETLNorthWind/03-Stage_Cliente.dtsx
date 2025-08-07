@@ -11,45 +11,11 @@
   DTS:LocaleID="2058"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="12"
-  DTS:VersionGUID="{5A3DE2A4-8BC7-4046-B4A3-F91D253261AD}">
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{1DE27971-949D-4234-A6CD-F772B6DD152B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost,1450.northwind.sa]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{453A3315-3BBA-4B0F-9295-85B769F73FB1}"
-      DTS:ObjectName="localhost,1450.northwind.sa">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost,1450;User ID=sa;Initial Catalog=northwind;Provider=MSOLEDBSQL.1;Application Name=SSIS-Package1-{453A3315-3BBA-4B0F-9295-85B769F73FB1}localhost,1450.northwind.sa;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbnRWTxIt6kyg4Q8YGpNkdgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABYUz722ykr4PRzDHKMmSc3NaMikdb7H4wtooKPZP9EhQAAAAAOgAAAAAIAACAAAAC8ITypnNIq4GIBzTpr/Wdn+NaFEegWB1zLvVRYpvzRiyAAAACDcTbW7pNfOjxdrP05EATEWY7HAorKhWzSUoX2Eg8bkEAAAABgGZ3qjRBqUA+WS+HDDw4O51BBm4V1DTK+gBUGEh5xPKrPcLexfood81zX7LCOcKFa58FUFGPQtq+b52WU8wpf</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{52639023-A836-461C-A153-CF9EAF083C21}"
-      DTS:ObjectName="localhost,1450.stage_northwind.sa">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost,1450;User ID=sa;Initial Catalog=stage_northwind;Provider=MSOLEDBSQL.1;Application Name=SSIS-Package1-{52639023-A836-461C-A153-CF9EAF083C21}localhost,1450.stage_northwind.sa;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbnRWTxIt6kyg4Q8YGpNkdgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAJqjB0M+4xOCsv5B0oC8+FL+i2UaAg33YMRIVjzjAztAAAAAAOgAAAAAIAACAAAAA/vfMaTkbwvwk576beU9B+fhxdHmZ004IshKkl1ZXR7yAAAAAq0mpTNg1B1ie3IvF//VXXo/8n76A2OvUEgoU8hxrypUAAAAB16w6uMr3hlwfdpMLYyGGnNRHNu9P2N5XN4V8H1/dsLIwoho+7WFd7eEbtP4OcJ5maoum8Et2kEF77/kyWn+PD</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LocalHost.Northwind]"
       DTS:CreationName="OLEDB"
@@ -103,6 +69,98 @@
         <pipeline
           version="1">
           <components>
+            <component
+              refId="Package\CARGA STAGE_CLIENTE\Conditional Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Conditional Split"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\CARGA STAGE_CLIENTE\Conditional Split.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\CARGA STAGE_CLIENTE\Conditional Split.Inputs[Conditional Split Input].Columns[clienteid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="clienteid"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\CARGA STAGE_CLIENTE\LEFT JOIN CUSTOMERS STAGE CLIENTE.Outputs[Merge Join Output].Columns[clienteid]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\CARGA STAGE_CLIENTE\Conditional Split.Outputs[Case 1]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Case 1"
+                  synchronousInputId="Package\CARGA STAGE_CLIENTE\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">[ISNULL](#{Package\CARGA STAGE_CLIENTE\LEFT JOIN CUSTOMERS STAGE CLIENTE.Outputs[Merge Join Output].Columns[clienteid]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">ISNULL(clienteid)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\CARGA STAGE_CLIENTE\Conditional Split.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\CARGA STAGE_CLIENTE\Conditional Split.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\CARGA STAGE_CLIENTE\Conditional Split.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\CARGA STAGE_CLIENTE\Conditional Split.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CARGA STAGE_CLIENTE\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\CARGA STAGE_CLIENTE\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\CARGA STAGE_CLIENTE\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\CARGA STAGE_CLIENTE\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
             <component
               refId="Package\CARGA STAGE_CLIENTE\CONVERSION DE DATOS"
               componentClassID="Microsoft.DataConvert"
@@ -669,8 +727,8 @@ from Northwind.dbo.Customers;</property>
               <connections>
                 <connection
                   refId="Package\CARGA STAGE_CLIENTE\NORTHWIND_CUSTOMERS.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost,1450.northwind.sa]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.northwind.sa]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.Northwind]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.Northwind]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -891,8 +949,8 @@ from Northwind.dbo.Customers;</property>
               <connections>
                 <connection
                   refId="Package\CARGA STAGE_CLIENTE\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.stage_northwind]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.stage_northwind]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1693,8 +1751,8 @@ from Northwind.dbo.Customers;</property>
               <connections>
                 <connection
                   refId="Package\CARGA STAGE_CLIENTE\STAGE_CLIENTE.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.stage_northwind 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.stage_northwind 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1874,13 +1932,18 @@ from Northwind.dbo.Customers;</property>
           </components>
           <paths>
             <path
+              refId="Package\CARGA STAGE_CLIENTE.Paths[Case 1]"
+              endId="Package\CARGA STAGE_CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Case 1"
+              startId="Package\CARGA STAGE_CLIENTE\Conditional Split.Outputs[Case 1]" />
+            <path
               refId="Package\CARGA STAGE_CLIENTE.Paths[Data Conversion Output]"
               endId="Package\CARGA STAGE_CLIENTE\ORDENAR_CUSTOMERS.Inputs[Sort Input]"
               name="Data Conversion Output"
               startId="Package\CARGA STAGE_CLIENTE\CONVERSION DE DATOS.Outputs[Data Conversion Output]" />
             <path
               refId="Package\CARGA STAGE_CLIENTE.Paths[Merge Join Output]"
-              endId="Package\CARGA STAGE_CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              endId="Package\CARGA STAGE_CLIENTE\Conditional Split.Inputs[Conditional Split Input]"
               name="Merge Join Output"
               startId="Package\CARGA STAGE_CLIENTE\LEFT JOIN CUSTOMERS STAGE CLIENTE.Outputs[Merge Join Output]" />
             <path
@@ -1931,27 +1994,11 @@ from Northwind.dbo.Customers;</property>
     design-time-name="Package\CARGA STAGE_CLIENTE">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="218.4,41.6"
-          Id="Package\CARGA STAGE_CLIENTE\ORDENAR STAGE_CLIENTE"
-          TopLeft="607.291633485714,250.249998259793" />
-        <NodeLayout
-          Size="284,41.6"
-          Id="Package\CARGA STAGE_CLIENTE\LEFT JOIN CUSTOMERS STAGE CLIENTE"
-          TopLeft="395.624978384004,384.366663993828" />
-        <NodeLayout
-          Size="163.2,41.6"
-          Id="Package\CARGA STAGE_CLIENTE\STAGE_CLIENTE"
-          TopLeft="624.702346820149,63.1428567037696" />
-        <NodeLayout
-          Size="215.2,41.6"
-          Id="Package\CARGA STAGE_CLIENTE\NORTHWIND_CUSTOMERS"
-          TopLeft="273.660699333553,78.2579359637403" />
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171.2,41.6"
           Id="Package\CARGA STAGE_CLIENTE\OLE DB Destination"
-          TopLeft="894.999951099358,346.066665105754" />
+          TopLeft="446.904737486963,530.238091812352" />
         <NodeLayout
           Size="204,41.6"
           Id="Package\CARGA STAGE_CLIENTE\CONVERSION DE DATOS"
@@ -1960,32 +2007,52 @@ from Northwind.dbo.Customers;</property>
           Size="202.4,41.6"
           Id="Package\CARGA STAGE_CLIENTE\ORDENAR_CUSTOMERS"
           TopLeft="260.416652438128,296.833331269191" />
+        <NodeLayout
+          Size="218.4,41.6"
+          Id="Package\CARGA STAGE_CLIENTE\ORDENAR STAGE_CLIENTE"
+          TopLeft="607.291633485714,250.249998259793" />
+        <NodeLayout
+          Size="284,41.6"
+          Id="Package\CARGA STAGE_CLIENTE\LEFT JOIN CUSTOMERS STAGE CLIENTE"
+          TopLeft="396.22021644672,380.404759259474" />
+        <NodeLayout
+          Size="163.2,41.6"
+          Id="Package\CARGA STAGE_CLIENTE\STAGE_CLIENTE"
+          TopLeft="624.702346820149,107.714284965254" />
+        <NodeLayout
+          Size="153.6,41.6"
+          Id="Package\CARGA STAGE_CLIENTE\Conditional Split"
+          TopLeft="460.357117704339,453.838093584198" />
+        <NodeLayout
+          Size="215.2,41.6"
+          Id="Package\CARGA STAGE_CLIENTE\NORTHWIND_CUSTOMERS"
+          TopLeft="277.232127709847,104.25793578294" />
         <EdgeLayout
           Id="Package\CARGA STAGE_CLIENTE.Paths[Sort Output1]"
           TopLeft="716.491633485714,291.849998259793">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-132.86665510171,92.5166657340354"
+              EndConnector="-132.271417038994,88.5547609996812"
               Start="0,0"
-              End="-132.86665510171,85.0166657340354">
+              End="-132.271417038994,81.0547609996812">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,51.1990190513993" />
+                    End="0,48.8351935376249" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,51.1990190513993"
-                    Point2="0,55.1990190513993"
-                    Point3="-4,55.1990190513993" />
+                    Point1="0,48.8351935376249"
+                    Point2="0,52.8351935376249"
+                    Point3="-4,52.8351935376249" />
                   <mssgle:LineSegment
-                    End="-128.86665510171,55.1990190513993" />
+                    End="-128.271417038994,52.8351935376249" />
                   <mssgle:CubicBezierSegment
-                    Point1="-128.86665510171,55.1990190513993"
-                    Point2="-132.86665510171,55.1990190513993"
-                    Point3="-132.86665510171,59.1990190513993" />
+                    Point1="-128.271417038994,52.8351935376249"
+                    Point2="-132.271417038994,52.8351935376249"
+                    Point3="-132.271417038994,56.8351935376249" />
                   <mssgle:LineSegment
-                    End="-132.86665510171,85.0166657340354" />
+                    End="-132.271417038994,81.0547609996812" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2000,26 +2067,26 @@ from Northwind.dbo.Customers;</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="130.008325945876,45.9333327246374"
+              EndConnector="130.603564008592,41.9714279902831"
               Start="0,0"
-              End="130.008325945876,38.4333327246374">
+              End="130.603564008592,34.4714279902831">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.4056018777248" />
+                    End="0,21.0417763639504" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,23.4056018777248"
-                    Point2="0,27.4056018777248"
-                    Point3="4,27.4056018777248" />
+                    Point1="0,21.0417763639504"
+                    Point2="0,25.0417763639504"
+                    Point3="4,25.0417763639504" />
                   <mssgle:LineSegment
-                    End="126.008325945876,27.4056018777248" />
+                    End="126.603564008592,25.0417763639504" />
                   <mssgle:CubicBezierSegment
-                    Point1="126.008325945876,27.4056018777248"
-                    Point2="130.008325945876,27.4056018777248"
-                    Point3="130.008325945876,31.4056018777248" />
+                    Point1="126.603564008592,25.0417763639504"
+                    Point2="130.603564008592,25.0417763639504"
+                    Point3="130.603564008592,29.0417763639504" />
                   <mssgle:LineSegment
-                    End="130.008325945876,38.4333327246374" />
+                    End="130.603564008592,34.4714279902831" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2030,30 +2097,30 @@ from Northwind.dbo.Customers;</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA STAGE_CLIENTE.Paths[OLE DB Source Output1]"
-          TopLeft="706.302346820149,104.74285670377">
+          TopLeft="706.302346820149,149.314284965254">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="10.1892866655652,145.507141556023"
+              EndConnector="10.189286665565,100.935713294539"
               Start="0,0"
-              End="10.1892866655652,138.007141556023">
+              End="10.189286665565,93.4357132945389">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,68.7535707780116" />
+                    End="0,46.4678566472695" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,68.7535707780116"
-                    Point2="0,72.7535707780116"
-                    Point3="4,72.7535707780116" />
+                    Point1="0,46.4678566472695"
+                    Point2="0,50.4678566472695"
+                    Point3="4,50.4678566472695" />
                   <mssgle:LineSegment
-                    End="6.18928666556519,72.7535707780116" />
+                    End="6.18928666556496,50.4678566472695" />
                   <mssgle:CubicBezierSegment
-                    Point1="6.18928666556519,72.7535707780116"
-                    Point2="10.1892866655652,72.7535707780116"
-                    Point3="10.1892866655652,76.7535707780116" />
+                    Point1="6.18928666556496,50.4678566472695"
+                    Point2="10.189286665565,50.4678566472695"
+                    Point3="10.189286665565,54.4678566472695" />
                   <mssgle:LineSegment
-                    End="10.1892866655652,138.007141556023" />
+                    End="10.189286665565,93.4357132945389" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2064,30 +2131,18 @@ from Northwind.dbo.Customers;</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA STAGE_CLIENTE.Paths[OLE DB Source Output]"
-          TopLeft="381.260699333553,119.85793596374">
+          TopLeft="387.16605600077,145.85793578294">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="8.23928495814073,78.3920626576539"
+              EndConnector="0,52.3920628384545"
               Start="0,0"
-              End="8.23928495814073,70.8920626576539">
+              End="0,44.8920628384545">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.196031328827" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,35.196031328827"
-                    Point2="0,39.196031328827"
-                    Point3="4,39.196031328827" />
-                  <mssgle:LineSegment
-                    End="4.23928495814073,39.196031328827" />
-                  <mssgle:CubicBezierSegment
-                    Point1="4.23928495814073,39.196031328827"
-                    Point2="8.23928495814073,39.196031328827"
-                    Point3="8.23928495814073,43.196031328827" />
-                  <mssgle:LineSegment
-                    End="8.23928495814073,70.8920626576539" />
+                    End="0,44.8920628384545" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2098,30 +2153,18 @@ from Northwind.dbo.Customers;</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA STAGE_CLIENTE.Paths[Merge Join Output]"
-          TopLeft="679.624978384004,405.166663993828">
+          TopLeft="537.688667075529,422.004759259474">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="215.374972715354,-38.2999988880742"
+              EndConnector="0,31.8333343247242"
               Start="0,0"
-              End="207.874972715354,-38.2999988880742">
+              End="0,24.3333343247242">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="103.687486357677,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="103.687486357677,0"
-                    Point2="107.687486357677,0"
-                    Point3="107.687486357677,-4" />
-                  <mssgle:LineSegment
-                    End="107.687486357677,-34.2999988880742" />
-                  <mssgle:CubicBezierSegment
-                    Point1="107.687486357677,-34.2999988880742"
-                    Point2="107.687486357677,-38.2999988880742"
-                    Point3="111.687486357677,-38.2999988880742" />
-                  <mssgle:LineSegment
-                    End="207.874972715354,-38.2999988880742" />
+                    End="0,24.3333343247242" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2164,9 +2207,46 @@ from Northwind.dbo.Customers;</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\CARGA STAGE_CLIENTE.Paths[Case 1]"
+          TopLeft="534.830927595651,495.438093584198">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.7999982281532"
+              Start="0,0"
+              End="0,27.2999982281532">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.2999982281532" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-15.2180859375,8.87314364532662,30.436171875,9.5537109375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARGA STAGE_CLIENTE\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\CARGA STAGE_CLIENTE\STAGE_CLIENTE">
     <Properties>
@@ -2185,19 +2265,6 @@ from Northwind.dbo.Customers;</property>
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\CARGA STAGE_CLIENTE\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

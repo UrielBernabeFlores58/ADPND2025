@@ -11,45 +11,11 @@
   DTS:LocaleID="2058"
   DTS:ObjectName="04-Stage_Ventas"
   DTS:PackageType="5"
-  DTS:VersionBuild="14"
-  DTS:VersionGUID="{99E7D927-8EB9-42D4-A3A0-426BC5ECEED7}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{E63FD470-C725-41CA-B03D-3FE033AD018E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost,1450.northwind.sa]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{2F526CF1-EDFE-4F6A-9FEE-97BD85594B9C}"
-      DTS:ObjectName="localhost,1450.northwind.sa">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost,1450;User ID=sa;Initial Catalog=northwind;Provider=MSOLEDBSQL.1;Application Name=SSIS-04-Stage_Ventas-{2F526CF1-EDFE-4F6A-9FEE-97BD85594B9C}localhost,1450.northwind.sa;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbnRWTxIt6kyg4Q8YGpNkdgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABX3DThh9QannOsM1ZkpkmbAoRP37s/E7n5F/noJE+bMgAAAAAOgAAAAAIAACAAAAD9XRwrCgKwuKYL7tq/iQn1LoGpmbNzr/K5mCTVUYJWmCAAAACY8mDF4hS/eW6NV7xKv/Qi22ribSZXEw7gS1aJydbsw0AAAABmS1aoJn5aBIpcPhHisxxzqPtCOXey52+J2I3OoMwqpFIJuz8GOjr+sCL3aZk+OvtRfvP1uLilysVR7A36qGVl</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{30F3D874-C848-4B28-A96B-D7C08E77D771}"
-      DTS:ObjectName="localhost,1450.stage_northwind.sa">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost,1450;User ID=sa;Initial Catalog=stage_northwind;Provider=MSOLEDBSQL.1;Application Name=SSIS-04-Stage_Ventas-{30F3D874-C848-4B28-A96B-D7C08E77D771}localhost,1450.stage_northwind.sa;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbnRWTxIt6kyg4Q8YGpNkdgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAC2U/EMZD8HXfvw15asP2P+9LqZyRvQGKMsLGFnRpTy6QAAAAAOgAAAAAIAACAAAACoahDztCifIW186GnvsW5Q+Cp8E//Bwr9O871caGoOiiAAAACcNw9/Y/svXkGrWRznJdl0Bf1Z9+fkzJMXrFyrIRpkfEAAAAAEvruBrOu0QFtErQ+JEhG0WApbUXoppZBxcNMpsnWj5VKUkEec9AFqMcjIbaVh+vIhlQxyfkWlelIyikBV8gHN</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LocalHost.Northwind]"
       DTS:CreationName="OLEDB"
@@ -785,8 +751,8 @@ on od.ProductID = p.ProductID;</property>
               <connections>
                 <connection
                   refId="Package\CARGA STAGE VENTAS\NORTHWIND ORDERS.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost,1450.northwind.sa]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.northwind.sa]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.Northwind]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.Northwind]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1028,8 +994,8 @@ on od.ProductID = p.ProductID;</property>
               <connections>
                 <connection
                   refId="Package\CARGA STAGE VENTAS\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.stage_northwind]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.stage_northwind]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1907,8 +1873,8 @@ on od.ProductID = p.ProductID;</property>
               <connections>
                 <connection
                   refId="Package\CARGA STAGE VENTAS\STAGE VENTAS.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.stage_northwind]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.stage_northwind]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2179,13 +2145,39 @@ on od.ProductID = p.ProductID;</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="158.4,41.6"
+          Id="Package\CARGA STAGE VENTAS\STAGE VENTAS"
+          TopLeft="537.499970632296,39.5999995299181" />
+        <NodeLayout
           Size="156,41.6"
           Id="Package\CARGA STAGE VENTAS\Data Conversion"
           TopLeft="225.833320994345,119.466665847037" />
         <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\CARGA STAGE VENTAS\OLE DB Destination"
-          TopLeft="345.833314437834,440.73333102511" />
+          Size="190.4,41.6"
+          Id="Package\CARGA STAGE VENTAS\NORTHWIND ORDERS"
+          TopLeft="213.333321677314,34.5333331043191" />
+        <EdgeLayout
+          Id="Package\CARGA STAGE VENTAS.Paths[OLE DB Source Output]"
+          TopLeft="306.183321335829,76.1333331043191">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.3333327427179"
+              Start="0,0"
+              End="0,35.8333327427179">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.8333327427179" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <NodeLayout
           Size="252,41.6"
           Id="Package\CARGA STAGE VENTAS\ORDENAR NORTHWIND ORDENES"
@@ -2194,44 +2186,90 @@ on od.ProductID = p.ProductID;</property>
           Size="212.8,41.6"
           Id="Package\CARGA STAGE VENTAS\ORDENAR STAGE VENTAS"
           TopLeft="506.666638983622,222.599998463194" />
-        <NodeLayout
-          Size="190.4,41.6"
-          Id="Package\CARGA STAGE VENTAS\NORTHWIND ORDERS"
-          TopLeft="213.333321677314,34.5333331043191" />
-        <NodeLayout
-          Size="158.4,41.6"
-          Id="Package\CARGA STAGE VENTAS\STAGE VENTAS"
-          TopLeft="537.499970632296,39.5999995299181" />
-        <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\CARGA STAGE VENTAS\Merge Join"
-          TopLeft="356.66664717926,287.466664906873" />
-        <NodeLayout
-          Size="153.6,41.6"
-          Id="Package\CARGA STAGE VENTAS\Conditional Split"
-          TopLeft="351.666647452448,369.199997721911" />
         <EdgeLayout
-          Id="Package\CARGA STAGE VENTAS.Paths[VENTAS_NUEVAS]"
-          TopLeft="429.949980945141,410.799997721911">
+          Id="Package\CARGA STAGE VENTAS.Paths[Data Conversion Output]"
+          TopLeft="305.33332222369,161.066665847037">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,29.9333333031999"
+              EndConnector="0,57.1999993129568"
               Start="0,0"
-              End="0,22.4333333031999">
+              End="0,49.6999993129568">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.4333333031999" />
+                    End="0,49.6999993129568" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-39.6456640625,5.78307290159995,79.291328125,10.8671875"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\CARGA STAGE VENTAS.Paths[OLE DB Source Output1]"
+          TopLeft="614.883304807959,81.199999529918">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,141.399998933276"
+              Start="0,0"
+              End="0,133.899998933276">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,133.899998933276" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="153.6,41.6"
+          Id="Package\CARGA STAGE VENTAS\Conditional Split"
+          TopLeft="351.666647452448,369.199997721911" />
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\CARGA STAGE VENTAS\Merge Join"
+          TopLeft="356.66664717926,287.466664906873" />
+        <EdgeLayout
+          Id="Package\CARGA STAGE VENTAS.Paths[Sort Output]"
+          TopLeft="306.833323453036,259.866665159994">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="114.633323726224,27.5999997468789"
+              Start="0,0"
+              End="114.633323726224,20.0999997468789">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.79999987343945" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.79999987343945"
+                    Point2="0,13.7999998734394"
+                    Point3="4,13.7999998734394" />
+                  <mssgle:LineSegment
+                    End="110.633323726224,13.7999998734394" />
+                  <mssgle:CubicBezierSegment
+                    Point1="110.633323726224,13.7999998734394"
+                    Point2="114.633323726224,13.7999998734394"
+                    Point3="114.633323726224,17.7999998734394" />
+                  <mssgle:LineSegment
+                    End="114.633323726224,20.0999997468789" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2269,84 +2307,6 @@ on od.ProductID = p.ProductID;</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\CARGA STAGE VENTAS.Paths[Sort Output]"
-          TopLeft="306.833323453036,259.866665159994">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="114.633323726224,27.5999997468789"
-              Start="0,0"
-              End="114.633323726224,20.0999997468789">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,9.79999987343945" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,9.79999987343945"
-                    Point2="0,13.7999998734394"
-                    Point3="4,13.7999998734394" />
-                  <mssgle:LineSegment
-                    End="110.633323726224,13.7999998734394" />
-                  <mssgle:CubicBezierSegment
-                    Point1="110.633323726224,13.7999998734394"
-                    Point2="114.633323726224,13.7999998734394"
-                    Point3="114.633323726224,17.7999998734394" />
-                  <mssgle:LineSegment
-                    End="114.633323726224,20.0999997468789" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\CARGA STAGE VENTAS.Paths[OLE DB Source Output1]"
-          TopLeft="614.883304807959,81.199999529918">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,141.399998933276"
-              Start="0,0"
-              End="0,133.899998933276">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,133.899998933276" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\CARGA STAGE VENTAS.Paths[OLE DB Source Output]"
-          TopLeft="306.183321335829,76.1333331043191">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,43.3333327427179"
-              Start="0,0"
-              End="0,35.8333327427179">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.8333327427179" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\CARGA STAGE VENTAS.Paths[Merge Join Output]"
           TopLeft="424.966647315854,329.066664906873">
           <EdgeLayout.Curve>
@@ -2368,33 +2328,39 @@ on od.ProductID = p.ProductID;</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\CARGA STAGE VENTAS\OLE DB Destination"
+          TopLeft="345.833314437834,440.73333102511" />
         <EdgeLayout
-          Id="Package\CARGA STAGE VENTAS.Paths[Data Conversion Output]"
-          TopLeft="305.33332222369,161.066665847037">
+          Id="Package\CARGA STAGE VENTAS.Paths[VENTAS_NUEVAS]"
+          TopLeft="429.949980945141,410.799997721911">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,57.1999993129568"
+              EndConnector="0,29.9333333031999"
               Start="0,0"
-              End="0,49.6999993129568">
+              End="0,22.4333333031999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,49.6999993129568" />
+                    End="0,22.4333333031999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-39.6456640625,5.78307290159995,79.291328125,10.8671875"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\CARGA STAGE VENTAS\OLE DB Destination">
+    design-time-name="Package\CARGA STAGE VENTAS\STAGE VENTAS">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2415,7 +2381,7 @@ on od.ProductID = p.ProductID;</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\CARGA STAGE VENTAS\STAGE VENTAS">
+    design-time-name="Package\CARGA STAGE VENTAS\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

@@ -11,45 +11,11 @@
   DTS:LocaleID="2058"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{F40E77F2-3709-4F69-B447-BBD3D5D79AB9}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{6254D1FA-37A9-421C-89FF-335C00A81EDA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost,1450.northwind.sa]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{F4377AD2-61FE-427F-8E65-B1B0724960B3}"
-      DTS:ObjectName="localhost,1450.northwind.sa">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost,1450;User ID=sa;Initial Catalog=northwind;Provider=MSOLEDBSQL.1;Application Name=SSIS-Package1-{F4377AD2-61FE-427F-8E65-B1B0724960B3}localhost,1450.northwind.sa;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbnRWTxIt6kyg4Q8YGpNkdgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABZgOxN1xIol/5nhBJF84MPsoPiTcC9mZ+D7bFkZkvUGgAAAAAOgAAAAAIAACAAAAA1L/4PPK5vsDDAOMOnnLrgtE6UX7ltVGwONwERleTfuCAAAAAH7EiMyznoxA8F8DLgp66cTT9tgRCeequkF9BZOXSbGEAAAAC8T47UXoxrnvPLiq8gjz8KDqZKXS7wt3fZHrxF0mdvxPedxoe8zR7Eizl0ps67R9V2bbwOrnaV9wTfGeOEizRm</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{0938EF50-6CAC-43F3-894E-BE6A3D781E1E}"
-      DTS:ObjectName="localhost,1450.stage_northwind.sa">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost,1450;User ID=sa;Initial Catalog=stage_northwind;Provider=MSOLEDBSQL.1;Application Name=SSIS-Package1-{0938EF50-6CAC-43F3-894E-BE6A3D781E1E}localhost,1450.stage_northwind.sa;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbnRWTxIt6kyg4Q8YGpNkdgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACkcQJHKsWAWPbz/SoQ8QS1sIRjgzSGH6gq7cH+GhTgoQAAAAAOgAAAAAIAACAAAAAVTjKfGo/DMHD9b0hqgZ79AXy0cwGhLa1+6xZx6gN7TyAAAADmqxUapWO+xuV9RHh66IG7S3Wsb4cl8uibxKaHbLf7D0AAAAAv6BJIm/FkhlZ3FZ5zegiWqQFSDyi1YmZE5XMIg7B+GZFYHS+ps7HfpB7Y28i8zSdUYonPQ57PtDaQHPZ8xcfl</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LocalHost.Northwind]"
       DTS:CreationName="OLEDB"
@@ -579,8 +545,8 @@
               <connections>
                 <connection
                   refId="Package\CARGA STAGE TIEMPO\Northwind Orders.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost,1450.northwind.sa]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.northwind.sa]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.Northwind]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.Northwind]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -798,7 +764,7 @@
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">0</property>
+                  typeConverter="AccessMode">3</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
@@ -819,8 +785,8 @@
               <connections>
                 <connection
                   refId="Package\CARGA STAGE TIEMPO\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.stage_northwind 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.stage_northwind 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1541,8 +1507,8 @@
               <connections>
                 <connection
                   refId="Package\CARGA STAGE TIEMPO\STAGE TIEMPO.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.stage_northwind]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.stage_northwind]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1808,11 +1774,11 @@
         <NodeLayout
           Size="144.8,41.6"
           Id="Package\CARGA STAGE TIEMPO\Ordenar stage"
-          TopLeft="556.666636251742,194.133331983354" />
+          TopLeft="496.666639529997,168.133332164155" />
         <NodeLayout
           Size="260.8,41.6"
           Id="Package\CARGA STAGE TIEMPO\LEFT JOIN ORDERS_STAGE TIEMPO"
-          TopLeft="349.999980876844,301.599997902711" />
+          TopLeft="349.166647589042,245.266664961113" />
         <NodeLayout
           Size="156,41.6"
           Id="Package\CARGA STAGE TIEMPO\STAGE TIEMPO"
@@ -1820,41 +1786,41 @@
         <NodeLayout
           Size="171.2,41.6"
           Id="Package\CARGA STAGE TIEMPO\OLE DB Destination"
-          TopLeft="414.999977325401,465.46666429215" />
+          TopLeft="374.999979510904,389.199998155832" />
         <NodeLayout
           Size="212,41.6"
           Id="Package\CARGA STAGE TIEMPO\FILTRAR FECHAS NUEVAS"
-          TopLeft="374.166646223102,383.93333095279" />
+          TopLeft="365.833313345082,312.866664780312" />
         <NodeLayout
           Size="148.8,41.6"
           Id="Package\CARGA STAGE TIEMPO\Ordenar orders"
-          TopLeft="259.999985794227,190.666665340794" />
+          TopLeft="212.499988389512,169.866665485435" />
         <EdgeLayout
           Id="Package\CARGA STAGE TIEMPO.Paths[Sort Output1]"
-          TopLeft="629.066636251742,235.733331983354">
+          TopLeft="569.066639529997,209.733332164155">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-106.533322041565,65.8666659193569"
+              EndConnector="-47.366658607622,35.5333327969578"
               Start="0,0"
-              End="-106.533322041565,58.3666659193569">
+              End="-47.366658607622,28.0333327969578">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.2790239445921" />
+                    End="0,17.1899996801371" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,35.2790239445921"
-                    Point2="0,39.2790239445921"
-                    Point3="-4,39.2790239445921" />
+                    Point1="0,17.1899996801371"
+                    Point2="0,21.1899996801371"
+                    Point3="-4,21.1899996801371" />
                   <mssgle:LineSegment
-                    End="-102.533322041565,39.2790239445921" />
+                    End="-43.366658607622,21.1899996801371" />
                   <mssgle:CubicBezierSegment
-                    Point1="-102.533322041565,39.2790239445921"
-                    Point2="-106.533322041565,39.2790239445921"
-                    Point3="-106.533322041565,43.2790239445921" />
+                    Point1="-43.366658607622,21.1899996801371"
+                    Point2="-47.366658607622,21.1899996801371"
+                    Point3="-47.366658607622,25.1899996801371" />
                   <mssgle:LineSegment
-                    End="-106.533322041565,58.3666659193569" />
+                    End="-47.366658607622,28.0333327969578" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1865,30 +1831,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA STAGE TIEMPO.Paths[Sort Output]"
-          TopLeft="334.399985794227,232.266665340794">
+          TopLeft="286.899988389512,211.466665485435">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="103.866661749284,69.3333325619168"
+              EndConnector="150.533325866196,33.799999475678"
               Start="0,0"
-              End="103.866661749284,61.8333325619168">
+              End="150.533325866196,26.299999475678">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.346341003387" />
+                    End="0,16.1563411507397" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,37.346341003387"
-                    Point2="0,41.346341003387"
-                    Point3="4,41.346341003387" />
+                    Point1="0,16.1563411507397"
+                    Point2="0,20.1563411507397"
+                    Point3="4,20.1563411507397" />
                   <mssgle:LineSegment
-                    End="99.8666617492837,41.346341003387" />
+                    End="146.533325866196,20.1563411507397" />
                   <mssgle:CubicBezierSegment
-                    Point1="99.8666617492837,41.346341003387"
-                    Point2="103.866661749284,41.346341003387"
-                    Point3="103.866661749284,45.346341003387" />
+                    Point1="146.533325866196,20.1563411507397"
+                    Point2="150.533325866196,20.1563411507397"
+                    Point3="150.533325866196,24.1563411507397" />
                   <mssgle:LineSegment
-                    End="103.866661749284,61.8333325619168" />
+                    End="150.533325866196,26.299999475678" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1899,30 +1865,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA STAGE TIEMPO.Paths[OLE DB Source Output1]"
-          TopLeft="562.166640212967,115.266666154398">
+          TopLeft="565.616639871482,115.266666154398">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="66.8999960387748,78.8666658289565"
+              EndConnector="0,52.8666660097569"
               Start="0,0"
-              End="66.8999960387748,71.3666658289565">
+              End="0,45.3666660097569">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.4333329144783" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,35.4333329144783"
-                    Point2="0,39.4333329144783"
-                    Point3="4,39.4333329144783" />
-                  <mssgle:LineSegment
-                    End="62.8999960387748,39.4333329144783" />
-                  <mssgle:CubicBezierSegment
-                    Point1="62.8999960387748,39.4333329144783"
-                    Point2="66.8999960387748,39.4333329144783"
-                    Point3="66.8999960387748,43.4333329144783" />
-                  <mssgle:LineSegment
-                    End="66.8999960387748,71.3666658289565" />
+                    End="0,45.3666660097569" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1933,30 +1887,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA STAGE TIEMPO.Paths[OLE DB Source Output]"
-          TopLeft="289.166655238304,123.933332760798">
+          TopLeft="288.033321813908,123.933332760798">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="45.233330555923,66.7333325799964"
+              EndConnector="0,45.933332724637"
               Start="0,0"
-              End="45.233330555923,59.2333325799964">
+              End="0,38.433332724637">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.3666662899982" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,29.3666662899982"
-                    Point2="0,33.3666662899982"
-                    Point3="4,33.3666662899982" />
-                  <mssgle:LineSegment
-                    End="41.233330555923,33.3666662899982" />
-                  <mssgle:CubicBezierSegment
-                    Point1="41.233330555923,33.3666662899982"
-                    Point2="45.233330555923,33.3666662899982"
-                    Point3="45.233330555923,37.3666662899982" />
-                  <mssgle:LineSegment
-                    End="45.233330555923,59.2333325799964" />
+                    End="0,38.433332724637" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1967,18 +1909,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA STAGE TIEMPO.Paths[Merge Join Output]"
-          TopLeft="480.283313549973,343.199997902711">
+          TopLeft="475.699980467062,286.866664961113">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,40.7333330500788"
+              EndConnector="0,25.9999998191994"
               Start="0,0"
-              End="0,33.2333330500788">
+              End="0,18.4999998191994">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.2333330500788" />
+                    End="0,18.4999998191994" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1989,37 +1931,37 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA STAGE TIEMPO.Paths[FECHAS_NUEVAS]"
-          TopLeft="480.166646223102,425.53333095279">
+          TopLeft="471.833313345082,354.466664780312">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="20.4333311022984,39.9333333393599"
+              EndConnector="-11.2333338341774,34.7333333755202"
               Start="0,0"
-              End="20.4333311022984,32.4333333393599">
+              End="-11.2333338341774,27.2333333755202">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15.9666666696799" />
+                    End="0,13.3666666877601" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,15.9666666696799"
-                    Point2="0,19.9666666696799"
-                    Point3="4,19.9666666696799" />
+                    Point1="0,13.3666666877601"
+                    Point2="0,17.3666666877601"
+                    Point3="-4,17.3666666877601" />
                   <mssgle:LineSegment
-                    End="16.4333311022984,19.9666666696799" />
+                    End="-7.23333383417742,17.3666666877601" />
                   <mssgle:CubicBezierSegment
-                    Point1="16.4333311022984,19.9666666696799"
-                    Point2="20.4333311022984,19.9666666696799"
-                    Point3="20.4333311022984,23.9666666696799" />
+                    Point1="-7.23333383417742,17.3666666877601"
+                    Point2="-11.2333338341774,17.3666666877601"
+                    Point3="-11.2333338341774,21.3666666877601" />
                   <mssgle:LineSegment
-                    End="20.4333311022984,32.4333333393599" />
+                    End="-11.2333338341774,27.2333333755202" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-28.7858149176008,24.9666666696799,78.0049609375,10.8671875"
+              BoundingBox="-44.6191473858387,22.3666666877601,78.0049609375,10.8671875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>

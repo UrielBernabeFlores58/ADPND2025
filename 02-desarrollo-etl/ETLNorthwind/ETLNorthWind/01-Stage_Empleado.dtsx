@@ -11,62 +11,11 @@
   DTS:LocaleID="2058"
   DTS:ObjectName="01-Stage_Empleado"
   DTS:PackageType="5"
-  DTS:VersionBuild="18"
-  DTS:VersionGUID="{31C4DB2A-D619-442E-AEBC-C7FA37667744}">
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{17991B5C-C014-477C-BEB1-AA577B5C89A4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost,1450.northwind.sa]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{E0947D26-33F5-43F7-AF36-F662141C8B1F}"
-      DTS:ObjectName="localhost,1450.northwind.sa">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost,1450;User ID=sa;Initial Catalog=northwind;Provider=MSOLEDBSQL.1;Application Name=SSIS-01-Stage_Empleado-{E0947D26-33F5-43F7-AF36-F662141C8B1F}localhost,1450.northwind.sa;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbnRWTxIt6kyg4Q8YGpNkdgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABVziHFpJ7FGng0tN9a9OI0I+sV2UoAByf3XwwZ0/KpHwAAAAAOgAAAAAIAACAAAADttsOSdLscRKZkU7SOQYri3uL2PynPl0AQ1rnmUDbjfiAAAACQ+EnjG7Rt8nvUBrdTOglRGyt+B9tw648UFgwlS8ZPqUAAAACQG0o+lt6cOD+pUM20dsTRNozzWWpIvDk8JPFKiCU37TFsMCK10JGLMrBvlAB1UqiNWkFap4YURDGRhthVCNjF</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{DC8F7721-8E80-494A-83E7-A9E77907B6F2}"
-      DTS:ObjectName="localhost,1450.stage_northwind.sa">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost,1450;User ID=sa;Initial Catalog=stage_northwind;Provider=MSOLEDBSQL.1;Application Name=SSIS-01-Stage_Empleado-{DC8F7721-8E80-494A-83E7-A9E77907B6F2}localhost,1450.stage_northwind.sa;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbnRWTxIt6kyg4Q8YGpNkdgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAD0otwYePwdGihzkXKuwK52vrxxfRKr+anLRMszoJcJuAAAAAAOgAAAAAIAACAAAADKFJueb2hTpfx1/OmZoV/19X9A6RtRQsaQ9z/GOAAhhCAAAAAo0iNon5kEEFEXoUizep+OEl6o+0tjKYQrly0icVuoF0AAAAA+xNdQsm5lrrPdkwX2PFWbc7PlAPGUbKBLsSDWkpPuz1cboUY+rA6jUzp6sl+F6ywe6mFltwWLfB5o3jcubV81</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa 1]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{9095F094-624A-4179-BDFC-F0384C6A323D}"
-      DTS:ObjectName="localhost,1450.stage_northwind.sa 1">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost,1450;User ID=sa;Initial Catalog=stage_northwind;Provider=MSOLEDBSQL.1;Application Name=SSIS-01-Stage_Empleado-{9095F094-624A-4179-BDFC-F0384C6A323D}localhost,1450.stage_northwind.sa 1;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbnRWTxIt6kyg4Q8YGpNkdgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADw9J3X95dRjBdBZawZVD4LrFmmFHJ49CXNdsHmSue1HAAAAAAOgAAAAAIAACAAAABwaBdcORh8m5H8ElEiMjTG92BwPilrNmE+S1IC6axYPiAAAABBQYCz5Li8Y3AUDDeZ1ulapG7BvoyoMhRsv2a/JgUYLkAAAAATSxxQNjDWMMPaAaIikZwJjJt5ITsqG2lIcsa0Iak620jhF9tszQx6vWi7jvtHIyzNZ3ZfDt5CAqd3t63wjPI7</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LocalHost.Northwind]"
       DTS:CreationName="OLEDB"
@@ -354,8 +303,8 @@
               <connections>
                 <connection
                   refId="Package\CARGA_STAGE_EMPLEADO\EMPLEADO_STAGE.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.stage_northwind]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.stage_northwind]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -527,8 +476,8 @@ from Northwind.dbo.Employees;</property>
               <connections>
                 <connection
                   refId="Package\CARGA_STAGE_EMPLEADO\EMPLOYEE_NORTHWIND.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost,1450.northwind.sa]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.northwind.sa]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.Northwind]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.Northwind]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -919,8 +868,8 @@ from Northwind.dbo.Employees;</property>
               <connections>
                 <connection
                   refId="Package\CARGA_STAGE_EMPLEADO\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost,1450.stage_northwind.sa 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa 1]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.stage_northwind]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.stage_northwind]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1403,15 +1352,15 @@ from Northwind.dbo.Employees;</property>
         <NodeLayout
           Size="193.6,41.6"
           Id="Package\CARGA_STAGE_EMPLEADO\ORDENAR_EMPLOYEE"
-          TopLeft="87.4999952192109,183.733332055675" />
+          TopLeft="92.1296245958888,161.585184061542" />
         <NodeLayout
           Size="173.6,41.6"
           Id="Package\CARGA_STAGE_EMPLEADO\Conversion de datos"
-          TopLeft="97.5694391134853,258.916664866193" />
+          TopLeft="99.4212908641565,237.731479828327" />
         <NodeLayout
           Size="171.2,41.6"
           Id="Package\CARGA_STAGE_EMPLEADO\OLE DB Destination"
-          TopLeft="369.791646462142,534.166663668388" />
+          TopLeft="421.643495480934,451.351849429457" />
         <NodeLayout
           Size="176.8,41.6"
           Id="Package\CARGA_STAGE_EMPLEADO\EMPLEADO_STAGE"
@@ -1419,7 +1368,7 @@ from Northwind.dbo.Employees;</property>
         <NodeLayout
           Size="260.8,41.6"
           Id="Package\CARGA_STAGE_EMPLEADO\LEFT JOIN EMPLOYEE_EMPLEADOS"
-          TopLeft="311.458316316001,350.99999755919" />
+          TopLeft="375.347201714155,313.444442264791" />
         <NodeLayout
           Size="206.4,41.6"
           Id="Package\CARGA_STAGE_EMPLEADO\EMPLOYEE_NORTHWIND"
@@ -1431,33 +1380,21 @@ from Northwind.dbo.Employees;</property>
         <NodeLayout
           Size="153.6,41.6"
           Id="Package\CARGA_STAGE_EMPLEADO\Conditional Split"
-          TopLeft="381.944423575921,452.111107967187" />
+          TopLeft="429.166643218035,379.888886247189" />
         <EdgeLayout
           Id="Package\CARGA_STAGE_EMPLEADO.Paths[Sort Output1]"
-          TopLeft="553.466641715501,225.333332055675">
+          TopLeft="550.673588381495,225.333332055675">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-69.4749920661668,125.666665503515"
+              EndConnector="0,88.1111102091161"
               Start="0,0"
-              End="-69.4749920661668,118.166665503515">
+              End="0,80.6111102091161">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,70.9402432088036" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,70.9402432088036"
-                    Point2="0,74.9402432088036"
-                    Point3="-4,74.9402432088036" />
-                  <mssgle:LineSegment
-                    End="-65.4749920661668,74.9402432088036" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-65.4749920661668,74.9402432088036"
-                    Point2="-69.4749920661668,74.9402432088036"
-                    Point3="-69.4749920661668,78.9402432088036" />
-                  <mssgle:LineSegment
-                    End="-69.4749920661668,118.166665503515" />
+                    End="0,80.6111102091161" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1468,18 +1405,18 @@ from Northwind.dbo.Employees;</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA_STAGE_EMPLEADO.Paths[Sort Output]"
-          TopLeft="184.334717166348,225.333332055675">
+          TopLeft="187.575457730023,203.185184061542">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,33.5833328105179"
+              EndConnector="0,34.5462957667847"
               Start="0,0"
-              End="0,26.0833328105179">
+              End="0,27.0462957667847">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.0833328105179" />
+                    End="0,27.0462957667847" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1512,18 +1449,18 @@ from Northwind.dbo.Employees;</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA_STAGE_EMPLEADO.Paths[OLE DB Source Output]"
-          TopLeft="187.916661863112,127.399999403358">
+          TopLeft="190.231476551451,127.399999403357">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,56.3333326523172"
+              EndConnector="0,34.1851846581848"
               Start="0,0"
-              End="0,48.8333326523172">
+              End="0,26.6851846581848">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,48.8333326523172" />
+                    End="0,26.6851846581848" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1534,30 +1471,18 @@ from Northwind.dbo.Employees;</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA_STAGE_EMPLEADO.Paths[Merge Join Output]"
-          TopLeft="441.858316316001,392.59999755919">
+          TopLeft="505.856922466095,355.044442264791">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="16.88610725992,59.511110407997"
+              EndConnector="0,24.8444439823978"
               Start="0,0"
-              End="16.88610725992,52.011110407997">
+              End="0,17.3444439823978">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.7555552039985" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25.7555552039985"
-                    Point2="0,29.7555552039985"
-                    Point3="4,29.7555552039985" />
-                  <mssgle:LineSegment
-                    End="12.88610725992,29.7555552039985" />
-                  <mssgle:CubicBezierSegment
-                    Point1="12.88610725992,29.7555552039985"
-                    Point2="16.88610725992,29.7555552039985"
-                    Point3="16.88610725992,33.7555552039985" />
-                  <mssgle:LineSegment
-                    End="16.88610725992,52.011110407997" />
+                    End="0,17.3444439823978" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1568,54 +1493,54 @@ from Northwind.dbo.Employees;</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA_STAGE_EMPLEADO.Paths[EMPLOYEE_EMPLEADOS]"
-          TopLeft="457.068035019031,493.711107967187">
+          TopLeft="506.605069349484,421.488886247189">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,40.4555557012008"
+              EndConnector="0,29.8629631822677"
               Start="0,0"
-              End="0,32.9555557012008">
+              End="0,22.3629631822677">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,32.9555557012008" />
+                    End="0,22.3629631822677" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-54.59748046875,11.0344184756004,109.1949609375,10.88671875"
+              BoundingBox="-54.59748046875,5.73812221613386,109.1949609375,10.88671875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA_STAGE_EMPLEADO.Paths[Data Conversion Output]"
-          TopLeft="184.369439113485,300.516664866193">
+          TopLeft="186.221290864156,279.331479828327">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="215.355543869182,50.4833326929973"
+              EndConnector="277.392577516665,34.1129624364641"
               Start="0,0"
-              End="215.355543869182,42.9833326929973">
+              End="277.392577516665,26.6129624364641">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.1053044961899" />
+                    End="0,16.3429739407694" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,26.1053044961899"
-                    Point2="0,30.1053044961899"
-                    Point3="4,30.1053044961899" />
+                    Point1="0,16.3429739407694"
+                    Point2="0,20.3429739407694"
+                    Point3="4,20.3429739407694" />
                   <mssgle:LineSegment
-                    End="211.355543869182,30.1053044961899" />
+                    End="273.392577516665,20.3429739407694" />
                   <mssgle:CubicBezierSegment
-                    Point1="211.355543869182,30.1053044961899"
-                    Point2="215.355543869182,30.1053044961899"
-                    Point3="215.355543869182,34.1053044961899" />
+                    Point1="273.392577516665,20.3429739407694"
+                    Point2="277.392577516665,20.3429739407694"
+                    Point3="277.392577516665,24.3429739407694" />
                   <mssgle:LineSegment
-                    End="215.355543869182,42.9833326929973" />
+                    End="277.392577516665,26.6129624364641" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

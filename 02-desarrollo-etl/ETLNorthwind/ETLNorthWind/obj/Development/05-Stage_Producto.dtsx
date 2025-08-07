@@ -11,62 +11,11 @@
   DTS:LocaleID="2058"
   DTS:ObjectName="05-Stage_Producto"
   DTS:PackageType="5"
-  DTS:VersionBuild="19"
-  DTS:VersionGUID="{9C56198E-9B3F-4AF6-8453-232F69824C8A}">
+  DTS:VersionBuild="23"
+  DTS:VersionGUID="{13B6CACC-8D56-4C93-94EF-2356F4157DF4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost,1450.northwind.sa]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{006509DB-DA58-4BCB-937E-8E357B65FD53}"
-      DTS:ObjectName="localhost,1450.northwind.sa">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost,1450;User ID=sa;Initial Catalog=northwind;Provider=MSOLEDBSQL.1;Application Name=SSIS-05-Stage_Producto-{006509DB-DA58-4BCB-937E-8E357B65FD53}localhost,1450.northwind.sa;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbnRWTxIt6kyg4Q8YGpNkdgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADpIdEBgtkltVNKwZAigTKfbG4LwJDf4eCnqKZaQUYwnAAAAAAOgAAAAAIAACAAAACPaYsS2onBAfSf6Q6X8c/7WYMPg41HqiVW2FyLHSKLOyAAAACGQQ3HQf5g7pF7aQwgrG3CqKUud+Oi9pGtTwu2x2a0MUAAAAAAtK5V5IwDDQGbbbVtVNKfVUq/NGT1J/Tr34vJNBgwV1CxacC9ahQqZuWm2M276gxpe9j2+7XGpiMzo4TQ0kGc</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{8626DE32-7408-4DDF-9C85-F555831C770D}"
-      DTS:ObjectName="localhost,1450.stage_northwind.sa">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost,1450;User ID=sa;Initial Catalog=stage_northwind;Provider=MSOLEDBSQL.1;Application Name=SSIS-05-Stage_Producto-{8626DE32-7408-4DDF-9C85-F555831C770D}localhost,1450.stage_northwind.sa;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbnRWTxIt6kyg4Q8YGpNkdgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADCohp2TPi+6bJD9L4QTEvoS/obT/D79VKdJQj1IOm1bQAAAAAOgAAAAAIAACAAAABkcKSqpUlX57UbgZuZrhpU0rIYmeB3cu3iP8TFwSip2yAAAADLJPL8KVUZ9Z5rr8RMff3sTv5inpVmRrlENzFjLX8xR0AAAAAGf14qPpbu+oVhvlTXVzQG3/knneJ+kWzCUt1zLlkRk/1LTHKAncvop1baAfpi+8lwop7j/K6Z/dUbqE2w/rC+</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa 1]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{F0091D5D-77FF-4770-8E71-06909E13E8F6}"
-      DTS:ObjectName="localhost,1450.stage_northwind.sa 1">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost,1450;User ID=sa;Initial Catalog=stage_northwind;Provider=MSOLEDBSQL.1;Application Name=SSIS-05-Stage_Producto-{F0091D5D-77FF-4770-8E71-06909E13E8F6}localhost,1450.stage_northwind.sa 1;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbnRWTxIt6kyg4Q8YGpNkdgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAgN0Z5uCA1UoyHNR31GciudskvOPH8wERPpdmTieIyhQAAAAAOgAAAAAIAACAAAADH8pg3rrTsyjOhKfW49j2cY7Z1jr2i25fsdWp/arbmcCAAAADJKzEXg/B6OjTjZ3Sj+3JiL3jWdBkspaB5xmff/CdVdkAAAACH1eebIAT72zY37ZPGF4gY6c7CJiCIjSjiSIXXeAV3Ku5hHeJWieN9YoT2y+B5LeYKYtv+mq3GjLuJmBbSZKRE</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LocalHost.Northwind]"
       DTS:CreationName="OLEDB"
@@ -571,8 +520,8 @@
               <connections>
                 <connection
                   refId="Package\CARGA STAGE_PRODUCTO\NORTHWIND_PRODUCTS.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost,1450.northwind.sa]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.northwind.sa]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.Northwind]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.Northwind]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -733,7 +682,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                  name="FastLoadOptions"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -742,8 +691,8 @@
               <connections>
                 <connection
                   refId="Package\CARGA STAGE_PRODUCTO\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.stage_northwind]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.stage_northwind]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -756,19 +705,12 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\CARGA STAGE_PRODUCTO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CategoryID]"
+                      refId="Package\CARGA STAGE_PRODUCTO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ProductID]"
                       cachedDataType="i4"
-                      cachedName="CategoryID"
-                      externalMetadataColumnId="Package\CARGA STAGE_PRODUCTO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[categoriaid]"
-                      lineageId="Package\CARGA STAGE_PRODUCTO\Merge Join.Outputs[Merge Join Output].Columns[CategoryID]" />
-                    <inputColumn
-                      refId="Package\CARGA STAGE_PRODUCTO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UnitPrice_DECIMAL]"
-                      cachedDataType="numeric"
-                      cachedName="UnitPrice_DECIMAL"
-                      cachedPrecision="15"
-                      cachedScale="2"
-                      externalMetadataColumnId="Package\CARGA STAGE_PRODUCTO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[preciounitario]"
-                      lineageId="Package\CARGA STAGE_PRODUCTO\Merge Join.Outputs[Merge Join Output].Columns[UnitPrice_DECIMAL]" />
+                      cachedName="ProductID"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\CARGA STAGE_PRODUCTO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[producto]"
+                      lineageId="Package\CARGA STAGE_PRODUCTO\Merge Join.Outputs[Merge Join Output].Columns[ProductID]" />
                     <inputColumn
                       refId="Package\CARGA STAGE_PRODUCTO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ProductName_VARCHAR]"
                       cachedCodepage="1252"
@@ -778,12 +720,19 @@
                       externalMetadataColumnId="Package\CARGA STAGE_PRODUCTO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nombreproducto]"
                       lineageId="Package\CARGA STAGE_PRODUCTO\Merge Join.Outputs[Merge Join Output].Columns[ProductName_VARCHAR]" />
                     <inputColumn
-                      refId="Package\CARGA STAGE_PRODUCTO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ProductID]"
+                      refId="Package\CARGA STAGE_PRODUCTO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UnitPrice_DECIMAL]"
+                      cachedDataType="numeric"
+                      cachedName="UnitPrice_DECIMAL"
+                      cachedPrecision="15"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\CARGA STAGE_PRODUCTO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[preciounitario]"
+                      lineageId="Package\CARGA STAGE_PRODUCTO\Merge Join.Outputs[Merge Join Output].Columns[UnitPrice_DECIMAL]" />
+                    <inputColumn
+                      refId="Package\CARGA STAGE_PRODUCTO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CategoryID]"
                       cachedDataType="i4"
-                      cachedName="ProductID"
-                      cachedSortKeyPosition="1"
-                      externalMetadataColumnId="Package\CARGA STAGE_PRODUCTO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[producto]"
-                      lineageId="Package\CARGA STAGE_PRODUCTO\Merge Join.Outputs[Merge Join Output].Columns[ProductID]" />
+                      cachedName="CategoryID"
+                      externalMetadataColumnId="Package\CARGA STAGE_PRODUCTO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[categoriaid]"
+                      lineageId="Package\CARGA STAGE_PRODUCTO\Merge Join.Outputs[Merge Join Output].Columns[CategoryID]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1272,8 +1221,8 @@
               <connections>
                 <connection
                   refId="Package\CARGA STAGE_PRODUCTO\STAGE_PRODUCTO.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost,1450.stage_northwind.sa]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.stage_northwind]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.stage_northwind]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1470,7 +1419,7 @@
         <NodeLayout
           Size="153.6,41.6"
           Id="Package\CARGA STAGE_PRODUCTO\Conditional Split"
-          TopLeft="429.583309861935,432.549997346749" />
+          TopLeft="484.583306856868,459.416663826588" />
         <NodeLayout
           Size="129.6,41.6"
           Id="Package\CARGA STAGE_PRODUCTO\Merge Join"
@@ -1486,32 +1435,44 @@
         <NodeLayout
           Size="171.2,41.6"
           Id="Package\CARGA STAGE_PRODUCTO\OLE DB Destination"
-          TopLeft="422.499976915619,508.39999764959" />
+          TopLeft="188.333323043254,480.399997866551" />
         <NodeLayout
           Size="261.6,41.6"
           Id="Package\CARGA STAGE_PRODUCTO\ORDENAR_NORTHWIND PRODUCTS"
           TopLeft="157.291658072629,304.416664549791" />
         <EdgeLayout
           Id="Package\CARGA STAGE_PRODUCTO.Paths[PRDUCTO_NUEVO]"
-          TopLeft="507.241643388777,474.149997346749">
+          TopLeft="484.583306856868,480.216663826588">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,34.2500003028413"
+              EndConnector="-125.049983813613,20.9833340399628"
               Start="0,0"
-              End="0,26.7500003028413">
+              End="-117.549983813613,20.9833340399628">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.7500003028413" />
+                    End="-58.5249919068067,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-58.5249919068067,0"
+                    Point2="-62.5249919068067,0"
+                    Point3="-62.5249919068067,4" />
+                  <mssgle:LineSegment
+                    End="-62.5249919068067,16.9833340399628" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-62.5249919068067,16.9833340399628"
+                    Point2="-62.5249919068067,20.9833340399628"
+                    Point3="-66.5249919068067,20.9833340399628" />
+                  <mssgle:LineSegment
+                    End="-117.549983813613,20.9833340399628" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-41.1378125,7.93164077642066,82.275625,10.88671875"
+              BoundingBox="-103.662804406807,-16.88671875,82.275625,10.88671875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1561,18 +1522,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA STAGE_PRODUCTO.Paths[Merge Join Output]"
-          TopLeft="510.174975993609,397.79999752303">
+          TopLeft="513.966642125283,397.79999752303">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,34.749999823719"
+              EndConnector="47.4166647315845,61.6166663035582"
               Start="0,0"
-              End="0,27.249999823719">
+              End="47.4166647315845,54.1166663035582">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.249999823719" />
+                    End="0,26.8083331517791" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.8083331517791"
+                    Point2="0,30.8083331517791"
+                    Point3="4,30.8083331517791" />
+                  <mssgle:LineSegment
+                    End="43.4166647315845,30.8083331517791" />
+                  <mssgle:CubicBezierSegment
+                    Point1="43.4166647315845,30.8083331517791"
+                    Point2="47.4166647315845,30.8083331517791"
+                    Point3="47.4166647315845,34.8083331517791" />
+                  <mssgle:LineSegment
+                    End="47.4166647315845,54.1166663035582" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
